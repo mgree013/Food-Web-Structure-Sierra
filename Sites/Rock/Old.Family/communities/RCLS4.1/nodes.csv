@@ -1,0 +1,12 @@
+"node","density","phylum","class","order","family","genus"
+"Ameletus",2.222222222,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Acari",2.222222222,"Arthropoda","Arachnida",,,
+"Baetis",2.222222222,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",41.11111111,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Heterlimnius",23.33333333,"Arthropoda","Insecta","Coleoptera","Elmidae","Heterlimnius"
+"Malenka",24.44444444,"Arthropoda","Insecta","Plecoptera","Nemouridae","Malenka"
+"Pisidium",45.55555556,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Planorbidae",1.111111111,"Mollusca","Gastropoda","Basommatophora","Planorbidae",
+"Rhyacophila",1.111111111,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Serratella",1.111111111,"Arthropoda","Insecta","Ephemeroptera","Ephemerellidae","Serratella"
+"Simulium",3222.222222,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"

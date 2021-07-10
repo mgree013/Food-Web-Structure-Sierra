@@ -1,0 +1,14 @@
+"node","density","phylum","class","order","family","genus"
+"Acari",576,"Arthropoda","Arachnida",,,
+"Agabus",4,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Agabus"
+"Ameletus",8,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Baetis",96,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",1152,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Dicranota",4,"Arthropoda","Insecta","Diptera","Tipulidae","Dicranota"
+"Ironodes",4,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Ironodes"
+"Oligochaeta",404,"Annelida","Clitellata",,,
+"Ostracoda",16,"Arthropoda","Ostracoda",,,
+"Simulium",260,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Muscidae",24,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Limnephilidae",4,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Psychoglypha"
+"Dytiscidae",24,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Sanfilippodytes"

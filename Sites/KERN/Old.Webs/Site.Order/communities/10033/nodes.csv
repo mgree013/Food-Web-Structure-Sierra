@@ -1,0 +1,14 @@
+"node","density","phylum","class","order","family","genus"
+"Acari",1301.333333,"Arthropoda","Arachnida",,,
+"Baetis",501.3333333,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",1898.666667,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Diphetor",10.66666667,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Diphetor"
+"Doroneuria",10.66666667,"Arthropoda","Insecta","Plecoptera","Perlidae","Doroneuria"
+"Drunella",10.66666667,"Arthropoda","Insecta","Ephemeroptera","Ephemerellidae","Drunella"
+"Paraleptophlebia",10.66666667,"Arthropoda","Insecta","Ephemeroptera","Leptophlebiidae","Paraleptophlebia"
+"Pedicia",10.66666667,"Arthropoda","Insecta","Diptera","Pediciidae","Pedicia"
+"Pisidium",10.66666667,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Rhyacophila",53.33333334,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Simulium",2581.333333,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Zapada",32,"Arthropoda","Insecta","Plecoptera","Nemouridae","Zapada"
+"Diptera",10.66666667,"Arthropoda","Insecta","Diptera","Empididae","Clinocera"

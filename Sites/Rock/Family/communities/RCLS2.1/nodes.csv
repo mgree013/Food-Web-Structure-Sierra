@@ -1,0 +1,9 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",1.388888889,0.1,"Arthropoda","Arachnida",,,
+"Ameletus",15.27777778,9.08748113,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Baetis",36.11111111,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",58.33333333,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Diphetor",4.166666667,2.092471648,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Diphetor"
+"Parapsyche",1.388888889,7.624553901,"Arthropoda","Insecta","Trichoptera","Hydropsychidae","Parapsyche"
+"Rhyacophila",2.777777778,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Simulium",1.388888889,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"

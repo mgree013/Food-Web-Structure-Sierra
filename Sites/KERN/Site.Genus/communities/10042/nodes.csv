@@ -1,0 +1,11 @@
+"node","density","phylum","class","order","family","genus"
+"Acari",64,"Arthropoda","Arachnida",,,
+"Ceratopogonidae",1.6,"Arthropoda","Insecta","Diptera","Ceratopogonidae","Monohelea"
+"Chironomidae",568,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Dytiscidae",1.6,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Stictotarsus"
+"Limnephilidae",4.8,,,,,
+"Muscidae",6.4,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Oligochaeta",70.4,"Annelida","Clitellata",,,
+"Pedicia",1.6,"Arthropoda","Insecta","Diptera","Pediciidae","Pedicia"
+"Prosimulium",3.2,"Arthropoda","Insecta","Diptera","Simuliidae","Prosimulium"
+"Turbellaria",81.6,"Platyhelminthes","Turbellaria",,,

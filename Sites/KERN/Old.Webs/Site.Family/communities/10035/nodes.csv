@@ -1,0 +1,15 @@
+"node","density","phylum","class","order","family","genus"
+"Acari",576,"Arthropoda","Arachnida",,,
+"Baetis",584,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",2224,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Desmona",8,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Desmona"
+"Ironodes",48,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Ironodes"
+"Paraleptophlebia",8,"Arthropoda","Insecta","Ephemeroptera","Leptophlebiidae","Paraleptophlebia"
+"Prosimulium",384,"Arthropoda","Insecta","Diptera","Simuliidae","Prosimulium"
+"Rhyacophila",24,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Simulium",40,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Turbellaria",40,"Platyhelminthes","Turbellaria",,,
+"Muscidae",48,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Limnephilidae",8,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Psychoglypha"
+"Dytiscidae",16,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Sanfilippodytes"
+"Tipulidae",8,"Arthropoda","Insecta","Diptera","Tipulidae","Monophilus"

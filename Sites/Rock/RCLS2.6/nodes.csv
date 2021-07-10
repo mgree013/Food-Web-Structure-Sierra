@@ -1,0 +1,15 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",1.388888889,0.1,"Arthropoda","Arachnida",,,
+"Ameletus",1.388888889,9.08748113,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Arctopsyche",1.388888889,51.81128833,"Arthropoda","Insecta","Trichoptera","Hydropsychidae","Arctopsyche"
+"Baetis",104.1666667,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Caudatella",2.777777778,1.542387039,"Arthropoda","Insecta","Ephemeroptera","Ephemerellidae","Caudatella"
+"Chironomidae",43.05555556,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Diptera",1.388888889,1.217892125,"Arthropoda","Insecta","Diptera","Empididae","Clinocera"
+"Doroneuria",8.333333333,47.55178364,"Arthropoda","Insecta","Plecoptera","Perlidae","Doroneuria"
+"Epeorus",8.333333333,14.45630938,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Epeorus"
+"Oligochaeta",4.166666667,0.506640431,"Annelida","Clitellata",,,
+"Pisidium",8.333333333,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Rhyacophila",8.333333333,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Simulium",23.61111111,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Zapada",30.55555556,0.789662984,"Arthropoda","Insecta","Plecoptera","Nemouridae","Zapada"
