@@ -14,5 +14,5 @@ Status of MS: In prep
 
 # Results
 
-## Figure 2: Results on the Effects of NEvironmental Gradients on Local Food Web Structure
+## Figure 2: Results on the Effects of Environmental Gradients on Local Food Web Structure
 ![](Figs/Fig1.png)
