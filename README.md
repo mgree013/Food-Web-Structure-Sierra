@@ -14,5 +14,5 @@ Status of MS: In prep
 
 # Results
 
-## Figure 2: Maps of Sampling Sites in the Sierra Nevada, CA
+## Figure 2: Results on the Effects of Environmental Gradients on Local Food Web Structure
 ![](Figs/Fig1.png)
