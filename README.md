@@ -2,7 +2,7 @@
 
 Title: The Geography of High Elevation Benthic Food Webs
 
-Authors: Matthew D. Green and Kurt E. Anderson
+Authors: Matthew D. Green, David E. Herbst, and Kurt E. Anderson
 
 Status of MS: In prep
 
@@ -10,7 +10,7 @@ Status of MS: In prep
 # Methods 
 
 ## Figure 1: Maps of Sampling Sites in the Sierra Nevada, CA
-![](Figs/Map.png)
+![](Figs/Picture1.png)
 
 # Results
 
