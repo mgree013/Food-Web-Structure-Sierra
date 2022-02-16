@@ -5,10 +5,12 @@ library(reshape2)
 library(metR)
 library(igraph)
 library(ggbiplot)
+library(cheddar)
+library(tidyverse)
 
 
 #rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/New_res_fam_con_genus/"
-rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/New_family/"
+rock.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/New_family/"
 #rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Family/"
 Rock.web<-LoadCollection(rock.dir)
 
@@ -57,13 +59,14 @@ Rock.data<-CollectionCPS(Rock.web,
 all.webs<-( Rock.data)
 all.webs<-all.webs%>%tibble::rownames_to_column()%>%rename(Site = title) 
 
-envs <-read.csv("dave.matt.env.full.12.29.19.csv")
-env<-envs%>%filter( Network=="ROCK")
+envs <-read.csv("Data/dave.matt.env.full.12.29.19.csv")
+
+env<-envs%>%filter(O.NET=="ROCK")
 
 
 env<-env%>%mutate(Euc.dist.lake=log(1+Euc.dist.lake),River.dist.lake=log(1+River.dist.lake),Head.river.dist=log(1+Head.river.dist))
   #mutate(Size.net.dist=Head.river.dist*Up.Lake.area,Size.river.dist=River.dist.lake*Up.Lake.area,RCLSev.dist=River.dist.lake/RCLSevation)
-env.webs<-left_join(env,all.webs )%>%filter(Head.river.dist>3.5)
+env.webs<-dplyr::left_join(env,all.webs, by="Site")#%>%filter(Head.river.dist>3.5)
 
 #PCA
 spatials<-env.webs%>%dplyr::select(c(Head.river.dist, River.dist.lake, Up.Lake.area, Elevation))
@@ -173,10 +176,10 @@ prepplot1$est.C<-predict(lm.mod,prepplot1, type="response")
 st.bd<-ggplot(prepplot1) +
   geom_tile(aes(River.dist.lake, Head.river.dist, fill = est.C))+
   #ggtitle("e)") +
-  scale_fill_viridis_c()+
+  scale_fill_viridis_d()+
   scale_x_continuous(expand = c(0,0)) +
   scale_y_continuous(expand = c(0,0))+
-  ggplot2::xlab("Log Distance from Upstream Lakes (m)") + ylab("Log Distance from Headwaters (m)") +
+  ggplot2::xlab("Log Distance from Upstream Lakes (m)") + ylab("Log Distance from Headwaters (m)") 
   #ggplot2::labs(fill = "C")
 
 
