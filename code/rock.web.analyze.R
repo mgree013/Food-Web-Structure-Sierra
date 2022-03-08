@@ -161,7 +161,7 @@ lapply(models, summary)
 models[[1]]
 #Heat map of both head and River dist metrics
 #Beta
-lm.mod <- lm(C ~ S_PC1*E_PC3, data = env.webzz)
+lm.mod <- lm(C ~ Head.river.dist*River.dist.lake, data = env.webzz)
 summary(lm.mod)
 
 range(env.webs$Head.river.dist)
@@ -181,15 +181,38 @@ prepplot1$est.C<-predict(lm.mod,prepplot1, type="response")
 st.bd<-ggplot(prepplot1) +
   geom_tile(aes(River.dist.lake, Head.river.dist, fill = est.C))+
   #ggtitle("e)") +
-  scale_fill_viridis_d()+
+  scale_fill_viridis_c()+
   scale_x_continuous(expand = c(0,0)) +
   scale_y_continuous(expand = c(0,0))+
   ggplot2::xlab("Log Distance from Upstream Lakes (m)") + ylab("Log Distance from Headwaters (m)") 
   #ggplot2::labs(fill = "C")
 
-
-lm.mod <- lm(B ~ Head.river.dist, data = env.webs)
+#Spatial and Env Gradient
+lm.mod <- lm(C ~ S_PC1*E_PC1, data = env.webzz)
 summary(lm.mod)
+
+range(env.webzz$S_PC1)
+range(env.webzz$E_PC1)
+
+prepplot1 <- as.data.frame(matrix(ncol = 3, nrow = 10000))
+colnames(prepplot1) <- c("S_PC1", "E_PC1", "est.C")
+
+prepplot1$S_PC1 <- rep(seq(-4.158012,  5.408687, length.out = 100), 100)
+prepplot1 <- prepplot1[order(prepplot1$S_PC1),]
+prepplot1$E_PC1 <- rep(seq(-5.246649 , 3.142546, length.out = 100), 100)
+#prepplot1$est.C <- -4.99626     +0.21383 *prepplot1$Head.river.dist +0.75407 *prepplot1$River.dist.lake + 
+#  -0.09176 *prepplot1$Head.river.dist*prepplot1$River.dist.lake
+prepplot1$est.C<-predict(lm.mod,prepplot1, type="response")
+
+st.bd<-ggplot(prepplot1) +
+  geom_tile(aes(S_PC1, E_PC1, fill = est.C))+
+  #ggtitle("e)") +
+  scale_fill_viridis_c()+
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0))+
+  ggplot2::xlab("Spatial Gradient (SPC1)") + ylab("Environmental Gradient (EPC1)") 
+#ggplot2::labs(fill = "C")
+
 
 
 ##### Lavaan modRCLSing
