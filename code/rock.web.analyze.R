@@ -56,7 +56,7 @@ Rock.data<-CollectionCPS(Rock.web,
                            #DD='DegreeDistribution'
                            ))
 
-all.webs<-( Rock.data)
+all.webs<-(Rock.data)
 all.webs<-all.webs%>%tibble::rownames_to_column()%>%rename(Site = title) 
 
 envs <-read.csv("Data/dave.matt.env.full.12.29.19.csv")
