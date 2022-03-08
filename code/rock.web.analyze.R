@@ -77,7 +77,7 @@ biplot(Epca)
 summary(Epca)
 Epca$rotation
 ggbiplot(Epca)
-ggbiplot(Epca, labels=rownames(all$O.NET), groups=interaction(all$O.NET), ellipse=TRUE)
+ggbiplot(Epca, labels=rownames(env.webs$Site), groups=interaction(env.webs$Site), ellipse=TRUE)
 
 Epca$x
 env_pc_scores <- data.frame(Epca$x[,1:6])
@@ -89,6 +89,7 @@ Epca = prcomp(spatials, scale.=TRUE)
 biplot(Epca)
 summary(Epca)
 Epca$rotation
+ggbiplot(Epca)
 
 
 Epca$x
@@ -133,7 +134,7 @@ env.webs%>%
 
 env.webzz%>%
   filter(Head.river.dist>3.5)%>%
-  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean, key = "var", value = "value") %>% 
+  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   geom_smooth(method = "lm")+
