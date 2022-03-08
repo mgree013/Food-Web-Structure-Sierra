@@ -113,7 +113,8 @@ env.webzz%>%
   geom_point()+
   geom_smooth(method = "lm")+
   facet_wrap(~var, scales = "free") +
-  theme_bw()
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
 env.webs%>%
   filter(Head.river.dist>3.5)%>%
@@ -122,7 +123,8 @@ env.webs%>%
   geom_point()+
   geom_smooth(method = "lm")+
   facet_wrap(~var, scales = "free") +
-  theme_bw()
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
 env.webs%>%
   filter(Head.river.dist>3.5)%>%
@@ -130,7 +132,8 @@ env.webs%>%
   ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_boxplot()+
   facet_wrap(~var, scales = "free") +
-  theme_bw()
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
 env.webzz%>%
   filter(Head.river.dist>3.5)%>%
@@ -139,7 +142,8 @@ env.webzz%>%
   geom_point()+
   geom_smooth(method = "lm")+
   facet_wrap(~var, scales = "free") +
-  theme_bw()
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                          panel.border = element_blank(),panel.background = element_blank())
 
 varlist<-names(env.webs)[c(28:33,36:40)]
 
