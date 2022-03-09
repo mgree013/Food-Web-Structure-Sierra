@@ -1,1 +1,1 @@
-#Part 2: Beta Diversity ANalysis and Figures
+#Part 2: Beta Diversity Analysis and Figures

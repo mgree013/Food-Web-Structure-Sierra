@@ -1,3 +1,6 @@
+#File: Organizing environmental, spatial, and local food web metrics
+
+#Libraries
 library(cowplot)
 library(viridis)
 library(ggplot2)
