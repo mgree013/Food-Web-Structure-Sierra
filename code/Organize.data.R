@@ -176,7 +176,8 @@ env<-envs%>%filter(Network == "RAE" | Network=="EVO" | Network =="CASCADE"| O.NE
 
 env<-env%>%mutate(Euc.dist.lake=log(1+Euc.dist.lake),River.dist.lake=log(1+River.dist.lake),Head.river.dist=log(1+Head.river.dist))%>%
   mutate(Size.net.dist=Head.river.dist*Up.Lake.area,Size.river.dist=River.dist.lake*Up.Lake.area,Elev.dist=River.dist.lake/Elevation)
-env.webs<-left_join(env,all.webs )
+
+env.webs<-dplyr::left_join(env,all.webs, by="Site")
 
 ##################################################################################################################################################################
 
