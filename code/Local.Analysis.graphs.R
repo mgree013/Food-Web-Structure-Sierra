@@ -1,5 +1,49 @@
 #Part 1: Local Food web metrics Analysis and Figures
+################################################################################################################################
 
+#explore Local emtrics along indivudual gradeitns
+
+env.webzz%>%
+  filter(Head.river.dist>3.5)%>%
+  gather(S,L,L.S,C,Omn,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.webs%>%
+  filter(Head.river.dist>3.5)%>%
+  gather(S,L,L.S,C,B,I,Sim.mean,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = Head.river.dist, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.webs%>%
+  filter(Head.river.dist>3.5)%>%
+  gather(S,L,L.S,C,B,I,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_boxplot()+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.webzz%>%
+  filter(Head.river.dist>3.5)%>%
+  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
+  ggplot(aes(x = value, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+
+################################################################################################################################
 #1A) Create Environemntal and Spatial PCA Gradients
 #PCA's
 envs<-env.webs%>%dplyr::select(c(Temp,Chlorophyll.mean,Conductivity,DO,pH,Discharge.Mean,SHRUB_SCRUB))

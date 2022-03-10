@@ -170,7 +170,7 @@ all.webs<-all.webs%>%tibble::rownames_to_column()%>%rename(Site = title)
 
 ##################################################################################################################################################################
 #2) Load Environmental and Spatial Data
-envs <-read.csv("dave.matt.env.full.12.29.19.csv")
+envs <-read.csv("Data/dave.matt.env.full.12.29.19.csv")
 env<-envs%>%filter(Network == "RAE" | Network=="EVO" | Network =="CASCADE"| O.NET =="KERN" | Network=="BUBBS" | Network=="ROCK")
 
 
