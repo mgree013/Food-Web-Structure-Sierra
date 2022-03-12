@@ -25,6 +25,16 @@ env.webs%>%
 
 env.webs%>%
   filter(Head.river.dist>3.5)%>%
+  gather(S,L,L.S,C,B,I,Sim.mean,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = River.dist.lake, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.webs%>%
+  filter(Head.river.dist>3.5)%>%
   gather(S,L,L.S,C,B,I,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
   ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_boxplot()+
