@@ -109,4 +109,5 @@ diversity<-species%>%
   rownames_to_column("Site")
 
 env.div.webz<-left_join(env.webzz,diversity, by="Site")
-
+################################################################################################################################
+#3)
