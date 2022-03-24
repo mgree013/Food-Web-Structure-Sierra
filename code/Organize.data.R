@@ -164,7 +164,7 @@ Rock.data<-CollectionCPS(Rock.web,
                          ))
 
 all.webs<-rbind(Kern.data,Cascade.data,Evo.data,Bubbs.data,Rae.data, Rock.data)
-all.webs<-all.webs%>%tibble::rownames_to_column()%>%rename(Site = title) 
+all.webs<-all.webs%>%tibble::rownames_to_column()%>%dplyr::rename(Site = title) 
 #setwd("~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web")
 
 ##################################################################################################################################################################
