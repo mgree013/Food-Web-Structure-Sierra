@@ -1,15 +1,14 @@
+#Project:The Geography of High Elevation Benthic Food Webs
+#Date: 03/21/19-Present
+#Authors:Matthew D. Green, David Herbst, and Kurt E. Anderson
+
+#Data: https://datadryad.org/stash/dataset/doi:10.5061/dryad.2fqz612qw
+################################################################################################################################
 #File: Organizing environmental, spatial, and local food web metrics
 
-#Libraries
-library(cowplot)
-library(viridis)
-library(ggplot2)
-library(reshape2)
-library(metR)
-library(igraph)
-library(ggbiplot)
-library(cheddar)
-library(tidyverse)
+#Load Packages
+Packages <- c("tidyverse", "ggplot2", "igraph", "reshape2","reshape", "viridis", "ggbiplot", "metR", "cheddar", "cowplot")
+lapply(Packages, library, character.only = TRUE)
 
 ##################################################################################################################################################################
 #1) Load Food webs by Network
