@@ -34,11 +34,13 @@ ToIgraph <- function(community, weight=NULL)
 }
 
 #ROCK
-i.ROCK.RCLS1.1<-ToIgraph(ROCK.RCLS1.1)
+RCLS1.1<-LoadCommunity('Sites/Rock/Family/communities/RCLS1.1')
+i.ROCK.RCLS1.1<-ToIgraph(RCLS1.1)
 plot.igraph(i.ROCK.RCLS1.1)
 a.ROCK.RCLS1.1<-as_adjacency_matrix(i.ROCK.RCLS1.1,sparse=T)
 
-i.ROCK.RCLS2.1<-ToIgraph(ROCK.RCLS2.1)
+RCLS2.1<-LoadCommunity('Sites/Rock/Family/communities/RCLS2.1')
+i.ROCK.RCLS2.1<-ToIgraph(RCLS2.1)
 plot.igraph(i.ROCK.RCLS2.1)
 a.ROCK.RCLS2.1<-as_adjacency_matrix(i.ROCK.RCLS2.1,sparse=T)
 
