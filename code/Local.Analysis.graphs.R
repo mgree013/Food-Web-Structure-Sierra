@@ -100,5 +100,13 @@ env_pc_scores<-env_pc_scores%>%rownames_to_column("Site")
 env.webz<-left_join(env.webs,spatial_pc_scores, by="Site")
 env.webzz<-left_join(env.webz,env_pc_scores, by="Site")
 ################################################################################################################################
-
 #2) Calculate Community Size
+species<-read.csv(file = "data/sp.density.update.12.28.19.csv", row.name=1)
+
+diversity<-species%>%
+  #group_by(Site,Network)%>%
+  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
+  rownames_to_column("Site")
+
+env.div.webz<-left_join(env.webzz,diversity, by="Site")
+
