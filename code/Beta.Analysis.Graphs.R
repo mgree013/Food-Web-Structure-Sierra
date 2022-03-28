@@ -13,7 +13,7 @@
 
 
 
-#BETA
+#Igrpah and Cheddar communicate function
 ToIgraph <- function(community, weight=NULL)
 {
   if(is.null(TLPS(community)))
