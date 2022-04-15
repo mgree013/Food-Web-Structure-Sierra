@@ -8,7 +8,7 @@
 #Part 1: Local Food web metrics Analysis and Figures
 ################################################################################################################################
 
-#explore Local emtrics along indivudual gradeitns
+#explore Local Metrics along individual gradients
 
 env.webzz%>%
   filter(Head.river.dist>3.5)%>%
@@ -16,8 +16,20 @@ env.webzz%>%
   ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   geom_smooth(method = "lm")+
+  xlab("Environmental Gradient (E_PC1)")+
   facet_wrap(~var, scales = "free") +
-  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.webzz%>%
+  filter(Head.river.dist>3.5)%>%
+  gather(S,L,L.S,C,Omn,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = S_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Spatial Gradient (S_PC1)")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webs%>%
@@ -26,18 +38,20 @@ env.webs%>%
   ggplot(aes(x = Head.river.dist, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   geom_smooth(method = "lm")+
+  xlab("Distance from Headwaters (m)")+
   facet_wrap(~var, scales = "free") +
-  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webs%>%
-  filter(Head.river.dist>3.5)%>%
+  #filter(Head.river.dist>3.5)%>%
   gather(S,L,L.S,C,B,I,Sim.mean,Path, key = "var", value = "value") %>% 
   ggplot(aes(x = River.dist.lake, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   geom_smooth(method = "lm")+
+  xlab("Distance from Upstream Lakes (m)")+
   facet_wrap(~var, scales = "free") +
-  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webs%>%
@@ -45,8 +59,12 @@ env.webs%>%
   gather(S,L,L.S,C,B,I,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
   ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  xlab("Fish Presence")+
+  labs(fill='Fish Presence') +
+  #scale_fill_discrete(name = "Fish Presence", labels = c("no", "yes"))+
   facet_wrap(~var, scales = "free") +
-  theme(axis.title.x=element_blank(),axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webzz%>%
