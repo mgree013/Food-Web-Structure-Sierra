@@ -1,0 +1,10 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",1657.6,0.1,"Arthropoda","Arachnida",,,
+"Chironomidae",1068.8,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Ceratopogonidae",6.4,0.162619632,"Arthropoda","Insecta","Diptera","Ceratopogonidae","Culicoides"
+"Dicosmoecus",6.4,7.071423253,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Dicosmoecus"
+"Muscidae",6.4,0.83633613,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Oligochaeta",435.2,0.506640431,"Annelida","Clitellata",,,
+"Pisidium",6.4,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Dytiscidae",38.4,0.66911638,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Sanfilippodytes"
+"Simulium",6.4,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
