@@ -38,7 +38,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10029<-list(title= "10029", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10029<-Community(KERN.10029,Properties.KERN.10029, trophic.links=links)
-SaveCommunity(KERN.10029, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10029/",fn='write.csv' )
+SaveCommunity(KERN.10029, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10029/",fn='write.csv' )
 nodes<-as.matrix(nodes)
 KERN.LS.10029 <- Community(properties = CPS(KERN.10029),
                                 nodes = KERN.10029,
@@ -73,7 +73,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 nodes<-as.data.frame(nodes)
 Properties.KERN.10030<-list(title= "10030", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10030<-Community(KERN.10030,Properties.KERN.10030, trophic.links=links)
-SaveCommunity(KERN.10030, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10030/",fn='write.csv' )
+SaveCommunity(KERN.10030, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10030/",fn='write.csv' )
 
 KERN.LS.10030 <- Community(properties = CPS(KERN.10030),
                                 nodes = KERN.10030,
@@ -109,7 +109,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10031<-list(title= "10031", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10031<-Community(KERN.10031,Properties.KERN.10031, trophic.links=links)
-SaveCommunity(KERN.10031, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10031/",fn='write.csv' )
+SaveCommunity(KERN.10031, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10031/",fn='write.csv' )
 
 KERN.LS.10031 <- Community(properties = CPS(KERN.10031),
                                 nodes = KERN.10031,
@@ -144,7 +144,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10032<-list(title= "10032", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10032<-Community(KERN.10032,Properties.KERN.10032, trophic.links=links)
-SaveCommunity(KERN.10032, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10032/",fn='write.csv' )
+SaveCommunity(KERN.10032, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10032/",fn='write.csv' )
 
 KERN.LS.10032 <- Community(properties = CPS(KERN.10032),
                                 nodes = KERN.10032,
@@ -180,7 +180,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10033<-list(title= "10033", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10033<-Community(KERN.10033,Properties.KERN.10033, trophic.links=links)
-SaveCommunity(KERN.10033, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10033/",fn='write.csv' )
+SaveCommunity(KERN.10033, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10033/",fn='write.csv' )
 
 KERN.LS.10033 <- Community(properties = CPS(KERN.10033),
                                 nodes = KERN.10033,
@@ -215,7 +215,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10034<-list(title= "10034", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10034<-Community(KERN.10034,Properties.KERN.10034, trophic.links=links)
-SaveCommunity(KERN.10034, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10034/",fn='write.csv' )
+SaveCommunity(KERN.10034, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10034/",fn='write.csv' )
 
 KERN.LS.10034 <- Community(properties = CPS(KERN.10034),
                                 nodes = KERN.10034,
@@ -251,7 +251,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10035<-list(title= "10035", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10035<-Community(KERN.10035,Properties.KERN.10035, trophic.links=links)
-SaveCommunity(KERN.10035, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10035/",fn='write.csv' )
+SaveCommunity(KERN.10035, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10035/",fn='write.csv' )
 
 KERN.LS.10035 <- Community(properties = CPS(KERN.10035),
                                 nodes = KERN.10035,
@@ -286,7 +286,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10036<-list(title= "10036", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10036<-Community(KERN.10036,Properties.KERN.10036, trophic.links=links)
-SaveCommunity(KERN.10036, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10036/",fn='write.csv' )
+SaveCommunity(KERN.10036, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10036/",fn='write.csv' )
 
 KERN.LS.10036 <- Community(properties = CPS(KERN.10036),
                                 nodes = KERN.10036,
@@ -330,7 +330,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10037<-list(title= "10037", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10037<-Community(KERN.10037,Properties.KERN.10037, trophic.links=links)
-SaveCommunity(KERN.10037, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10037/",fn='write.csv' )
+SaveCommunity(KERN.10037, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10037/",fn='write.csv' )
 
 KERN.LS.10037 <- Community(properties = CPS(KERN.10037),
                            nodes = KERN.10037,
@@ -375,7 +375,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10039<-Community(KERN.10039,Properties.KERN.10039, trophic.links=links)
-SaveCommunity(KERN.10039, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10039/",fn='write.csv' )
+SaveCommunity(KERN.10039, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10039/",fn='write.csv' )
 
 KERN.LS.10039 <- Community(properties = CPS(KERN.10039),
                                 nodes = KERN.10039,
@@ -416,7 +416,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10038<-list(title= "10038", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10038<-Community(KERN.10038,Properties.KERN.10038, trophic.links=links)
-SaveCommunity(KERN.10038, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10038/",fn='write.csv' )
+SaveCommunity(KERN.10038, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10038/",fn='write.csv' )
 
 KERN.LS.10038 <- Community(properties = CPS(KERN.10038),
                                 nodes = KERN.10038,
@@ -457,7 +457,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10039<-Community(KERN.10039,Properties.KERN.10039, trophic.links=links)
-SaveCommunity(KERN.10039, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10039/",fn='write.csv' )
+SaveCommunity(KERN.10039, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10039/",fn='write.csv' )
 
 KERN.LS.10039 <- Community(properties = CPS(KERN.10039),
                                 nodes = KERN.10039,
@@ -493,7 +493,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10040<-list(title= "10040", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10040<-Community(KERN.10040,Properties.KERN.10040, trophic.links=links)
-SaveCommunity(KERN.10040, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10040/",fn='write.csv' )
+SaveCommunity(KERN.10040, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10040/",fn='write.csv' )
 
 KERN.LS.10040 <- Community(properties = CPS(KERN.10040),
                             nodes = KERN.10040,
@@ -528,7 +528,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10041<-list(title= "10041", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10041<-Community(KERNs.10041,Properties.KERN.10041, trophic.links=links)
-SaveCommunity(KERN.10041, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10041/",fn='write.csv' )
+SaveCommunity(KERN.10041, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10041/",fn='write.csv' )
 
 KERNs.LS.10041 <- Community(properties = CPS(KERN.10041),
                             nodes = KERNs.10041,
@@ -570,7 +570,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10042<-list(title= "10042", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10042<-Community(KERN.10042,Properties.KERN.10042, trophic.links=links)
-SaveCommunity(KERN.10042, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10042/",fn='write.csv' )
+SaveCommunity(KERN.10042, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10042/",fn='write.csv' )
 
 KERNs.LS.10042 <- Community(properties = CPS(KERN.10042),
                             nodes = KERN.10042,
@@ -612,7 +612,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10044<-list(title= "10044", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10044<-Community(KERN.10044,Properties.KERN.10044, trophic.links=links)
-SaveCommunity(KERN.10044, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10044/",fn='write.csv' )
+SaveCommunity(KERN.10044, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10044/",fn='write.csv' )
 
 KERNs.LS.10044 <- Community(properties = CPS(KERN.10044),
                             nodes = KERN.10044,
@@ -649,7 +649,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10046<-list(title= "10046", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10046<-Community(KERNs.10046,Properties.KERN.10046, trophic.links=links)
-SaveCommunity(KERN.10046, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10046/",fn='write.csv' )
+SaveCommunity(KERN.10046, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10046/",fn='write.csv' )
 
 KERNs.LS.10046 <- Community(properties = CPS(KERN.10046),
                             nodes = KERNs.10046,
@@ -684,7 +684,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10047<-list(title= "10047", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10047<-Community(KERNs.10047,Properties.KERN.10047, trophic.links=links)
-SaveCommunity(KERN.10047, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10047/",fn='write.csv' )
+SaveCommunity(KERN.10047, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10047/",fn='write.csv' )
 
 KERNs.LS.10047 <- Community(properties = CPS(KERN.10047),
                             nodes = KERNs.10047,
@@ -726,7 +726,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10048<-list(title= "10048", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10048<-Community(KERN.10048,Properties.KERN.10048, trophic.links=links)
-SaveCommunity(KERN.10048, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10048/",fn='write.csv' )
+SaveCommunity(KERN.10048, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10048/",fn='write.csv' )
 
 KERNs.LS.10048 <- Community(properties = CPS(KERN.10048),
                             nodes = KERN.10048,
@@ -767,7 +767,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10049<-list(title= "10049", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10049<-Community(KERN.10049,Properties.KERN.10049, trophic.links=links)
-SaveCommunity(KERN.10049, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10049/",fn='write.csv' )
+SaveCommunity(KERN.10049, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10049/",fn='write.csv' )
 
 KERNs.LS.10049 <- Community(properties = CPS(KERN.10049),
                             nodes = KERN.10049,
@@ -810,7 +810,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10052<-list(title= "10052", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10052<-Community(KERN.10052,Properties.KERN.10052, trophic.links=links)
-SaveCommunity(KERN.10052, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10052/",fn='write.csv' )
+SaveCommunity(KERN.10052, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10052/",fn='write.csv' )
 
 KERNs.LS.10052 <- Community(properties = CPS(KERN.10052),
                             nodes = KERN.10052,
@@ -845,7 +845,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10053<-list(title= "10053", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10053<-Community(KERNs.10053,Properties.KERN.10053, trophic.links=links)
-SaveCommunity(KERN.10053, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10053/",fn='write.csv' )
+SaveCommunity(KERN.10053, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10053/",fn='write.csv' )
 
 KERNs.LS.10053 <- Community(properties = CPS(KERN.10053),
                             nodes = KERNs.10053,
@@ -880,7 +880,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10054<-list(title= "10054", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10054<-Community(KERNs.10054,Properties.KERN.10054, trophic.links=links)
-SaveCommunity(KERN.10054, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10054/",fn='write.csv' )
+SaveCommunity(KERN.10054, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10054/",fn='write.csv' )
 
 KERNs.LS.10054 <- Community(properties = CPS(KERN.10054),
                             nodes = KERNs.10054,
@@ -915,7 +915,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10055<-list(title= "10055", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10055<-Community(KERNs.10055,Properties.KERN.10055, trophic.links=links)
-SaveCommunity(KERN.10055, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10055/",fn='write.csv' )
+SaveCommunity(KERN.10055, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10055/",fn='write.csv' )
 
 KERNs.LS.10055 <- Community(properties = CPS(KERN.10055),
                             nodes = KERNs.10055,
@@ -953,7 +953,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.KERN.10056<-list(title= "10056", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 KERN.10056<-Community(KERNs.10056,Properties.KERN.10056, trophic.links=links)
-SaveCommunity(KERN.10056, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site/10056/",fn='write.csv' )
+SaveCommunity(KERN.10056, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10056/",fn='write.csv' )
 
 KERNs.LS.10056 <- Community(properties = CPS(KERN.10056),
                             nodes = KERNs.10056,
@@ -990,7 +990,7 @@ dads<-CollectionCPS(KERNading,
                       Prey.per.pred='PreyperPredator',
                       Pred.per.Prey='PredatorPerPrey'))
 
-temp.path <-"~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/KERN.sites.order/"
+temp.path <-"~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/KERN.sites.order/"
 SaveCollection(KERN.order, temp.path)
 KERN.order.loaded<-LoadCollection(temp.path)
 

@@ -37,7 +37,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS1_1<-list(title= "CLS1_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS1_1<-Community(Cascades.CLS1_1,Properties.Casc.CLS1_1, trophic.links=links)
-SaveCommunity(Cascade.CLS1_1, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS1_1/",fn='write.csv' )
+SaveCommunity(Cascade.CLS1_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS1_1/",fn='write.csv' )
 
 Cascades.LS.CLS1_1 <- Community(properties = CPS(Cascade.CLS1_1),
                                 nodes = Cascades.CLS1_1,
@@ -72,7 +72,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS1_3<-list(title= "CLS1_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS1_3<-Community(Cascades.CLS1_3,Properties.Casc.CLS1_3, trophic.links=links)
-SaveCommunity(Cascade.CLS1_3, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS1_3/",fn='write.csv' )
+SaveCommunity(Cascade.CLS1_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS1_3/",fn='write.csv' )
 
 Cascades.LS.CLS1_3 <- Community(properties = CPS(Cascade.CLS1_3),
                                 nodes = Cascades.CLS1_3,
@@ -108,7 +108,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS2_1<-list(title= "CLS2_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS2_1<-Community(Cascades.CLS2_1,Properties.Casc.CLS2_1, trophic.links=links)
-SaveCommunity(Cascade.CLS2_1, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS2_1/",fn='write.csv' )
+SaveCommunity(Cascade.CLS2_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS2_1/",fn='write.csv' )
 
 Cascades.LS.CLS2_1 <- Community(properties = CPS(Cascade.CLS2_1),
                                 nodes = Cascades.CLS2_1,
@@ -143,7 +143,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS2_3<-list(title= "CLS2_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS2_3<-Community(Cascades.CLS2_3,Properties.Casc.CLS2_3, trophic.links=links)
-SaveCommunity(Cascade.CLS2_3, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS2_3/",fn='write.csv' )
+SaveCommunity(Cascade.CLS2_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS2_3/",fn='write.csv' )
 
 Cascades.LS.CLS2_3 <- Community(properties = CPS(Cascade.CLS2_3),
                                 nodes = Cascades.CLS2_3,
@@ -179,7 +179,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS3_1<-list(title= "CLS3_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS3_1<-Community(Cascades.CLS3_1,Properties.Casc.CLS3_1, trophic.links=links)
-SaveCommunity(Cascade.CLS3_1, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS3_1/",fn='write.csv' )
+SaveCommunity(Cascade.CLS3_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_1/",fn='write.csv' )
 
 Cascades.LS.CLS3_1 <- Community(properties = CPS(Cascade.CLS3_1),
                                 nodes = Cascades.CLS3_1,
@@ -214,7 +214,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS3_2<-list(title= "CLS3_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS3_2<-Community(Cascades.CLS3_2,Properties.Casc.CLS3_2, trophic.links=links)
-SaveCommunity(Cascade.CLS3_2, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS3_2/",fn='write.csv' )
+SaveCommunity(Cascade.CLS3_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_2/",fn='write.csv' )
 
 Cascades.LS.CLS3_2 <- Community(properties = CPS(Cascade.CLS3_2),
                                 nodes = Cascades.CLS3_2,
@@ -250,7 +250,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS3_3<-list(title= "CLS3_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS3_3<-Community(Cascades.CLS3_3,Properties.Casc.CLS3_3, trophic.links=links)
-SaveCommunity(Cascade.CLS3_3, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS3_3/",fn='write.csv' )
+SaveCommunity(Cascade.CLS3_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_3/",fn='write.csv' )
 
 Cascades.LS.CLS3_3 <- Community(properties = CPS(Cascade.CLS3_3),
                                 nodes = Cascades.CLS3_3,
@@ -285,7 +285,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS4_1<-list(title= "CLS4_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS4_1<-Community(Cascades.CLS4_1,Properties.Casc.CLS4_1, trophic.links=links)
-SaveCommunity(Cascade.CLS4_1, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS4_1/",fn='write.csv' )
+SaveCommunity(Cascade.CLS4_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_1/",fn='write.csv' )
 
 Cascades.LS.CLS4_1 <- Community(properties = CPS(Cascade.CLS4_1),
                                 nodes = Cascades.CLS4_1,
@@ -320,7 +320,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS4_2<-list(title= "CLS4_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS4_2<-Community(Cascades.CLS4_2,Properties.Casc.CLS4_2, trophic.links=links)
-SaveCommunity(Cascade.CLS4_2, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS4_2/",fn='write.csv' )
+SaveCommunity(Cascade.CLS4_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_2/",fn='write.csv' )
 
 Cascades.LS.CLS4_2 <- Community(properties = CPS(Cascade.CLS4_2),
                                 nodes = Cascades.CLS4_2,
@@ -355,7 +355,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS4_3<-list(title= "CLS4_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS4_3<-Community(Cascades.CLS4_3,Properties.Casc.CLS4_3, trophic.links=links)
-SaveCommunity(Cascade.CLS4_3, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS4_3/",fn='write.csv' )
+SaveCommunity(Cascade.CLS4_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_3/",fn='write.csv' )
 
 Cascades.LS.CLS4_3 <- Community(properties = CPS(Cascade.CLS4_3),
                                 nodes = Cascades.CLS4_3,
@@ -390,7 +390,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Casc.CLS5_1<-list(title= "CLS5_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Cascade.CLS5_1<-Community(Cascades.CLS5_1,Properties.Casc.CLS5_1, trophic.links=links)
-SaveCommunity(Cascade.CLS5_1, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site/CLS5_1/",fn='write.csv' )
+SaveCommunity(Cascade.CLS5_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS5_1/",fn='write.csv' )
 
 Cascades.LS.CLS5_1 <- Community(properties = CPS(Cascade.CLS5_1),
                                 nodes = Cascades.CLS5_1,
@@ -423,7 +423,7 @@ dads<-CollectionCPS(Cascading,
                       Prey.per.pred='PreyperPredator',
                       Pred.per.Prey='PredatorPerPrey'))
 
-temp.path <-"~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Cascade.sites.order/"
+temp.path <-"~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Cascade.sites.order/"
 SaveCollection(Cascade.order, temp.path)
 Cascade.order.loaded<-LoadCollection(temp.path)
 

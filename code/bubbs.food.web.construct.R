@@ -37,7 +37,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10477.trt.2003<-list(title= "Outlet.10477.trt.2003", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10477.trt.2003<-Community(BUBBSs.Outlet.10477.trt.2003,Properties.Bubbs.Outlet.10477.trt.2003, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10477.trt.2003, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10477.trt.2003/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10477.trt.2003, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10477.trt.2003/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10477.trt.2003 <- Community(properties = CPS(BUBBS.Outlet.10477.trt.2003),
                                 nodes = BUBBSs.Outlet.10477.trt.2003,
@@ -72,7 +72,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10477.trt.2004<-list(title= "Outlet.10477.trt.2004", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10477.trt.2004<-Community(BUBBSs.Outlet.10477.trt.2004,Properties.Bubbs.Outlet.10477.trt.2004, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10477.trt.2004, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10477.trt.2004/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10477.trt.2004, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10477.trt.2004/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10477.trt.2004 <- Community(properties = CPS(BUBBS.Outlet.10477.trt.2004),
                                 nodes = BUBBSs.Outlet.10477.trt.2004,
@@ -108,7 +108,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10477.trt.2011<-list(title= "Outlet.10477.trt.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10477.trt.2011<-Community(BUBBSs.Outlet.10477.trt.2011,Properties.Bubbs.Outlet.10477.trt.2011, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10477.trt.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10477.trt.2011/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10477.trt.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10477.trt.2011/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10477.trt.2011 <- Community(properties = CPS(BUBBS.Outlet.10477.trt.2011),
                                 nodes = BUBBSs.Outlet.10477.trt.2011,
@@ -143,7 +143,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10487.trt.2003<-list(title= "Outlet.10487.trt.2003", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10487.trt.2003<-Community(BUBBSs.Outlet.10487.trt.2003,Properties.Bubbs.Outlet.10487.trt.2003, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10487.trt.2003, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10487.trt.2003/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10487.trt.2003, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10487.trt.2003/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10487.trt.2003 <- Community(properties = CPS(BUBBS.Outlet.10487.trt.2003),
                                              nodes = BUBBSs.Outlet.10487.trt.2003,
@@ -178,7 +178,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10487.trt.2004<-list(title= "Outlet.10487.trt.2004", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10487.trt.2004<-Community(BUBBSs.Outlet.10487.trt.2004,Properties.Bubbs.Outlet.10487.trt.2004, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10487.trt.2004, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10487.trt.2004/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10487.trt.2004, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10487.trt.2004/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10487.trt.2004 <- Community(properties = CPS(BUBBS.Outlet.10487.trt.2004),
                                              nodes = BUBBSs.Outlet.10487.trt.2004,
@@ -221,7 +221,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10487.trt.2011<-list(title= "Outlet.10487.trt.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.10487.trt.2011<-Community(Outlet.10487.trt.2011,Properties.Bubbs.Outlet.10487.trt.2011, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.10487.trt.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.10487.trt.2011/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.10487.trt.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.10487.trt.2011/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.10487.trt.2011 <- Community(properties = CPS(BUBBS.Outlet.10487.trt.2011),
                                              nodes = BUBBSs.Outlet.10487.trt.2011,
@@ -257,7 +257,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.11007.fishless.2011<-list(title= "Outlet.11007.fishless.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.11007.fishless.2011<-Community(BUBBSs.Outlet.11007.fishless.2011,Properties.Bubbs.Outlet.11007.fishless.2011, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.11007.fishless.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site.Family/communities/Outlet.11007.fishless.2011/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.11007.fishless.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site.Family/communities/Outlet.11007.fishless.2011/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.11007.fishless.2011 <- Community(properties = CPS(BUBBS.Outlet.11007.fishless.2011),
                                 nodes = BUBBSs.Outlet.11007.fishless.2011,
@@ -298,7 +298,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10494.trt.2012<-list(title= "Outlet.10494.trt.2012", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.10494.trt.2012<-Community(Bubbs.Outlet.10494.trt.2012,Properties.Bubbs.Outlet.10494.trt.2012, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.10494.trt.2012, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.10494.trt.2012/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.10494.trt.2012, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.10494.trt.2012/",fn='write.csv' )
 
 Bubbs.LS.Outlet.10494.trt.2012 <- Community(properties = CPS(Bubbs.Outlet.10494.trt.2012),
                                             nodes = Bubbs.Outlet.10494.trt.2012,
@@ -341,7 +341,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10494.trt.2012<-list(title= "Outlet.10494.trt.2012", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.10494.trt.2012<-Community(Bubbs.Outlet.10494.trt.2012,Properties.Bubbs.Outlet.10494.trt.2012, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.10494.trt.2012, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.10494.trt.2012/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.10494.trt.2012, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.10494.trt.2012/",fn='write.csv' )
 
 Bubbs.LS.Outlet.10494.trt.2012 <- Community(properties = CPS(Bubbs.Outlet.10494.trt.2012),
                            nodes = Bubbs.Outlet.10494.trt.2012,
@@ -383,7 +383,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.BUBBS.Outlet.11007.fishless.2003<-list(title= "Outlet.11007.fishless.2003", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.11007.fishless.2003<-Community(BUBBS.Outlet.11007.fishless.2003,Properties.BUBBS.Outlet.11007.fishless.2003, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.11007.fishless.2003, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.11007.fishless.2003/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.11007.fishless.2003, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.11007.fishless.2003/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.11007.fishless.2003 <- Community(properties = CPS(BUBBS.Outlet.11007.fishless.2003),
                             nodes = BUBBS.Outlet.11007.fishless.2003,
@@ -425,7 +425,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.BUBBS.Outlet.11007.fishless.2004<-list(title= "Outlet.11007.fishless.2004", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.11007.fishless.2004<-Community(BUBBS.Outlet.11007.fishless.2004,Properties.BUBBS.Outlet.11007.fishless.2004, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.11007.fishless.2004, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.11007.fishless.2004/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.11007.fishless.2004, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.11007.fishless.2004/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.11007.fishless.2004 <- Community(properties = CPS(BUBBS.Outlet.11007.fishless.2004),
                                                   nodes = BUBBS.Outlet.11007.fishless.2004,
@@ -467,7 +467,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.BUBBS.Outlet.11007.fishless.2011<-list(title= "Outlet.11007.fishless.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 BUBBS.Outlet.11007.fishless.2011<-Community(BUBBS.Outlet.11007.fishless.2011,Properties.BUBBS.Outlet.11007.fishless.2011, trophic.links=links)
-SaveCommunity(BUBBS.Outlet.11007.fishless.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/Site/Outlet.11007.fishless.2011/",fn='write.csv' )
+SaveCommunity(BUBBS.Outlet.11007.fishless.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/Site/Outlet.11007.fishless.2011/",fn='write.csv' )
 
 BUBBSs.LS.Outlet.11007.fishless.2011 <- Community(properties = CPS(BUBBS.Outlet.11007.fishless.2011),
                                                   nodes = BUBBS.Outlet.11007.fishless.2011,
@@ -507,7 +507,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.Vidette.below.2003<-list(title= "Outlet.Vidette.below.2003", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.Vidette.below.2003<-Community(Bubbs.Outlet.Vidette.below.2003,Properties.Bubbs.Outlet.Vidette.below.2003, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.Vidette.below.2003, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.Vidette.below.2003/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.Vidette.below.2003, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.Vidette.below.2003/",fn='write.csv' )
 
 Bubbs.LS.Outlet.Vidette.below.2003 <- Community(properties = CPS(Bubbs.Outlet.Vidette.below.2003),
                            nodes = Bubbs.Outlet.Vidette.below.2003,
@@ -548,7 +548,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.Vidette.below.2004<-list(title= "Outlet.Vidette.below.2004", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.Vidette.below.2004<-Community(Bubbs.Outlet.Vidette.below.2004,Properties.Bubbs.Outlet.Vidette.below.2004, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.Vidette.below.2004, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.Vidette.below.2004/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.Vidette.below.2004, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.Vidette.below.2004/",fn='write.csv' )
 
 Bubbs.LS.Outlet.Vidette.below.2004 <- Community(properties = CPS(Bubbs.Outlet.Vidette.below.2004),
                            nodes = Bubbs.Outlet.Vidette.below.2004,
@@ -589,7 +589,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.Vidette.below.2011<-list(title= "Outlet.Vidette.below.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.Vidette.below.2011<-Community(Bubbs.Outlet.Vidette.below.2011,Properties.Bubbs.Outlet.Vidette.below.2011, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.Vidette.below.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.Vidette.below.2011/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.Vidette.below.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.Vidette.below.2011/",fn='write.csv' )
 
 Bubbs.LS.Outlet.Vidette.below.2011 <- Community(properties = CPS(Bubbs.Outlet.Vidette.below.2011),
                            nodes = Bubbs.Outlet.Vidette.below.2011,
@@ -630,7 +630,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.Vidette.below.2012<-list(title= "Outlet.Vidette.below.2012", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.Vidette.below.2012<-Community(Bubbs.Outlet.Vidette.below.2012,Properties.Bubbs.Outlet.Vidette.below.2012, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.Vidette.below.2012, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site/Outlet.Vidette.below.2012/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.Vidette.below.2012, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site/Outlet.Vidette.below.2012/",fn='write.csv' )
 
 Bubbs.LS.Outlet.Vidette.below.2012 <- Community(properties = CPS(Bubbs.Outlet.Vidette.below.2012),
                            nodes = Bubbs.Outlet.Vidette.below.2012,
@@ -674,7 +674,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 Properties.Bubbs.Outlet.10487.trt.2011<-list(title= "Outlet.10487.trt.2011", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
 Bubbs.Outlet.10487.trt.2011<-Community(Bubbs.Outlet.10487.trt.2011,Properties.Bubbs.Outlet.10487.trt.2011, trophic.links=links)
-SaveCommunity(Bubbs.Outlet.10487.trt.2011, dir ="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Order/communities/Outlet.10487.trt.2011/",fn='write.csv' )
+SaveCommunity(Bubbs.Outlet.10487.trt.2011, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Site.Order/communities/Outlet.10487.trt.2011/",fn='write.csv' )
 
 Bubbs.LS.Outlet.10487.trt.2011 <- Community(properties = CPS(Bubbs.Outlet.10487.trt.2011),
                                             nodes = Bubbs.Outlet.10487.trt.2011,
@@ -706,7 +706,7 @@ dads<-CollectionCPS(Bubbsading,
                       Prey.per.pred='PreyperPredator',
                       Pred.per.Prey='PredatorPerPrey'))
 
-temp.path <-"~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/BUBBS/BUBBS.sites.order/"
+temp.path <-"~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/BUBBS/BUBBS.sites.order/"
 SaveCollection(BUBBS.order, temp.path)
 BUBBS.order.loaded<-LoadCollection(temp.path)
 
