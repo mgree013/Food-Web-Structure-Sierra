@@ -2,14 +2,13 @@
 library(tidyverse )
 library(cheddar)
 ##################################################################################################################################################################################################################
-#setwd("~/Users/matthewdouglasgreen/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web.Web/Sierra.Nevada.LS.Food.Web")
+setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 registry<-read.csv('newest.registry.csv')
 
 food.web<-read.csv("dog.csv")
 
 ################################################################################################################################################################################################################
 #Cascade Sites Individually
-setwd("~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade")
 
 #Cascade CLS1_1
 Cascade.CLS1_1<-food.web%>%

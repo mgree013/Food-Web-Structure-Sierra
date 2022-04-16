@@ -1,20 +1,8 @@
-setwd("~/Dropbox/Sierra Lake Project/Dave.Matthew.Datas/Matthew and Dave/ALL_All")
-species<-read.csv("sp.density.update.12.28.19.csv")
-env<-read.csv("dave.matt.env.all.csv")
-O.NET=env$O.NET
-Network=env$Network
-pivoted<-species%>%
-  add_column(O.NET,Network)%>%
-  pivot_longer(-c(Site,O.NET,Network), names_to="Taxonomic_name", values_to = "density")
-
-
-
-write.csv(pivoted, "pivoted.sp.data.csv")
 #Local.Food.Webs Sierra Nevada
 library(tidyverse )
 library(cheddar)
 ##################################################################################################################################################################################################################
-setwd("~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web")
+setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
 registry<-read.csv('newest.registry.csv')
 
@@ -22,7 +10,6 @@ food.web<-read.csv("pivoted.sp.data.csv")
 summary(food.web)
 ################################################################################################################################################################################################################
 #KERN Sites Individually
-setwd("~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN")
 
 #KERN 10029
 KERN.10029<-food.web%>%

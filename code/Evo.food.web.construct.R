@@ -3,13 +3,14 @@ library(tidyverse)
 library(cheddar)
 source(WebBuilder)
 
+setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
+
 registry<-read.csv('new.registry.csv')
 
 food.web<-read.csv("dog.csv")
 ################################################################################################################################################################################################################
 #EVO Sites Individually
-setwd("~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO")
-getwd()
+
 #EVO ELS2_1
 EVO.ELS2_1<-food.web%>%
   filter(Network=="EVO" & Site=="ELS2_1")%>%
