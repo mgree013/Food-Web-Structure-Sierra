@@ -7,7 +7,10 @@ setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 registry<-read.csv('newest.registry.csv')
 
 food.web<-read.csv("pivoted.sp.data.csv")
+fn.trait<-read.csv("Full_fn_trait.csv")
 summary(food.web)
+fn.traits<-fn.trait%>%select(c(Taxonomic_name,M))#%>%rename("Taxonomic_name"="Full_List_Taxa")
+food.webz<-left_join(fn.traits,food.web, by="Taxonomic_name")
 ################################################################################################################################################################################################################
 #KERN Sites Individually
 
@@ -16,14 +19,8 @@ KERN.10029<-food.web%>%
   filter(O.NET=="KERN" & Site=="10029")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-KERN.food.web.10029<-food.web%>%
-  filter(O.NET=="KERN"& Site=="10029")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
-
-KERN.10029<-left_join(KERN.10029,KERN.food.web.10029)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(KERN.10029)<-KERN.10029$Taxonomic_name
+KERN.food.web.10029<-KERN.10029%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved

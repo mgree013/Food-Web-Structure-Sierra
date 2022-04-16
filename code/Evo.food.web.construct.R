@@ -5,9 +5,13 @@ source(WebBuilder)
 
 setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
-registry<-read.csv('new.registry.csv')
+registry<-read.csv('newest.registry.csv')
 
-food.web<-read.csv("dog.csv")
+food.web<-read.csv("pivoted.sp.data.csv")
+fn.trait<-read.csv("Full_fn_trait.csv")
+summary(food.web)
+fn.traits<-fn.trait%>%select(c(Taxonomic_name,M))#%>%rename("Taxonomic_name"="Full_List_Taxa")
+food.webz<-left_join(fn.traits,food.web, by="Taxonomic_name")
 ################################################################################################################################################################################################################
 #EVO Sites Individually
 
