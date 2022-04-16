@@ -15,7 +15,7 @@ food.webz<-left_join(fn.traits,food.web, by="Taxonomic_name")
 #KERN Sites Individually
 
 #KERN 10029
-KERN.10029<-food.web%>%
+KERN.10029<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10029")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -33,7 +33,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10029<-list(title= "10029", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10029<-list(title= "10029", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10029<-Community(KERN.10029,Properties.KERN.10029, trophic.links=links)
 SaveCommunity(KERN.10029, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10029/",fn='write.csv' )
 nodes<-as.matrix(nodes)
@@ -44,7 +44,7 @@ KERN.LS.10029 <- Community(properties = CPS(KERN.10029),
 PlotWebByLevel(KERN.10029, level='ChainAveragedTrophicLevel')
 
 #10030
-KERN.10030<-food.web%>%
+KERN.10030<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10030")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -68,7 +68,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 nodes<-as.data.frame(nodes)
-Properties.KERN.10030<-list(title= "10030", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10030<-list(title= "10030", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10030<-Community(KERN.10030,Properties.KERN.10030, trophic.links=links)
 SaveCommunity(KERN.10030, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10030/",fn='write.csv' )
 
@@ -80,7 +80,7 @@ PlotWebByLevel(KERN.10030, level='ChainAveragedTrophicLevel')
 
 
 #10031
-KERN.10031<-food.web%>%
+KERN.10031<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10031")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -104,7 +104,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10031<-list(title= "10031", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10031<-list(title= "10031", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10031<-Community(KERN.10031,Properties.KERN.10031, trophic.links=links)
 SaveCommunity(KERN.10031, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10031/",fn='write.csv' )
 
@@ -115,7 +115,7 @@ KERN.LS.10031 <- Community(properties = CPS(KERN.10031),
 PlotWebByLevel(KERN.10031, level='ChainAveragedTrophicLevel')
 
 #10032
-KERN.10032<-food.web%>%
+KERN.10032<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10032")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -139,7 +139,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10032<-list(title= "10032", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10032<-list(title= "10032", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10032<-Community(KERN.10032,Properties.KERN.10032, trophic.links=links)
 SaveCommunity(KERN.10032, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10032/",fn='write.csv' )
 
@@ -151,7 +151,7 @@ PlotWebByLevel(KERN.10032, level='ChainAveragedTrophicLevel')
 
 
 #10033
-KERN.10033<-food.web%>%
+KERN.10033<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10033")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -175,7 +175,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10033<-list(title= "10033", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10033<-list(title= "10033", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10033<-Community(KERN.10033,Properties.KERN.10033, trophic.links=links)
 SaveCommunity(KERN.10033, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10033/",fn='write.csv' )
 
@@ -186,7 +186,7 @@ KERN.LS.10033 <- Community(properties = CPS(KERN.10033),
 PlotWebByLevel(KERN.10033, level='ChainAveragedTrophicLevel')
 
 #10034
-KERN.10034<-food.web%>%
+KERN.10034<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10034")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -210,7 +210,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10034<-list(title= "10034", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10034<-list(title= "10034", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10034<-Community(KERN.10034,Properties.KERN.10034, trophic.links=links)
 SaveCommunity(KERN.10034, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10034/",fn='write.csv' )
 
@@ -222,7 +222,7 @@ PlotWebByLevel(KERN.10034, level='ChainAveragedTrophicLevel')
 
 
 #10035
-KERN.10035<-food.web%>%
+KERN.10035<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10035")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -246,7 +246,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10035<-list(title= "10035", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10035<-list(title= "10035", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10035<-Community(KERN.10035,Properties.KERN.10035, trophic.links=links)
 SaveCommunity(KERN.10035, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10035/",fn='write.csv' )
 
@@ -257,7 +257,7 @@ KERN.LS.10035 <- Community(properties = CPS(KERN.10035),
 PlotWebByLevel(KERN.10035, level='ChainAveragedTrophicLevel')
 
 #10036
-KERN.10036<-food.web%>%
+KERN.10036<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10036")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -281,7 +281,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10036<-list(title= "10036", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10036<-list(title= "10036", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10036<-Community(KERN.10036,Properties.KERN.10036, trophic.links=links)
 SaveCommunity(KERN.10036, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10036/",fn='write.csv' )
 
@@ -292,7 +292,7 @@ KERN.LS.10036 <- Community(properties = CPS(KERN.10036),
 PlotWebByLevel(KERN.10036, level='ChainAveragedTrophicLevel')
 
 #10037
-KERN.10037.o<-food.web%>%
+KERN.10037.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10037")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -325,7 +325,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10037<-list(title= "10037", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10037<-list(title= "10037", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10037<-Community(KERN.10037,Properties.KERN.10037, trophic.links=links)
 SaveCommunity(KERN.10037, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10037/",fn='write.csv' )
 
@@ -337,7 +337,7 @@ PlotWebByLevel(KERN.10037, level='ChainAveragedTrophicLevel')
 
 
 #10039
-KERN.10039.o<-food.web%>%
+KERN.10039.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10039")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -370,7 +370,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10039<-Community(KERN.10039,Properties.KERN.10039, trophic.links=links)
 SaveCommunity(KERN.10039, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10039/",fn='write.csv' )
 
@@ -381,7 +381,7 @@ KERN.LS.10039 <- Community(properties = CPS(KERN.10039),
 PlotWebByLevel(KERN.10039, level='ChainAveragedTrophicLevel')
 
 #10038
-KERN.10038.o<-food.web%>%
+KERN.10038.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10038")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -411,7 +411,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10038<-list(title= "10038", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10038<-list(title= "10038", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10038<-Community(KERN.10038,Properties.KERN.10038, trophic.links=links)
 SaveCommunity(KERN.10038, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10038/",fn='write.csv' )
 
@@ -422,7 +422,7 @@ KERN.LS.10038 <- Community(properties = CPS(KERN.10038),
 PlotWebByLevel(KERN.10038, level='ChainAveragedTrophicLevel')
 
 #10039
-KERN.10039.o<-food.web%>%
+KERN.10039.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10039")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -452,7 +452,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10039<-list(title= "10039", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10039<-Community(KERN.10039,Properties.KERN.10039, trophic.links=links)
 SaveCommunity(KERN.10039, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10039/",fn='write.csv' )
 
@@ -464,7 +464,7 @@ PlotWebByLevel(KERN.10039, level='ChainAveragedTrophicLevel')
 
 
 #10040
-KERN.10040<-food.web%>%
+KERN.10040<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10040")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -488,7 +488,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10040<-list(title= "10040", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10040<-list(title= "10040", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10040<-Community(KERN.10040,Properties.KERN.10040, trophic.links=links)
 SaveCommunity(KERN.10040, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10040/",fn='write.csv' )
 
@@ -499,7 +499,7 @@ KERN.LS.10040 <- Community(properties = CPS(KERN.10040),
 PlotWebByLevel(KERN.10040, level='ChainAveragedTrophicLevel')
 
 #10041
-KERN.10041<-food.web%>%
+KERN.10041<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10041")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -523,7 +523,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10041<-list(title= "10041", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10041<-list(title= "10041", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10041<-Community(KERNs.10041,Properties.KERN.10041, trophic.links=links)
 SaveCommunity(KERN.10041, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10041/",fn='write.csv' )
 
@@ -534,7 +534,7 @@ KERNs.LS.10041 <- Community(properties = CPS(KERN.10041),
 PlotWebByLevel(KERN.10041, level='ChainAveragedTrophicLevel')
 
 #10042
-KERN.10042.o<-food.web%>%
+KERN.10042.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10042")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -565,7 +565,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10042<-list(title= "10042", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10042<-list(title= "10042", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10042<-Community(KERN.10042,Properties.KERN.10042, trophic.links=links)
 SaveCommunity(KERN.10042, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10042/",fn='write.csv' )
 
@@ -576,7 +576,7 @@ KERNs.LS.10042 <- Community(properties = CPS(KERN.10042),
 PlotWebByLevel(KERN.10042, level='ChainAveragedTrophicLevel')
 
 #10044
-KERN.10044.o<-food.web%>%
+KERN.10044.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10044")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -607,7 +607,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10044<-list(title= "10044", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10044<-list(title= "10044", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10044<-Community(KERN.10044,Properties.KERN.10044, trophic.links=links)
 SaveCommunity(KERN.10044, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10044/",fn='write.csv' )
 
@@ -620,7 +620,7 @@ PlotWebByLevel(KERN.10044, level='ChainAveragedTrophicLevel')
 
 
 #10046
-KERN.10046<-food.web%>%
+KERN.10046<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10046")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -644,7 +644,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10046<-list(title= "10046", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10046<-list(title= "10046", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10046<-Community(KERNs.10046,Properties.KERN.10046, trophic.links=links)
 SaveCommunity(KERN.10046, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10046/",fn='write.csv' )
 
@@ -655,7 +655,7 @@ KERNs.LS.10046 <- Community(properties = CPS(KERN.10046),
 PlotWebByLevel(KERN.10046, level='ChainAveragedTrophicLevel')
 
 #10047
-KERN.10047<-food.web%>%
+KERN.10047<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10047")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -679,7 +679,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10047<-list(title= "10047", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10047<-list(title= "10047", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10047<-Community(KERNs.10047,Properties.KERN.10047, trophic.links=links)
 SaveCommunity(KERN.10047, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10047/",fn='write.csv' )
 
@@ -690,7 +690,7 @@ KERNs.LS.10047 <- Community(properties = CPS(KERN.10047),
 PlotWebByLevel(KERN.10047, level='ChainAveragedTrophicLevel')
 
 #10048
-KERN.10048.o<-food.web%>%
+KERN.10048.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10048")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -721,7 +721,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10048<-list(title= "10048", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10048<-list(title= "10048", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10048<-Community(KERN.10048,Properties.KERN.10048, trophic.links=links)
 SaveCommunity(KERN.10048, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10048/",fn='write.csv' )
 
@@ -732,7 +732,7 @@ KERNs.LS.10048 <- Community(properties = CPS(KERN.10048),
 PlotWebByLevel(KERN.10048, level='ChainAveragedTrophicLevel')
 
 #10049
-KERN.10049.o<-food.web%>%
+KERN.10049.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10049")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -762,7 +762,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10049<-list(title= "10049", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10049<-list(title= "10049", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10049<-Community(KERN.10049,Properties.KERN.10049, trophic.links=links)
 SaveCommunity(KERN.10049, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10049/",fn='write.csv' )
 
@@ -774,7 +774,7 @@ PlotWebByLevel(KERN.10049, level='ChainAveragedTrophicLevel')
 
 
 #10052
-KERN.10052.o<-food.web%>%
+KERN.10052.o<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10052")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -805,7 +805,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10052<-list(title= "10052", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10052<-list(title= "10052", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10052<-Community(KERN.10052,Properties.KERN.10052, trophic.links=links)
 SaveCommunity(KERN.10052, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10052/",fn='write.csv' )
 
@@ -816,7 +816,7 @@ KERNs.LS.10052 <- Community(properties = CPS(KERN.10052),
 PlotWebByLevel(KERN.10052, level='ChainAveragedTrophicLevel')
 
 #10053
-KERN.10053<-food.web%>%
+KERN.10053<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10053")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -840,7 +840,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10053<-list(title= "10053", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10053<-list(title= "10053", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10053<-Community(KERNs.10053,Properties.KERN.10053, trophic.links=links)
 SaveCommunity(KERN.10053, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10053/",fn='write.csv' )
 
@@ -851,7 +851,7 @@ KERNs.LS.10053 <- Community(properties = CPS(KERN.10053),
 PlotWebByLevel(KERN.10053, level='ChainAveragedTrophicLevel')
 
 #10054
-KERN.10054<-food.web%>%
+KERN.10054<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10054")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -875,7 +875,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10054<-list(title= "10054", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10054<-list(title= "10054", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10054<-Community(KERNs.10054,Properties.KERN.10054, trophic.links=links)
 SaveCommunity(KERN.10054, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10054/",fn='write.csv' )
 
@@ -886,7 +886,7 @@ KERNs.LS.10054 <- Community(properties = CPS(KERN.10054),
 PlotWebByLevel(KERN.10054, level='ChainAveragedTrophicLevel')
 
 #10055
-KERN.10055<-food.web%>%
+KERN.10055<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10055")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -910,7 +910,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10055<-list(title= "10055", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10055<-list(title= "10055", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10055<-Community(KERNs.10055,Properties.KERN.10055, trophic.links=links)
 SaveCommunity(KERN.10055, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10055/",fn='write.csv' )
 
@@ -924,7 +924,7 @@ PlotWebByLevel(KERN.10055, show.nodes.as='labels',
                main='Level plot')
 
 #10056
-KERN.10056<-food.web%>%
+KERN.10056<-food.webz%>%
   filter(O.NET=="KERN" & Site=="10056")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
@@ -948,7 +948,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.KERN.10056<-list(title= "10056", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.KERN.10056<-list(title= "10056", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 KERN.10056<-Community(KERNs.10056,Properties.KERN.10056, trophic.links=links)
 SaveCommunity(KERN.10056, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Site/10056/",fn='write.csv' )
 

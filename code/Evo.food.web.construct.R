@@ -40,7 +40,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS2_1<-list(title= "ELS2_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS2_1<-list(title= "ELS2_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS2_1<-Community(EVOs.ELS2_1,Properties.EVO.ELS2_1, trophic.links=links)
 SaveCommunity(EVO.ELS2_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS2_1/",fn='write.csv' )
 
@@ -75,7 +75,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS2_2<-list(title= "ELS2_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS2_2<-list(title= "ELS2_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS2_2<-Community(EVOs.ELS2_2,Properties.EVO.ELS2_2, trophic.links=links)
 SaveCommunity(EVO.ELS2_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS2_2/",fn='write.csv' )
 
@@ -111,7 +111,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS2_3<-list(title= "ELS2_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS2_3<-list(title= "ELS2_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS2_3<-Community(EVOs.ELS2_3,Properties.EVO.ELS2_3, trophic.links=links)
 SaveCommunity(EVO.ELS2_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS2_3/",fn='write.csv' )
 
@@ -146,7 +146,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS3_1<-list(title= "ELS3_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS3_1<-list(title= "ELS3_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS3_1<-Community(EVOs.ELS3_1,Properties.EVO.ELS3_1, trophic.links=links)
 SaveCommunity(EVO.ELS3_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS3_1/",fn='write.csv' )
 
@@ -182,7 +182,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS3_2<-list(title= "ELS3_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS3_2<-list(title= "ELS3_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS3_2<-Community(EVOs.ELS3_2,Properties.EVO.ELS3_2, trophic.links=links)
 SaveCommunity(EVO.ELS3_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS3_2/",fn='write.csv' )
 
@@ -217,7 +217,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.CLS3.2<-list(title= "CLS3_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.CLS3.2<-list(title= "CLS3_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.CLS3.2<-Community(EVOs.CLS3.2,Properties.EVO.CLS3.2, trophic.links=links)
 SaveCommunity(EVO.CLS3.2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/CLS3.2/",fn='write.csv' )
 
@@ -253,7 +253,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS3_3<-list(title= "ELS3_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS3_3<-list(title= "ELS3_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS3_3<-Community(EVOs.ELS3_3,Properties.EVO.ELS3_3, trophic.links=links)
 SaveCommunity(EVO.ELS3_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS3_3/",fn='write.csv' )
 
@@ -288,7 +288,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS4_1<-list(title= "ELS4_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS4_1<-list(title= "ELS4_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS4_1<-Community(EVOs.ELS4_1,Properties.EVO.ELS4_1, trophic.links=links)
 SaveCommunity(EVO.ELS4_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS4_1/",fn='write.csv' )
 
@@ -323,7 +323,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS4_2<-list(title= "ELS4_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS4_2<-list(title= "ELS4_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS4_2<-Community(EVOs.ELS4_2,Properties.EVO.ELS4_2, trophic.links=links)
 SaveCommunity(EVO.ELS4_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS4_2/",fn='write.csv' )
 
@@ -358,7 +358,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS4_3<-list(title= "ELS4_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS4_3<-list(title= "ELS4_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS4_3<-Community(EVOs.ELS4_3,Properties.EVO.ELS4_3, trophic.links=links)
 SaveCommunity(EVO.ELS4_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS4_3/",fn='write.csv' )
 
@@ -393,7 +393,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS5_1<-list(title= "ELS5_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS5_1<-list(title= "ELS5_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS5_1<-Community(EVOs.ELS5_1,Properties.EVO.ELS5_1, trophic.links=links)
 SaveCommunity(EVO.ELS5_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS5_1/",fn='write.csv' )
 
@@ -429,7 +429,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS5_2<-list(title= "ELS5_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS5_2<-list(title= "ELS5_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS5_2<-Community(EVOs.ELS5_2,Properties.EVO.ELS5_2, trophic.links=links)
 SaveCommunity(EVO.ELS5_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS5_2/",fn='write.csv' )
 
@@ -465,7 +465,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS5_3<-list(title= "ELS5_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS5_3<-list(title= "ELS5_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS5_3<-Community(EVOs.ELS5_3,Properties.EVO.ELS5_3, trophic.links=links)
 SaveCommunity(EVO.ELS5_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS5_3/",fn='write.csv' )
 
@@ -502,7 +502,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS6_1<-list(title= "ELS6_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS6_1<-list(title= "ELS6_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS6_1<-Community(EVOs.ELS6_1,Properties.EVO.ELS6_1, trophic.links=links)
 SaveCommunity(EVO.ELS6_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS6_1/",fn='write.csv' )
 
@@ -538,7 +538,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS6_2<-list(title= "ELS6_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS6_2<-list(title= "ELS6_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS6_2<-Community(EVOs.ELS6_2,Properties.EVO.ELS6_2, trophic.links=links)
 SaveCommunity(EVO.ELS6_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS6_2/",fn='write.csv' )
 
@@ -575,7 +575,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS6_3<-list(title= "ELS6_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS6_3<-list(title= "ELS6_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS6_3<-Community(EVOs.ELS6_3,Properties.EVO.ELS6_3, trophic.links=links)
 SaveCommunity(EVO.ELS6_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS6_3/",fn='write.csv' )
 
@@ -612,7 +612,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS7_1<-list(title= "ELS7_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS7_1<-list(title= "ELS7_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS7_1<-Community(EVOs.ELS7_1,Properties.EVO.ELS7_1, trophic.links=links)
 SaveCommunity(EVO.ELS7_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS7_1/",fn='write.csv' )
 
@@ -649,7 +649,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS7_2<-list(title= "ELS7_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS7_2<-list(title= "ELS7_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS7_2<-Community(EVOs.ELS7_2,Properties.EVO.ELS7_2, trophic.links=links)
 SaveCommunity(EVO.ELS7_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS7_2/",fn='write.csv' )
 
@@ -686,7 +686,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS7_3<-list(title= "ELS7_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS7_3<-list(title= "ELS7_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS7_3<-Community(EVOs.ELS7_3,Properties.EVO.ELS7_3, trophic.links=links)
 SaveCommunity(EVO.ELS7_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS7_3/",fn='write.csv' )
 
@@ -723,7 +723,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS8_1<-list(title= "ELS8_1", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS8_1<-list(title= "ELS8_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS8_1<-Community(EVOs.ELS8_1,Properties.EVO.ELS8_1, trophic.links=links)
 SaveCommunity(EVO.ELS8_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS8_1/",fn='write.csv' )
 
@@ -760,7 +760,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS8_2<-list(title= "ELS8_2", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS8_2<-list(title= "ELS8_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS8_2<-Community(EVOs.ELS8_2,Properties.EVO.ELS8_2, trophic.links=links)
 SaveCommunity(EVO.ELS8_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS8_2/",fn='write.csv' )
 
@@ -802,7 +802,7 @@ links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','cl
 
 
 
-Properties.EVO.ELS8_3<-list(title= "ELS8_3", project="Sierra Nevada Lake-Stream Nets", densit="m^2")
+Properties.EVO.ELS8_3<-list(title= "ELS8_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
 EVO.ELS8_3<-Community(EVOs.ELS8_3,Properties.EVO.ELS8_3, trophic.links=links)
 SaveCommunity(EVO.ELS8_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Site/ELS8_3/",fn='write.csv' )
 
