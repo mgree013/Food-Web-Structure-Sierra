@@ -129,3 +129,45 @@ diversity<-species%>%
 env.div.webz<-left_join(env.webzz,diversity, by="Site")
 ################################################################################################################################
 #3)
+
+
+################################################################################################################################
+#4) Analysis
+
+#GLMM tmb
+
+#Connectance Model
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod3<-glmmTMB(C~Head.river.dist*River.dist.lake-River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webz)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+#Linkage Model
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod3<-glmmTMB(L~Head.river.dist*River.dist.lake-River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webz)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+
+#Linkage.S Model
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod3<-glmmTMB(L.S~Head.river.dist*River.dist.lake-River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webz)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+################################################################################################################################
