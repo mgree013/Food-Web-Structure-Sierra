@@ -1,0 +1,13 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acentrella",4.500450045,0.285232064,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Acentrella"
+"Agraylea",4.500450045,1.067967109,"Arthropoda","Insecta","Trichoptera","Hydroptilidae","Agraylea"
+"Antocha",4.500450045,0.185248823,"Arthropoda","Insecta","Diptera","Tipulidae","Antocha"
+"Baetis",31.50315032,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",958.5958596,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Nematomorpha",13.50135014,0.015,"Nematomorpha",,,,
+"Oligochaeta",90.0090009,0.506640431,"Annelida","Clitellata",,,
+"Paraleptophlebia",4.500450045,1.004883072,"Arthropoda","Insecta","Ephemeroptera","Leptophlebiidae","Paraleptophlebia"
+"Pisidium",76.50765077,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Tipula",4.500450045,10.16875835,"Arthropoda","Insecta","Diptera","Tipulidae","Tipula"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

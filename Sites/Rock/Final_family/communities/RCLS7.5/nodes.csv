@@ -1,0 +1,16 @@
+"node","N","M","phylum","class","order","family","genus"
+"Baetis",10.1010101,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",8.080808081,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Cinygmula",2.02020202,7.969282283,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Cinygmula"
+"Culicoides",1.01010101,0.162619632,"Arthropoda","Insecta","Diptera","Ceratopogonidae","Culicoides"
+"Doroneuria",5.050505051,47.55178364,"Arthropoda","Insecta","Plecoptera","Perlidae","Doroneuria"
+"Ironodes",1.01010101,5.59637151,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Ironodes"
+"Oligochaeta",3.03030303,0.506640431,"Annelida","Clitellata",,,
+"Optioservus",2.02020202,0.136166585,"Arthropoda","Insecta","Coleoptera","Elmidae","Optioservus"
+"Rhyacophila",3.03030303,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Siphlonurus",1.01010101,0.545457768,"Arthropoda","Insecta","Ephemeroptera","Siphlonuridae","Siphlonurus"
+"Suwallia",5.050505051,2.473558448,"Arthropoda","Insecta","Plecoptera","Chloroperlidae","Suwallia"
+"Wormaldia",15.15151515,7.017858546,"Arthropoda","Insecta","Trichoptera","Philopotamidae","Wormaldia"
+"Zapada",1.01010101,0.789662984,"Arthropoda","Insecta","Plecoptera","Nemouridae","Zapada"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

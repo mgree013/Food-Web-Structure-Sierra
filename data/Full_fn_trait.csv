@@ -123,3 +123,5 @@ Wiedeman,Wiedemannia,0.325065883,5,0.0054,2.546,Wiedemannia,Empididae,Diptera,me
 Wormaldia,Yoraperla,7.017858546,10.7,0.0141,2.62,Yoraperla,Peltoperlidae,Plecoptera,medium,streamlined,good,gills,SH,CN,eros,common,low,weak,low,weak,absent,absent,univoltine,fast,very_short,NP
 Yoraperla,Yphria,2.51842527,8.9,0.0054,2.811,Yphria,Phryganeidae,Trichoptera,small,not_streamlined,poor,gills,PR,BU,eros,rare,low,weak,low,none,absent,absent,univoltine,slow,long,CCE
 Zapada,Zapada,0.789662984,6,0.0056,2.762,Zapada,Nemouridae,Plecoptera,small,not_streamlined,none,gills,SH,SP,depo_eros,common,low,weak,very_low,weak,absent,absent,semivoltine,fast,very_short,CCE
+Benthic.producers,Benthic.producers,0.001,,,,,,,,,,,,,,,,,,,,,,,,
+Pelagic.producers,Pelagic.producers,0.001,,,,,,,,,,,,,,,,,,,,,,,,

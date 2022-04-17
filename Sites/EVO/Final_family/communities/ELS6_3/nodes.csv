@@ -1,0 +1,7 @@
+"node","N","M","phylum","class","order","family","genus"
+"Agraylea",4.500450045,1.067967109,"Arthropoda","Insecta","Trichoptera","Hydroptilidae","Agraylea"
+"Baetis",76.50765077,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",166.5166517,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Simulium",10571.55716,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

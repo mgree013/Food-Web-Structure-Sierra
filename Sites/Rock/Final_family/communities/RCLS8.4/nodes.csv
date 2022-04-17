@@ -1,0 +1,14 @@
+"node","N","M","phylum","class","order","family","genus"
+"Baetis",18.05555556,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Calineuria",1.388888889,82.42323092,"Arthropoda","Insecta","Plecoptera","Perlidae","Calineuria"
+"Chironomidae",9.722222222,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Doroneuria",1.388888889,47.55178364,"Arthropoda","Insecta","Plecoptera","Perlidae","Doroneuria"
+"Drunella",8.333333333,4.884692448,"Arthropoda","Insecta","Ephemeroptera","Ephemerellidae","Drunella"
+"Epeorus",8.333333333,14.45630938,"Arthropoda","Insecta","Ephemeroptera","Heptageniidae","Epeorus"
+"Heterlimnius",2.777777778,0.562121954,"Arthropoda","Insecta","Coleoptera","Elmidae","Heterlimnius"
+"Hydropsyche",5.555555556,5.40467727,"Arthropoda","Insecta","Trichoptera","Hydropsychidae","Hydropsyche"
+"Oligochaeta",1.388888889,0.506640431,"Annelida","Clitellata",,,
+"Ostracoda",1.388888889,0.014,"Arthropoda","Ostracoda",,,
+"Rhyacophila",1.388888889,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

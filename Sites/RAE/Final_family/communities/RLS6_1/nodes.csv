@@ -1,0 +1,10 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",103.510351,0.1,"Arthropoda","Arachnida",,,
+"Acentrella",4.500450045,0.285232064,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Acentrella"
+"Baetis",31.50315032,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",193.5193519,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Diphetor",4.500450045,2.092471648,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Diphetor"
+"Optioservus",252.0252025,0.136166585,"Arthropoda","Insecta","Coleoptera","Elmidae","Optioservus"
+"Pisidium",463.5463546,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Rhizelmis",54.00540054,0.31573772,"Arthropoda","Insecta","Coleoptera","Elmidae","Rhizelmis"
+"Simulium",67.50675068,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"

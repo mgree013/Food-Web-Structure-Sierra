@@ -15,32 +15,32 @@ lapply(Packages, library, character.only = TRUE)
 
 #cascade.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site.Genus/"
 #cascade.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Cascade_Sites_Order_Level_02_12_20/"
-cascade.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site.Family/"
+cascade.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Final_family"
 Cascade.web<-LoadCollection(cascade.dir)
 
 #evo.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO/Site.Genus/"
 #evo.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO/Site.Order/"
-evo.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO/Site.Family/"
+evo.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Final_family/"
 Evo.web<-LoadCollection(evo.dir)
 
 #rae.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/RAE/Site.Genus/"
 #rae.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/RAE/Rae_site_order_02_12_20/"
-rae.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/RAE/Site.Family/"
+rae.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/RAE/Final_family/"
 Rae.web<-LoadCollection(rae.dir)
 
 #kern.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site.Genus/"
 #kern.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site.Order/"
-kern.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site.Family/"
+kern.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Final_family/"
 Kern.web<-LoadCollection(kern.dir)
 
 #bubbs.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Genus/"
 #bubbs.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Order/"
-bubbs.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Family/"
+bubbs.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Final_family/"
 Bubbs.web<-LoadCollection(bubbs.dir)
 
 #rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Genus/"
 #rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Family/"
-rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Family/"
+rock.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/Final_family/"
 Rock.web<-LoadCollection(rock.dir)
 
 Rae.data<-CollectionCPS(Rae.web, 
@@ -169,7 +169,7 @@ all.webs<-all.webs%>%tibble::rownames_to_column()%>%dplyr::rename(Site = title)
 
 ##################################################################################################################################################################
 #2) Load Environmental and Spatial Data
-envs <-read.csv("Data/dave.matt.env.full.12.29.19.csv")
+envs <-read.csv("dave.matt.env.full.12.29.19.csv")
 env<-envs%>%filter(Network == "RAE" | Network=="EVO" | Network =="CASCADE"| O.NET =="KERN" | Network=="BUBBS" | Network=="ROCK")
 
 
