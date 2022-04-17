@@ -1,0 +1,15 @@
+"node","N","M","phylum","class","order","family","genus"
+"Allotrichoma",4.500450045,0.018364301,"Arthropoda","Insecta","Diptera","Ephydridae","Allotrichoma"
+"Baetis",36.00360036,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",751.5751575,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Claassenia",18.00180018,93.16726776,"Arthropoda","Insecta","Plecoptera","Perlidae","Claassenia"
+"Helodon",369.0369037,0.286362446,"Arthropoda","Insecta","Diptera","Simuliidae","Helodon"
+"Muscidae",4.500450045,1.259049334,"Arthropoda","Insecta","Diptera","Muscidae","Muscidae"
+"Nemertea",27.00270027,17,"Nemertea",,,,
+"Oligochaeta",31.50315032,0.506640431,"Annelida","Clitellata",,,
+"Pisidium",121.5121512,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Prosimulium",13.50135014,0.291869328,"Arthropoda","Insecta","Diptera","Simuliidae","Prosimulium"
+"Simulium",598.559856,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Stegopterna",9.00090009,2.733149393,"Arthropoda","Insecta","Diptera","Simuliidae","Stegopterna"
+"Turbellaria",18.00180018,0.030679362,"Platyhelminthes","Turbellaria",,,
+"Zapada",13.50135014,0.789662984,"Arthropoda","Insecta","Plecoptera","Nemouridae","Zapada"

@@ -15,389 +15,331 @@ food.webz<-left_join(fn.traits,food.web, by="Taxonomic_name")
 #Cascade Sites Individually
 
 #Cascade CLS1_1
-Cascade.CLS1_1<-food.web%>%
+Cascade.CLS1_1<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS1_1")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS1_1<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS1_1")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
-
-Cascades.CLS1_1<-left_join(Cascade.CLS1_1,Cascade.food.web.CLS1_1)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS1_1)<-Cascade.CLS1_1$Taxonomic_name
+Cascade.food.web.CLS1_1<-Cascade.CLS1_1%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS1_1,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS1_1,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS1_1<-list(title= "CLS1_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS1_1<-Community(Cascades.CLS1_1,Properties.Casc.CLS1_1, trophic.links=links)
-SaveCommunity(Cascade.CLS1_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS1_1/",fn='write.csv' )
+Cascade.CLS1_1<-Community(Cascade.food.web.CLS1_1,Properties.Casc.CLS1_1, trophic.links=links)
+SaveCommunity(Cascade.CLS1_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS1_1/",fn='write.csv' )
 
 Cascades.LS.CLS1_1 <- Community(properties = CPS(Cascade.CLS1_1),
-                                nodes = Cascades.CLS1_1,
+                                nodes = Cascade.food.web.CLS1_1,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS1_1, level='ChainAveragedTrophicLevel')
 
 #CLS1_3
-Cascade.CLS1_3<-food.web%>%
+Cascade.CLS1_3<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS1_3")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS1_3<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS1_3")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
-
-Cascades.CLS1_3<-left_join(Cascade.CLS1_3,Cascade.food.web.CLS1_3)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS1_3)<-Cascade.CLS1_3$Taxonomic_name
+Cascade.food.web.CLS1_3<-Cascade.CLS1_3%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS1_3,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS1_3,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS1_3<-list(title= "CLS1_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS1_3<-Community(Cascades.CLS1_3,Properties.Casc.CLS1_3, trophic.links=links)
-SaveCommunity(Cascade.CLS1_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS1_3/",fn='write.csv' )
+Cascade.CLS1_3<-Community(Cascade.food.web.CLS1_3,Properties.Casc.CLS1_3, trophic.links=links)
+SaveCommunity(Cascade.CLS1_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS1_3/",fn='write.csv' )
 
 Cascades.LS.CLS1_3 <- Community(properties = CPS(Cascade.CLS1_3),
-                                nodes = Cascades.CLS1_3,
+                                nodes = Cascade.food.web.CLS1_3,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS1_3, level='ChainAveragedTrophicLevel')
 
 
 #CLS2_1
-Cascade.CLS2_1<-food.web%>%
+Cascade.CLS2_1<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS2_1")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS2_1<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS2_1")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS2_1<-Cascade.CLS2_1%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS2_1<-left_join(Cascade.CLS2_1,Cascade.food.web.CLS2_1)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS2_1)<-Cascade.CLS2_1$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS2_1,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS2_1,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS2_1<-list(title= "CLS2_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS2_1<-Community(Cascades.CLS2_1,Properties.Casc.CLS2_1, trophic.links=links)
-SaveCommunity(Cascade.CLS2_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS2_1/",fn='write.csv' )
+Cascade.CLS2_1<-Community(Cascade.food.web.CLS2_1,Properties.Casc.CLS2_1, trophic.links=links)
+SaveCommunity(Cascade.CLS2_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS2_1/",fn='write.csv' )
 
 Cascades.LS.CLS2_1 <- Community(properties = CPS(Cascade.CLS2_1),
-                                nodes = Cascades.CLS2_1,
+                                nodes = Cascade.food.web.CLS2_1,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS2_1, level='ChainAveragedTrophicLevel')
 
 #CLS2_3
-Cascade.CLS2_3<-food.web%>%
+Cascade.CLS2_3<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS2_3")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS2_3<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS2_3")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS2_3<-Cascade.CLS2_3%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS2_3<-left_join(Cascade.CLS2_3,Cascade.food.web.CLS2_3)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS2_3)<-Cascade.CLS2_3$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS2_3,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS2_3,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS2_3<-list(title= "CLS2_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS2_3<-Community(Cascades.CLS2_3,Properties.Casc.CLS2_3, trophic.links=links)
-SaveCommunity(Cascade.CLS2_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS2_3/",fn='write.csv' )
+Cascade.CLS2_3<-Community(Cascade.food.web.CLS2_3,Properties.Casc.CLS2_3, trophic.links=links)
+SaveCommunity(Cascade.CLS2_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS2_3/",fn='write.csv' )
 
 Cascades.LS.CLS2_3 <- Community(properties = CPS(Cascade.CLS2_3),
-                                nodes = Cascades.CLS2_3,
+                                nodes = Cascade.food.web.CLS2_3,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS2_3, level='ChainAveragedTrophicLevel')
 
 
 #CLS3_1
-Cascade.CLS3_1<-food.web%>%
+Cascade.CLS3_1<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS3_1")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS3_1<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS3_1")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS3_1<-Cascade.CLS3_1%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS3_1<-left_join(Cascade.CLS3_1,Cascade.food.web.CLS3_1)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS3_1)<-Cascade.CLS3_1$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS3_1,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS3_1,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS3_1<-list(title= "CLS3_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS3_1<-Community(Cascades.CLS3_1,Properties.Casc.CLS3_1, trophic.links=links)
-SaveCommunity(Cascade.CLS3_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_1/",fn='write.csv' )
+Cascade.CLS3_1<-Community(Cascade.food.web.CLS3_1,Properties.Casc.CLS3_1, trophic.links=links)
+SaveCommunity(Cascade.CLS3_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS3_1/",fn='write.csv' )
 
 Cascades.LS.CLS3_1 <- Community(properties = CPS(Cascade.CLS3_1),
-                                nodes = Cascades.CLS3_1,
+                                nodes = Cascade.food.web.CLS3_1,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS3_1, level='ChainAveragedTrophicLevel')
 
 #CLS3_2
-Cascade.CLS3_2<-food.web%>%
+Cascade.CLS3_2<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS3_2")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS3_2<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS3_2")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
-
-Cascades.CLS3_2<-left_join(Cascade.CLS3_2,Cascade.food.web.CLS3_2)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS3_2)<-Cascade.CLS3_2$Taxonomic_name
+Cascade.food.web.CLS3_2<-Cascade.CLS3_2%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS3_2,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS3_2,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS3_2<-list(title= "CLS3_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS3_2<-Community(Cascades.CLS3_2,Properties.Casc.CLS3_2, trophic.links=links)
-SaveCommunity(Cascade.CLS3_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_2/",fn='write.csv' )
+Cascade.CLS3_2<-Community(Cascade.food.web.CLS3_2,Properties.Casc.CLS3_2, trophic.links=links)
+SaveCommunity(Cascade.CLS3_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS3_2/",fn='write.csv' )
 
 Cascades.LS.CLS3_2 <- Community(properties = CPS(Cascade.CLS3_2),
-                                nodes = Cascades.CLS3_2,
+                                nodes = Cascade.food.web.CLS3_2,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS3_2, level='ChainAveragedTrophicLevel')
 
 
 #CLS3_3
-Cascade.CLS3_3<-food.web%>%
+Cascade.CLS3_3<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS3_3")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS3_3<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS3_3")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS3_3<-Cascade.CLS3_3%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS3_3<-left_join(Cascade.CLS3_3,Cascade.food.web.CLS3_3)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS3_3)<-Cascade.CLS3_3$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS3_3,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS3_3,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS3_3<-list(title= "CLS3_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS3_3<-Community(Cascades.CLS3_3,Properties.Casc.CLS3_3, trophic.links=links)
-SaveCommunity(Cascade.CLS3_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS3_3/",fn='write.csv' )
+Cascade.CLS3_3<-Community(Cascade.food.web.CLS3_3,Properties.Casc.CLS3_3, trophic.links=links)
+SaveCommunity(Cascade.CLS3_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS3_3/",fn='write.csv' )
 
 Cascades.LS.CLS3_3 <- Community(properties = CPS(Cascade.CLS3_3),
-                                nodes = Cascades.CLS3_3,
+                                nodes = Cascade.food.web.CLS3_3,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS3_3, level='ChainAveragedTrophicLevel')
 
 #CLS4_1
-Cascade.CLS4_1<-food.web%>%
+Cascade.CLS4_1<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS4_1")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS4_1<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS4_1")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS4_1<-Cascade.CLS4_1%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS4_1<-left_join(Cascade.CLS4_1,Cascade.food.web.CLS4_1)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS4_1)<-Cascade.CLS4_1$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS4_1,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS4_1,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS4_1<-list(title= "CLS4_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS4_1<-Community(Cascades.CLS4_1,Properties.Casc.CLS4_1, trophic.links=links)
-SaveCommunity(Cascade.CLS4_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_1/",fn='write.csv' )
+Cascade.CLS4_1<-Community(Cascade.food.web.CLS4_1,Properties.Casc.CLS4_1, trophic.links=links)
+SaveCommunity(Cascade.CLS4_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS4_1/",fn='write.csv' )
 
 Cascades.LS.CLS4_1 <- Community(properties = CPS(Cascade.CLS4_1),
-                                nodes = Cascades.CLS4_1,
+                                nodes = Cascade.food.web.CLS4_1,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS4_1, level='ChainAveragedTrophicLevel')
 
 #CLS4_2
-Cascade.CLS4_2<-food.web%>%
+Cascade.CLS4_2<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS4_2")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS4_2<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS4_2")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS4_2<-Cascade.CLS4_2%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS4_2<-left_join(Cascade.CLS4_2,Cascade.food.web.CLS4_2)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS4_2)<-Cascade.CLS4_2$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS4_2,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS4_2,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS4_2<-list(title= "CLS4_2", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS4_2<-Community(Cascades.CLS4_2,Properties.Casc.CLS4_2, trophic.links=links)
-SaveCommunity(Cascade.CLS4_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_2/",fn='write.csv' )
+Cascade.CLS4_2<-Community(Cascade.food.web.CLS4_2,Properties.Casc.CLS4_2, trophic.links=links)
+SaveCommunity(Cascade.CLS4_2, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS4_2/",fn='write.csv' )
 
 Cascades.LS.CLS4_2 <- Community(properties = CPS(Cascade.CLS4_2),
-                                nodes = Cascades.CLS4_2,
+                                nodes = Cascade.food.web.CLS4_2,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS4_2, level='ChainAveragedTrophicLevel')
 
 #CLS4_3
-Cascade.CLS4_3<-food.web%>%
+Cascade.CLS4_3<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS4_3")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS4_3<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS4_3")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS4_3<-Cascade.CLS4_3%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS4_3<-left_join(Cascade.CLS4_3,Cascade.food.web.CLS4_3)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS4_3)<-Cascade.CLS4_3$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS4_3,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS4_3,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS4_3<-list(title= "CLS4_3", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS4_3<-Community(Cascades.CLS4_3,Properties.Casc.CLS4_3, trophic.links=links)
-SaveCommunity(Cascade.CLS4_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS4_3/",fn='write.csv' )
+Cascade.CLS4_3<-Community(Cascade.food.web.CLS4_3,Properties.Casc.CLS4_3, trophic.links=links)
+SaveCommunity(Cascade.CLS4_3, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS4_3/",fn='write.csv' )
 
 Cascades.LS.CLS4_3 <- Community(properties = CPS(Cascade.CLS4_3),
-                                nodes = Cascades.CLS4_3,
+                                nodes = Cascade.food.web.CLS4_3,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS4_3, level='ChainAveragedTrophicLevel')
 
 #CLS5_1
-Cascade.CLS5_1<-food.web%>%
+Cascade.CLS5_1<-food.webz%>%
   filter(Network=="CASCADE" & Site=="CLS5_1 ")%>%
   distinct(Taxonomic_name, .keep_all = TRUE )
 
-Cascade.food.web.CLS5_1<-food.web%>%
-  filter(Network=="CASCADE"& Site=="CLS5_1 ")%>%
-  dplyr::group_by(Taxonomic_name )%>%
-  summarize(density=mean(value))
+Cascade.food.web.CLS5_1<-Cascade.CLS5_1%>%
+  dplyr::select(c(N,M, phylum ,class, order, family, genus, node))
 
-Cascades.CLS5_1<-left_join(Cascade.CLS5_1,Cascade.food.web.CLS5_1)%>%
-  select(density, phylum ,class, order, family, genus, node)
-row.names(Cascades.CLS5_1)<-Cascade.CLS5_1$Taxonomic_name
 
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
 minimum.con.method<- "family"
 
-nodes<-cbind(Cascades.CLS5_1,minimum.res.method,minimum.con.method)
+nodes<-cbind(Cascade.food.web.CLS5_1,minimum.res.method,minimum.con.method)
 
 links<-WebBuilder(nodes, registry, method=c('exact','genus','family','order','class'))
 
 
 
 Properties.Casc.CLS5_1<-list(title= "CLS5_1", project="Sierra Nevada Lake-Stream Nets", M.units="m^2", N.units="mg")
-Cascade.CLS5_1<-Community(Cascades.CLS5_1,Properties.Casc.CLS5_1, trophic.links=links)
-SaveCommunity(Cascade.CLS5_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Site/CLS5_1/",fn='write.csv' )
+Cascade.CLS5_1<-Community(Cascade.food.web.CLS5_1,Properties.Casc.CLS5_1, trophic.links=links)
+SaveCommunity(Cascade.CLS5_1, dir ="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/CLS5_1/",fn='write.csv' )
 
 Cascades.LS.CLS5_1 <- Community(properties = CPS(Cascade.CLS5_1),
-                                nodes = Cascades.CLS5_1,
+                                nodes = Cascade.food.web.CLS5_1,
                                 trophic.links = links)
 
 PlotWebByLevel(Cascade.CLS5_1, level='ChainAveragedTrophicLevel')
