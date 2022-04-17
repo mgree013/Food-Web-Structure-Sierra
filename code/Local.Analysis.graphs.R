@@ -9,10 +9,11 @@
 ################################################################################################################################
 
 #explore Local Metrics along individual gradients
+#S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
 
 env.webzz%>%
   filter(Head.river.dist>3.5)%>%
-  gather(S,L,L.S,C,Omn,Path, key = "var", value = "value") %>% 
+  gather(S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
   ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   geom_smooth(method = "lm")+
