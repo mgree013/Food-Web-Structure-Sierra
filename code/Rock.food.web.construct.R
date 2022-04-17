@@ -26,7 +26,7 @@ ROCKs.RCLS1.1<-ROCK.RCLS1.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS1.1,minimum.res.method,minimum.con.method)
 
@@ -53,7 +53,7 @@ ROCKs.RCLS2.1<-ROCK.RCLS2.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.1,minimum.res.method,minimum.con.method)
 
@@ -81,7 +81,7 @@ ROCKs.RCLS2.2<-ROCK.RCLS2.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.2,minimum.res.method,minimum.con.method)
 
@@ -108,7 +108,7 @@ ROCKs.RCLS2.3<-ROCK.RCLS2.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.3,minimum.res.method,minimum.con.method)
 
@@ -135,7 +135,7 @@ ROCKs.RCLS2.4<-ROCK.RCLS2.4%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.4,minimum.res.method,minimum.con.method)
 
@@ -162,7 +162,7 @@ ROCKs.RCLS2.5<-ROCK.RCLS2.5%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.5,minimum.res.method,minimum.con.method)
 
@@ -189,7 +189,7 @@ ROCKs.RCLS2.6<-ROCK.RCLS2.6%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS2.6,minimum.res.method,minimum.con.method)
 
@@ -216,7 +216,7 @@ ROCKs.RCLS3.1<-ROCK.RCLS3.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS3.1,minimum.res.method,minimum.con.method)
 
@@ -243,7 +243,7 @@ ROCKs.RCLS3.2<-ROCK.RCLS3.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS3.2,minimum.res.method,minimum.con.method)
 
@@ -270,7 +270,7 @@ ROCKs.RCLS3.3<-ROCK.RCLS3.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS3.3,minimum.res.method,minimum.con.method)
 
@@ -297,7 +297,7 @@ ROCKs.RCLS3.4<-ROCK.RCLS3.4%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS3.4,minimum.res.method,minimum.con.method)
 
@@ -324,7 +324,7 @@ ROCKs.RCLS3.5<-ROCK.RCLS3.5%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS3.5,minimum.res.method,minimum.con.method)
 
@@ -352,7 +352,7 @@ ROCKs.RCLS4.1<-ROCK.RCLS4.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS4.1,minimum.res.method,minimum.con.method)
 
@@ -380,7 +380,7 @@ ROCKs.RCLS4.2<-ROCK.RCLS4.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS4.2,minimum.res.method,minimum.con.method)
 
@@ -407,7 +407,7 @@ ROCKs.RCLS4.3<-ROCK.RCLS4.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS4.3,minimum.res.method,minimum.con.method)
 
@@ -434,7 +434,7 @@ ROCKs.RCLS5.1<-ROCK.RCLS5.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS5.1,minimum.res.method,minimum.con.method)
 
@@ -461,7 +461,7 @@ ROCKs.RCLS5.2<-ROCK.RCLS5.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS5.2,minimum.res.method,minimum.con.method)
 
@@ -488,7 +488,7 @@ ROCKs.RCLS5.3<-ROCK.RCLS5.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS5.3,minimum.res.method,minimum.con.method)
 
@@ -515,7 +515,7 @@ ROCKs.RCLS6.1<-ROCK.RCLS6.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS6.1,minimum.res.method,minimum.con.method)
 
@@ -542,7 +542,7 @@ ROCKs.RCLS6.2<-ROCK.RCLS6.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS6.2,minimum.res.method,minimum.con.method)
 
@@ -569,7 +569,7 @@ ROCKs.RCLS6.3<-ROCK.RCLS6.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS6.3,minimum.res.method,minimum.con.method)
 
@@ -596,7 +596,7 @@ ROCKs.RCLS6.4<-ROCK.RCLS6.4%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS6.4,minimum.res.method,minimum.con.method)
 
@@ -623,7 +623,7 @@ ROCKs.RCLS6.5<-ROCK.RCLS6.5%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS6.5,minimum.res.method,minimum.con.method)
 
@@ -651,7 +651,7 @@ ROCKs.RCLS7.1<-ROCK.RCLS7.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.1,minimum.res.method,minimum.con.method)
 
@@ -679,7 +679,7 @@ ROCKs.RCLS7.2<-ROCK.RCLS7.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.2,minimum.res.method,minimum.con.method)
 
@@ -706,7 +706,7 @@ ROCKs.RCLS7.3<-ROCK.RCLS7.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.3,minimum.res.method,minimum.con.method)
 
@@ -733,7 +733,7 @@ ROCKs.RCLS7.4<-ROCK.RCLS7.4%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.4,minimum.res.method,minimum.con.method)
 
@@ -760,7 +760,7 @@ ROCKs.RCLS7.5<-ROCK.RCLS7.5%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.5,minimum.res.method,minimum.con.method)
 
@@ -787,7 +787,7 @@ ROCKs.RCLS7.6<-ROCK.RCLS7.6%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.6,minimum.res.method,minimum.con.method)
 
@@ -814,7 +814,7 @@ ROCKs.RCLS7.7<-ROCK.RCLS7.7%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS7.7,minimum.res.method,minimum.con.method)
 
@@ -841,7 +841,7 @@ ROCKs.RCLS8.1<-ROCK.RCLS8.1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.1,minimum.res.method,minimum.con.method)
 
@@ -868,7 +868,7 @@ ROCKs.RCLS8.2<-ROCK.RCLS8.2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.2,minimum.res.method,minimum.con.method)
 
@@ -895,7 +895,7 @@ ROCKs.RCLS8.3<-ROCK.RCLS8.3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.3,minimum.res.method,minimum.con.method)
 
@@ -922,7 +922,7 @@ ROCKs.RCLS8.4<-ROCK.RCLS8.4%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family" 
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.4,minimum.res.method,minimum.con.method)
 
@@ -950,7 +950,7 @@ ROCKs.RCLS8.5<-ROCK.RCLS8.5%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.5,minimum.res.method,minimum.con.method)
 
@@ -977,7 +977,7 @@ ROCKs.RCLS8.7<-ROCK.RCLS8.7%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "genus"
+minimum.con.method<- "family"
 
 nodes<-cbind(ROCKs.RCLS8.7,minimum.res.method,minimum.con.method)
 
