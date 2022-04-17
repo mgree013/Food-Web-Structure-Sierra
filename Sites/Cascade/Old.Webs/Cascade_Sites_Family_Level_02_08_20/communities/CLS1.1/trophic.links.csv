@@ -1,7 +1,0 @@
-"resource","consumer","res.density","res.phylum","res.class","res.order","res.family","res.genus","con.density","con.phylum","con.class","con.order","con.family","con.genus","res.method","con.method","N.records","linkevidence","source.id"
-"Baetis","Chironomidae",9.00090009,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis",2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,"exact","family",4,"observed - gut/stomach analysis","63"
-"Chironomidae","Drunella",2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,9.00090009,"Arthropoda","Insecta","Ephemeroptera","Ephemerellidae","Drunella","family","family",6,"observed - gut/stomach analysis","63"
-"Chironomidae","Chironomidae",2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,"family","family",144,"observed - gut/stomach analysis","63"
-"Chironomidae","Simulium",2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,13.50135014,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium","family","exact",14,"observed - gut/stomach analysis","63"
-"Simulium","Chironomidae",13.50135014,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium",2101.710171,"Arthropoda","Insecta","Diptera","Chironomidae",,"exact","family",2,"observed - gut/stomach analysis","63"
-"Simulium","Simulium",13.50135014,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium",13.50135014,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium","exact","exact",1,"observed - gut/stomach analysis","63"
