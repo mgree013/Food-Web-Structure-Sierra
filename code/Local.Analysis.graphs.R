@@ -5,6 +5,9 @@
 #Data: https://datadryad.org/stash/dataset/doi:10.5061/dryad.2fqz612qw
 ################################################################################################################################
 
+#CLS5_1
+
+
 #Part 1: Local Food web metrics Analysis and Figures
 ################################################################################################################################
 ################################################################################################################################
@@ -56,7 +59,7 @@ diversity<-species%>%
   transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
   rownames_to_column("Site")
 
-env.div.webz<-left_join(env.webzz,diversity, by="Site")
+env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
@@ -178,6 +181,141 @@ reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALS
 reported.table2
 r2(mod1)
 check_collinearity(mod3)
+multicollinearity(mod3)
+################################################################################################################################
+#additive Stream Model
+
+#Connectance Model
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod3<-glmmTMB(C~Head.river.dist+River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webz)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod2)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+#Linkage Model
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod3<-glmmTMB(L~Head.river.dist+River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webz)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod3)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+
+#Linkage Density Model
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod3<-glmmTMB(L.S~Head.river.dist+River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webz)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+################################################################################################################################
+#2) River Theory with Fish
+
+#Connectance Model
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod2<-glmmTMB(C~as.factor(Fish)+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod3<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod4<-glmmTMB(C~Head.river.dist*River.dist.lake+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod5<-glmmTMB(C~River.dist.lake* as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod6<-glmmTMB(C~Head.river.dist* as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod7<-glmmTMB(C~Head.river.dist*River.dist.lake* as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod2)
+check_collinearity(mod7)
+multicollinearity(mod3)
+
+#Linkage Model
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod2<-glmmTMB(L~as.factor(Fish)+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod3<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod4<-glmmTMB(L~Head.river.dist*River.dist.lake+(1|O.NET),family=poisson(),data=env.div.webz)
+mod5<-glmmTMB(L~River.dist.lake* as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+mod6<-glmmTMB(L~Head.river.dist* as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+mod7<-glmmTMB(L~Head.river.dist*River.dist.lake* as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod7)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+
+#Linkage Density Model
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod2<-glmmTMB(L.S~as.factor(Fish)+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod3<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod4<-glmmTMB(L.S~Head.river.dist*River.dist.lake+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod5<-glmmTMB(L.S~River.dist.lake* as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod6<-glmmTMB(L.S~Head.river.dist* as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod7<-glmmTMB(L.S~Head.river.dist*River.dist.lake* as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod3)
+multicollinearity(mod3)
+
+################################################################################################################################
+#3 Additive river theory with fish
+#2) River Theory with Fish
+
+#Connectance Model
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod2<-glmmTMB(C~as.factor(Fish)+ (1|O.NET),family=beta_family(), data=env.div.webz)
+mod3<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod4<-glmmTMB(C~Head.river.dist+River.dist.lake+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod5<-glmmTMB(C~River.dist.lake+ as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod6<-glmmTMB(C~Head.river.dist+ as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+mod7<-glmmTMB(C~Head.river.dist+River.dist.lake+ as.factor(Fish)+(1|O.NET),family=beta_family(),data=env.div.webz)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod7)
+check_collinearity(mod7)
+multicollinearity(mod3)
+
+#Linkage Model
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod2<-glmmTMB(L~as.factor(Fish)+ (1|O.NET),family=poisson(), data=env.div.webz)
+mod3<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod4<-glmmTMB(L~Head.river.dist+River.dist.lake+(1|O.NET),family=poisson(),data=env.div.webz)
+mod5<-glmmTMB(L~River.dist.lake+ as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+mod6<-glmmTMB(L~Head.river.dist+ as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+mod7<-glmmTMB(L~Head.river.dist+River.dist.lake+ as.factor(Fish)+(1|O.NET),family=poisson(),data=env.div.webz)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod7)
+check_collinearity(mod7)
+multicollinearity(mod3)
+
+
+#Linkage Density Model
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod2<-glmmTMB(L.S~as.factor(Fish)+ (1|O.NET),family=gaussian(), data=env.div.webz)
+mod3<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod4<-glmmTMB(L.S~Head.river.dist+River.dist.lake+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod5<-glmmTMB(L.S~River.dist.lake+ as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod6<-glmmTMB(L.S~Head.river.dist+ as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+mod7<-glmmTMB(L.S~Head.river.dist+River.dist.lake+ as.factor(Fish)+(1|O.NET),family=gaussian(),data=env.div.webz)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod1)
+check_collinearity(mod7)
 multicollinearity(mod3)
 
 ################################################################################################################################
