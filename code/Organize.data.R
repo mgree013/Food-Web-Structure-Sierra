@@ -13,34 +13,29 @@ lapply(Packages, library, character.only = TRUE)
 ##################################################################################################################################################################
 #1) Load Food webs by Network
 
-#cascade.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Site.Genus/"
-#cascade.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Cascade/Cascade_Sites_Order_Level_02_12_20/"
-cascade.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Final_family"
+
+#cascade.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Final_family"
+cascade.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Cascade/Family_genus"
 Cascade.web<-LoadCollection(cascade.dir)
 
-#evo.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO/Site.Genus/"
-#evo.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/EVO/Site.Order/"
-evo.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Final_family/"
+#evo.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Final_family/"
+evo.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/EVO/Family_genus/"
 Evo.web<-LoadCollection(evo.dir)
 
-#rae.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/RAE/Site.Genus/"
-#rae.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/RAE/Rae_site_order_02_12_20/"
-rae.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/RAE/Final_family/"
+#rae.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/RAE/Final_family/"
+rae.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/RAE/Family_genus/"
 Rae.web<-LoadCollection(rae.dir)
 
-#kern.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site.Genus/"
-#kern.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/KERN/Site.Order/"
-kern.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Final_family/"
+#kern.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Final_family/"
+kern.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/KERN/Family_genus/"
 Kern.web<-LoadCollection(kern.dir)
 
-#bubbs.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Genus/"
-#bubbs.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Bubbs/Site.Order/"
-bubbs.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Final_family/"
+#bubbs.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Final_family/"
+bubbs.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Bubbs/Family_genus/"
 Bubbs.web<-LoadCollection(bubbs.dir)
 
-#rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Genus/"
-#rock.dir="~/Dropbox/Sierra Lake Project/Food.Webs/MDG.Web/Sierra.Nevada.LS.Food.Web/Sites/Rock/Family/"
-rock.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/Final_family/"
+#rock.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/Final_family/"
+rock.dir="~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/Family_genus/"
 Rock.web<-LoadCollection(rock.dir)
 
 Rae.data<-CollectionCPS(Rae.web, 
@@ -57,10 +52,8 @@ Rae.data<-CollectionCPS(Rae.web,
                           Can='FractionCannibalistic',
                           Omn='FractionOmnivorous',
                           Sim.mean= 'MeanMaximumTrophicSimilarity',
-                          #Sim.max='MaximumTrophicSimilarity',
-                          #Vul='NormalisedTrophicVulnerability',
-                          #Gen='NormalisedTrophicGenerality',
-                          Path='CharacteristicPathLength'
+                          Path='CharacteristicPathLength',
+                          Slope='NvMSlope'
                         ))
 
 Evo.data<-CollectionCPS(Evo.web, 
@@ -77,10 +70,8 @@ Evo.data<-CollectionCPS(Evo.web,
                           Can='FractionCannibalistic',
                           Omn='FractionOmnivorous',
                           Sim.mean= 'MeanMaximumTrophicSimilarity',
-                          #Sim.max='MaximumTrophicSimilarity',
-                          #Vul='NormalisedTrophicVulnerability',
-                          #Gen='NormalisedTrophicGenerality',
-                          Path='CharacteristicPathLength'
+                          Path='CharacteristicPathLength',
+                          Slope='NvMSlope'
                         ))
 
 Cascade.data<-CollectionCPS(Cascade.web, 
@@ -97,10 +88,8 @@ Cascade.data<-CollectionCPS(Cascade.web,
                               Can='FractionCannibalistic',
                               Omn='FractionOmnivorous',
                               Sim.mean= 'MeanMaximumTrophicSimilarity',
-                              #Sim.max='MaximumTrophicSimilarity',
-                              #Vul='NormalisedTrophicVulnerability',
-                              #Gen='NormalisedTrophicGenerality',
-                              Path='CharacteristicPathLength'
+                              Path='CharacteristicPathLength',
+                              Slope='NvMSlope'
                             ))
 
 Kern.data<-CollectionCPS(Kern.web, 
@@ -117,10 +106,8 @@ Kern.data<-CollectionCPS(Kern.web,
                            Can='FractionCannibalistic',
                            Omn='FractionOmnivorous',
                            Sim.mean= 'MeanMaximumTrophicSimilarity',
-                           #Sim.max='MaximumTrophicSimilarity',
-                           #Vul='NormalisedTrophicVulnerability',
-                           #Gen='NormalisedTrophicGenerality',
-                           Path='CharacteristicPathLength'
+                           Path='CharacteristicPathLength',
+                           Slope='NvMSlope'
                          ))
 
 Bubbs.data<-CollectionCPS(Bubbs.web, 
@@ -137,10 +124,8 @@ Bubbs.data<-CollectionCPS(Bubbs.web,
                             Can='FractionCannibalistic',
                             Omn='FractionOmnivorous',
                             Sim.mean= 'MeanMaximumTrophicSimilarity',
-                            #Sim.max='MaximumTrophicSimilarity',
-                            #Vul='NormalisedTrophicVulnerability',
-                            #Gen='NormalisedTrophicGenerality',
-                            Path='CharacteristicPathLength'
+                            Path='CharacteristicPathLength',
+                            Slope='NvMSlope'
                           ))
 
 Rock.data<-CollectionCPS(Rock.web, 
@@ -157,10 +142,8 @@ Rock.data<-CollectionCPS(Rock.web,
                            Can='FractionCannibalistic',
                            Omn='FractionOmnivorous',
                            Sim.mean= 'MeanMaximumTrophicSimilarity',
-                           #Sim.max='MaximumTrophicSimilarity',
-                           #Vul='NormalisedTrophicVulnerability',
-                           #Gen='NormalisedTrophicGenerality',
-                           Path='CharacteristicPathLength'
+                           Path='CharacteristicPathLength',
+                           Slope='NvMSlope'
                          ))
 
 all.webs<-rbind(Kern.data,Cascade.data,Evo.data,Bubbs.data,Rae.data, Rock.data)
