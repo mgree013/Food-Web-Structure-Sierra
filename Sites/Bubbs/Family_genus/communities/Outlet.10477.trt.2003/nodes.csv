@@ -1,0 +1,17 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",1479.091995,0.1,"Arthropoda","Arachnida",,,
+"Ameletus",1.19474313,9.08748113,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Baetis",16.72640382,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",5290.919952,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Desmona",6.571087216,11.25992905,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Desmona"
+"Limnophora",22.10274791,0.83633613,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Oligochaeta",35.24492234,0.506640431,"Annelida","Clitellata",,,
+"Oreodytes",8.960573477,2.487221922,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Oreodytes"
+"Psychoglypha",1.19474313,10.61210978,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Psychoglypha"
+"Rhyacophila",8.960573477,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Sanfilippodytes",8.363201912,0.66911638,"Arthropoda","Insecta","Coleoptera","Dytiscidae","Sanfilippodytes"
+"Sialis",3.584229391,12.2633857,"Arthropoda","Insecta","Megaloptera","Sialidae","Sialis"
+"Simulium",3.584229391,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Stegopterna",30.46594982,2.733149393,"Arthropoda","Insecta","Diptera","Simuliidae","Stegopterna"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

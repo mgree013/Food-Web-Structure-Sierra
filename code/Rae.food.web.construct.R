@@ -371,21 +371,3 @@ PlotWebByLevel(RAE.RLS6_2, level='ChainAveragedTrophicLevel')
 ################################################################################################################################################################################################
 #COmbine three local food webs into communtiy colelction
 
-Rae.order<-CommunityCollection(list(RAEs.LS.RLS1_3,RAEs.LS.RLS2_1,RAEs.LS.RLS3_1,RAEs.LS.RLS3_2,RAEs.LS.RLS4_1,RAEs.LS.RLS4_2,RAEs.LS.RLS4_3,RAEs.LS.RLS5_1,RAEs.LS.RLS5_2,RAEs.LS.RLS5_3,RAEs.LS.RLS6_1,RAEs.LS.RLS6_2))
-
-CollectionCPS(Rae.order,  properties=NULL)
-
-Rae.data<-CollectionCPS(Rae.order, 
-                    c('title',
-                      S='NumberOfNodes',
-                      L='NumberOfTrophicLinks',
-                      'L/S'='LinkageDensity',
-                      C='DirectedConnectance',
-                      #Slope='NvMSlope',
-                      B='FractionBasalNodes',
-                      I='FractionIntermediateNodes',
-                      T='FractionTopLevelNodes',
-                      Isolated='FractionIsolatedNodes'
-                      ))
-
-###################################################################

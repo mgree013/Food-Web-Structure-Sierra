@@ -1,0 +1,12 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",2218.666666,0.1,"Arthropoda","Arachnida",,,
+"Baetis",192,0.712555345,"Arthropoda","Insecta","Ephemeroptera","Baetidae","Baetis"
+"Chironomidae",4074.666667,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Dicosmoecus",21.33333333,7.071423253,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Dicosmoecus"
+"Dicranota",21.33333333,0.456662436,"Arthropoda","Insecta","Diptera","Tipulidae","Dicranota"
+"Limnophora",128,0.83633613,"Arthropoda","Insecta","Diptera","Muscidae","Limnophora"
+"Oligochaeta",320,0.506640431,"Annelida","Clitellata",,,
+"Ostracoda",21.33333333,0.014,"Arthropoda","Ostracoda",,,
+"Simulium",7445.333333,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

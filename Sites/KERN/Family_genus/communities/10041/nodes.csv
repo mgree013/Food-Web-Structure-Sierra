@@ -1,0 +1,15 @@
+"node","N","M","phylum","class","order","family","genus"
+"Acari",9706.666667,0.1,"Arthropoda","Arachnida",,,
+"Ameletus",64,9.08748113,"Arthropoda","Insecta","Ephemeroptera","Ameletidae","Ameletus"
+"Chironomidae",2090.666667,0.95630662,"Arthropoda","Insecta","Diptera","Chironomidae",
+"Dicosmoecus",21.33333333,7.071423253,"Arthropoda","Insecta","Trichoptera","Limnephilidae","Dicosmoecus"
+"Doroneuria",64,47.55178364,"Arthropoda","Insecta","Plecoptera","Perlidae","Doroneuria"
+"Micrasema",85.33333333,5.45856005,"Arthropoda","Insecta","Trichoptera","Brachycentridae","Micrasema"
+"Oligochaeta",85.33333333,0.506640431,"Annelida","Clitellata",,,
+"Pedicia",42.66666667,4.905052628,"Arthropoda","Insecta","Diptera","Pediciidae","Pedicia"
+"Pisidium",618.6666667,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
+"Rhyacophila",64,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Skwala",21.33333333,67.53532213,"Arthropoda","Insecta","Plecoptera","Perlodidae","Skwala"
+"Turbellaria",1301.333333,0.030679362,"Platyhelminthes","Turbellaria",,,
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

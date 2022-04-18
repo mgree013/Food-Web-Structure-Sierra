@@ -996,47 +996,4 @@ PlotWebByLevel(ROCK.RCLS8.7, level='ChainAveragedTrophicLevel')
 #Done with ROCK LS food webs wohooooo!
 ################################################################################################################################################################################################
 #COmbine three local food webs into communtiy colelction
-PlotNPS(ROCKs.LS.RCLS8.1, 'Log10M', 'Log10N', show.web=FALSE, highlight.nodes=NULL)
-PlotNPS(ROCKs.LS.RCLS8.3, 'M', 'ChainAveragedTrophicLevel')
 
-par(mfrow=c(2,2))
-PlotMvN(ROCKs.LS.RCLS8.1)
-PlotNvM(ROCKs.LS.RCLS8.1)
-PlotBvM(ROCKs.LS.RCLS8.1)
-PlotMvB(ROCKs.LS.RCLS8.1)
-
-PlotNPyramid(ROCKs.LS.RCLS8.1)
-PlotNPyramid(ROCKs.LS.RCLS8.2)
-PlotNPyramid(ROCKs.LS.RCLS8.5)
-PlotNPyramid(ROCKs.LS.RCLS8.7)
-
-PlotBPyramid(ROCKs.LS.RCLS8.1)
-PlotBPyramid(ROCKs.LS.RCLS8.2)
-PlotBPyramid(ROCKs.LS.RCLS8.5)
-PlotBPyramid(ROCKs.LS.RCLS8.7)
-
-PlotBPyramid(ROCKs.LS.RCLS2.7)
-PlotBPyramid(ROCKs.LS.RCLS2.6)
-PlotBPyramid(ROCKs.LS.RCLS2.3)
-PlotBPyramid(ROCKs.LS.RCLS2.4)
-
-ROCKing<-CommunityCollection(list(ROCK.RCLS1.1,ROCK.RCLS2.1,ROCK.RCLS2.2,ROCK.RCLS2.3,ROCK.RCLS2.4,ROCK.RCLS2.5,ROCK.RCLS2.6,ROCK.RCLS3.1,ROCK.RCLS3.2,ROCK.RCLS3.3,ROCK.RCLS3.4,ROCK.RCLS3.5,ROCK.RCLS4.1,ROCK.RCLS4.2,ROCK.RCLS4.3,ROCK.RCLS5.1,ROCK.RCLS5.2,ROCK.RCLS5.3,ROCK.RCLS6.1,ROCK.RCLS6.2,ROCK.RCLS6.3,ROCK.RCLS6.4,ROCK.RCLS6.5,ROCK.RCLS7.1,ROCK.RCLS7.2,ROCK.RCLS7.3,ROCK.RCLS7.4,ROCK.RCLS7.5,ROCK.RCLS7.6,ROCK.RCLS7.7,ROCK.RCLS8.1,ROCK.RCLS8.2,ROCK.RCLS8.3,ROCK.RCLS8.4,ROCK.RCLS8.5,ROCK.RCLS8.7))
-
-CollectionCPS(ROCKing,  properties=NULL)
-
-ROCK.data<-CollectionCPS(ROCKing, 
-                         c('title',
-                           S='NumberOfNodes',
-                           L='NumberOfTrophicLinks',
-                           'L/S'='LinkageN',
-                           C='DirectedConnectance',
-                           #Slope='NvMSlope',
-                           B='FractionBasalNodes',
-                           I='FractionIntermediateNodes',
-                           T='FractionTopLevelNodes',
-                           Isolated='FractionIsolatedNodes'
-                         ))
-
-temp.path <- tempfile("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/Sites/Rock/Community")
-SaveCollection(ROCKing, temp.path)
-ROCK.order.loaded<-LoadCollection(temp.path)
