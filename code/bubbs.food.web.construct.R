@@ -26,7 +26,7 @@ BUBBS.food.web.Outlet.10477.trt.2003<-BUBBS.Outlet.10477.trt.2003%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.10477.trt.2003,minimum.res.method,minimum.con.method)
 
@@ -56,7 +56,7 @@ BUBBS.food.web.Outlet.10477.trt.2004<-BUBBS.Outlet.10477.trt.2004%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.10477.trt.2004,minimum.res.method,minimum.con.method)
 
@@ -87,7 +87,7 @@ BUBBS.food.web.Outlet.10477.trt.2011<-BUBBS.Outlet.10477.trt.2011%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.10477.trt.2011,minimum.res.method,minimum.con.method)
 
@@ -117,7 +117,7 @@ BUBBS.food.web.Outlet.10487.trt.2003<-BUBBS.Outlet.10487.trt.2003%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.10487.trt.2003,minimum.res.method,minimum.con.method)
 
@@ -147,7 +147,7 @@ BUBBS.food.web.Outlet.10487.trt.2004<-BUBBS.Outlet.10487.trt.2004%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.10487.trt.2004,minimum.res.method,minimum.con.method)
 
@@ -178,7 +178,7 @@ BUBBS.food.web.100487.trt.2011<-Outlet.10487.trt.2011%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.100487.trt.2011,minimum.res.method,minimum.con.method)
 
@@ -209,7 +209,7 @@ BUBBS.food.web.Outlet.11007.fishless.2011<-BUBBS.Outlet.11007.fishless.2011%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.11007.fishless.2011,minimum.res.method,minimum.con.method)
 
@@ -238,7 +238,7 @@ Bubbs.food.web.Outlet.10494.trt.2012<-Bubbs.Outlet.10494.trt.2012%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Bubbs.food.web.Outlet.10494.trt.2012,minimum.res.method,minimum.con.method)
 
@@ -269,7 +269,7 @@ BUBBS.food.web.Outlet.11007.fishless.2003<-BUBBS.Outlet.11007.fishless.2003%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.11007.fishless.2003,minimum.res.method,minimum.con.method)
 
@@ -299,7 +299,7 @@ BUBBS.food.web.Outlet.11007.fishless.2004<-BUBBS.Outlet.11007.fishless.2004%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(BUBBS.food.web.Outlet.11007.fishless.2004,minimum.res.method,minimum.con.method)
 
@@ -329,7 +329,7 @@ Bubbs.food.web.Outlet.Vidette.below.2003<-Bubbs.Outlet.Vidette.below.2003%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Bubbs.food.web.Outlet.Vidette.below.2003,minimum.res.method,minimum.con.method)
 
@@ -358,7 +358,7 @@ Bubbs.food.web.Outlet.Vidette.below.2004<-Bubbs.Outlet.Vidette.below.2004%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Bubbs.food.web.Outlet.Vidette.below.2004,minimum.res.method,minimum.con.method)
 
@@ -387,7 +387,7 @@ Bubbs.food.web.Outlet.Vidette.below.2011<-Bubbs.Outlet.Vidette.below.2011%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 Bubbs.food.web.Outlet.Vidette.below.2011
 nodes<-cbind(Bubbs.Outlet.Vidette.below.2011,minimum.res.method,minimum.con.method)
 
@@ -416,7 +416,7 @@ Bubbs.food.web.Outlet.Vidette.below.2012<-Bubbs.Outlet.Vidette.below.2012%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Bubbs.food.web.Outlet.Vidette.below.2012,minimum.res.method,minimum.con.method)
 

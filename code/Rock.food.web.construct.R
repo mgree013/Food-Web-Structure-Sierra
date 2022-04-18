@@ -977,7 +977,7 @@ ROCKs.RCLS8.7<-ROCK.RCLS8.7%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(ROCKs.RCLS8.7,minimum.res.method,minimum.con.method)
 

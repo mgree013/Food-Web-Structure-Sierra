@@ -25,7 +25,7 @@ KERN.food.web.10029<-KERN.10029%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10029,minimum.res.method,minimum.con.method)
 
@@ -54,7 +54,7 @@ KERN.food.web.10030<-KERN.10030%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10030,minimum.res.method,minimum.con.method)
 
@@ -82,7 +82,7 @@ KERN.food.web.10031<-KERN.10031%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10031,minimum.res.method,minimum.con.method)
 
@@ -109,7 +109,7 @@ KERN.food.web.10032<-KERN.10032%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10032,minimum.res.method,minimum.con.method)
 
@@ -137,7 +137,7 @@ KERN.food.web.10033<-KERN.10033%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10033,minimum.res.method,minimum.con.method)
 
@@ -166,7 +166,7 @@ KERN.food.web.10034<-KERN.10034%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10034,minimum.res.method,minimum.con.method)
 
@@ -194,7 +194,7 @@ KERN.food.web.10035<-KERN.10035%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10035,minimum.res.method,minimum.con.method)
 
@@ -221,7 +221,7 @@ KERN.food.web.10036<-KERN.10036%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10036,minimum.res.method,minimum.con.method)
 
@@ -250,7 +250,7 @@ KERN.food.web.10037<-KERN.10037%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10037,minimum.res.method,minimum.con.method)
 
@@ -278,7 +278,7 @@ KERN.food.web.10039<-KERN.10039%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10039,minimum.res.method,minimum.con.method)
 
@@ -304,7 +304,7 @@ KERN.food.web.10038<-KERN.10038%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10038,minimum.res.method,minimum.con.method)
 
@@ -333,7 +333,7 @@ KERN.food.web.10039<-KERN.10039%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10039,minimum.res.method,minimum.con.method)
 
@@ -363,7 +363,7 @@ KERN.food.web.10040<-KERN.10040%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10040,minimum.res.method,minimum.con.method)
 
@@ -392,7 +392,7 @@ KERN.food.web.10041<-KERN.10041%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10041,minimum.res.method,minimum.con.method)
 
@@ -419,7 +419,7 @@ KERN.food.web.10042<-KERN.10042%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10042,minimum.res.method,minimum.con.method)
 
@@ -446,7 +446,7 @@ KERN.food.web.10044<-KERN.10044%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10044,minimum.res.method,minimum.con.method)
 
@@ -474,7 +474,7 @@ KERN.food.web.10046<-KERN.10046%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10046,minimum.res.method,minimum.con.method)
 
@@ -502,7 +502,7 @@ KERN.food.web.10047<-KERN.10047%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10047,minimum.res.method,minimum.con.method)
 
@@ -529,7 +529,7 @@ KERN.food.web.10048<-KERN.10048%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10048,minimum.res.method,minimum.con.method)
 
@@ -556,7 +556,7 @@ KERN.food.web.10049<-KERN.10049%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10049,minimum.res.method,minimum.con.method)
 
@@ -586,7 +586,7 @@ KERN.food.web.10052<-KERN.10052%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.10052,minimum.res.method,minimum.con.method)
 
@@ -615,7 +615,7 @@ KERN.food.web.10053<-KERN.10053%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10053,minimum.res.method,minimum.con.method)
 
@@ -643,7 +643,7 @@ KERN.food.web.10054<-KERN.10054%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10054,minimum.res.method,minimum.con.method)
 
@@ -671,7 +671,7 @@ KERN.food.web.10055<-KERN.10055%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10055,minimum.res.method,minimum.con.method)
 
@@ -702,7 +702,7 @@ KERN.food.web.10056<-KERN.10056%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(KERN.food.web.10056,minimum.res.method,minimum.con.method)
 

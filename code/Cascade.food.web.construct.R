@@ -25,7 +25,7 @@ Cascade.food.web.CLS1_1<-Cascade.CLS1_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS1_1,minimum.res.method,minimum.con.method)
 
@@ -54,7 +54,7 @@ Cascade.food.web.CLS1_3<-Cascade.CLS1_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS1_3,minimum.res.method,minimum.con.method)
 
@@ -85,7 +85,7 @@ Cascade.food.web.CLS2_1<-Cascade.CLS2_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS2_1,minimum.res.method,minimum.con.method)
 
@@ -115,7 +115,7 @@ Cascade.food.web.CLS2_3<-Cascade.CLS2_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS2_3,minimum.res.method,minimum.con.method)
 
@@ -146,7 +146,7 @@ Cascade.food.web.CLS3_1<-Cascade.CLS3_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS3_1,minimum.res.method,minimum.con.method)
 
@@ -175,7 +175,7 @@ Cascade.food.web.CLS3_2<-Cascade.CLS3_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS3_2,minimum.res.method,minimum.con.method)
 
@@ -206,7 +206,7 @@ Cascade.food.web.CLS3_3<-Cascade.CLS3_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS3_3,minimum.res.method,minimum.con.method)
 
@@ -236,7 +236,7 @@ Cascade.food.web.CLS4_1<-Cascade.CLS4_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS4_1,minimum.res.method,minimum.con.method)
 
@@ -266,7 +266,7 @@ Cascade.food.web.CLS4_2<-Cascade.CLS4_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS4_2,minimum.res.method,minimum.con.method)
 
@@ -296,7 +296,7 @@ Cascade.food.web.CLS4_3<-Cascade.CLS4_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS4_3,minimum.res.method,minimum.con.method)
 
@@ -326,7 +326,7 @@ Cascade.food.web.CLS5_1<-Cascade.CLS5_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(Cascade.food.web.CLS5_1,minimum.res.method,minimum.con.method)
 

@@ -26,7 +26,7 @@ EVO.food.web.ELS2_1<-EVO.ELS2_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS2_1,minimum.res.method,minimum.con.method)
 
@@ -56,7 +56,7 @@ EVO.food.web.ELS2_2<-EVO.ELS2_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS2_2,minimum.res.method,minimum.con.method)
 
@@ -86,7 +86,7 @@ EVO.food.web.ELS2_3<-EVO.ELS2_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS2_3,minimum.res.method,minimum.con.method)
 
@@ -116,7 +116,7 @@ EVO.food.web.ELS3_1<-EVO.ELS3_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS3_1,minimum.res.method,minimum.con.method)
 
@@ -147,7 +147,7 @@ EVO.food.web.ELS3_2<-EVO.ELS3_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS3_2,minimum.res.method,minimum.con.method)
 
@@ -180,7 +180,7 @@ EVO.food.web.ELS3_3<-EVO.ELS3_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS3_3,minimum.res.method,minimum.con.method)
 
@@ -210,7 +210,7 @@ EVO.food.web.ELS4_1<-EVO.ELS4_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS4_1,minimum.res.method,minimum.con.method)
 
@@ -240,7 +240,7 @@ EVO.food.web.ELS4_2<-EVO.ELS4_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS4_2,minimum.res.method,minimum.con.method)
 
@@ -270,7 +270,7 @@ EVO.food.web.ELS4_3<-EVO.ELS4_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS4_3,minimum.res.method,minimum.con.method)
 
@@ -300,7 +300,7 @@ EVO.food.web.ELS5_1<-EVO.ELS5_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS5_1,minimum.res.method,minimum.con.method)
 
@@ -331,7 +331,7 @@ EVO.food.web.ELS5_2<-EVO.ELS5_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS5_2,minimum.res.method,minimum.con.method)
 
@@ -361,7 +361,7 @@ EVO.food.web.ELS5_3<-EVO.ELS5_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS5_3,minimum.res.method,minimum.con.method)
 
@@ -392,7 +392,7 @@ EVO.food.web.ELS6_1<-EVO.ELS6_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS6_1,minimum.res.method,minimum.con.method)
 
@@ -420,7 +420,7 @@ EVO.food.web.ELS6_2<-EVO.ELS6_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS6_2,minimum.res.method,minimum.con.method)
 
@@ -451,7 +451,7 @@ EVO.food.web.ELS6_3<-EVO.ELS6_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS6_3,minimum.res.method,minimum.con.method)
 
@@ -483,7 +483,7 @@ EVO.food.web.ELS7_1<-EVO.ELS7_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS7_1,minimum.res.method,minimum.con.method)
 
@@ -515,7 +515,7 @@ EVO.food.web.ELS7_2<-EVO.ELS7_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS7_2,minimum.res.method,minimum.con.method)
 
@@ -547,7 +547,7 @@ EVO.food.web.ELS7_3<-EVO.ELS7_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS7_3,minimum.res.method,minimum.con.method)
 
@@ -579,7 +579,7 @@ EVO.food.web.ELS8_1<-EVO.ELS8_1%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS8_1,minimum.res.method,minimum.con.method)
 
@@ -611,7 +611,7 @@ EVO.food.web.ELS8_2<-EVO.ELS8_2%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS8_2,minimum.res.method,minimum.con.method)
 
@@ -648,7 +648,7 @@ EVO.food.web.ELS8_3<-EVO.ELS8_3%>%
 #from links, remove species that dont exist
 #User input here can help make food webs better reoslved
 minimum.res.method<- "family"
-minimum.con.method<- "family"
+minimum.con.method<- "genus"
 
 nodes<-cbind(EVO.food.web.ELS8_3,minimum.res.method,minimum.con.method)
 
