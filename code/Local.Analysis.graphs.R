@@ -17,7 +17,7 @@ biplot(Epca)
 summary(Epca)
 Epca$rotation
 ggbiplot(Epca)
-ggbiplot(Epca, labels=rownames(env.webs$Site), groups=interaction(env.webs$Site), ellipse=TRUE)
+ggbiplot(Epca, labels=rownames(env.webs$Network), groups=interaction(env.webs$Network), ellipse=TRUE)
 
 Epca$x
 env_pc_scores <- data.frame(Epca$x[,1:6])
@@ -32,6 +32,7 @@ biplot(Epca)
 summary(Epca)
 Epca$rotation
 ggbiplot(Epca)
+ggbiplot(Epca, labels=rownames(env.webs$Network), groups=interaction(env.webs$Network), ellipse=TRUE)
 
 
 Epca$x
@@ -113,7 +114,6 @@ env.webs%>%
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webzz%>%
-  filter(Head.river.dist>3.5)%>%
   gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -133,7 +133,6 @@ env.webzz%>%
         panel.border = element_blank(),panel.background = element_blank())
 
 env.webzz%>%
-  filter(Head.river.dist>3.5)%>%
   gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
