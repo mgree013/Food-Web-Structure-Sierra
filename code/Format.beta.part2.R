@@ -690,5 +690,138 @@ bubbs.beta <- network_betadiversity(N.bubbs)
 rae.beta <- network_betadiversity(N.rae)
 
 
+#Geo.dist all sites
+evoenv<-env%>%dplyr::filter(O.NET=="KERN")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.kern <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.kern <- as.dist(GeoDist.kern)
+
+evoenv<-env%>%dplyr::filter(Network=="CASCADE")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.casc <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.casc <- as.dist(GeoDist.casc)
+
+evoenv<-env%>%dplyr::filter(Network=="EVO")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.evo <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.evo <- as.dist(GeoDist.evo)
+
+evoenv<-env%>%dplyr::filter(Network=="BUBBS")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.bubbs <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.bubbs <- as.dist(GeoDist.bubbs)
+
+evoenv<-env%>%dplyr::filter(Network=="RAE")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.rae <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.rae <- as.dist(GeoDist.rae)
+
+
+###Put it togerther
+
+kern.beta$GEO<-GeoDist.kern
+casc.beta$GEO<-GeoDist.casc
+evo.beta$GEO<-GeoDist.evo
+bubbs.beta$GEO<-GeoDist.bubbs
+rae.beta$GEO<-GeoDist.rae
+
+kern.beta$Network<-c("KERN")
+casc.beta$Network<-c("CASCADE")
+evo.beta$Network<-c("EVO")
+bubbs.beta$Network<-c("BUBBS")
+rae.beta$Network<-c("RAE")
+
+
+alls<-rbind(kern.beta,casc.beta,evo.beta,bubbs.beta,rae.beta)
+alls<-alls%>%mutate(ST.WN=ST/WN)
+
+alls%>%ggplot( aes(x=ST,y=S,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  geom_abline(intercept = 0, slope = 1, color="black",linetype="dashed", size=1.5)+ylim(0,1)+xlim(0,1)+
+  facet_grid(~Network)+
+  theme_bw()
+
+#Dissim in species comp
+alls%>%ggplot( aes(x=GEO,y=S,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  facet_grid(~Network,scales = "free")+
+  theme_bw()
+#Dissimilarity of interactions due to species turnover
+alls%>%ggplot( aes(x=GEO,y=ST,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  facet_grid(~Network,scales = "free")+
+  theme_bw()
+
+#Dissimialirty of all interctions
+alls%>%ggplot( aes(x=GEO,y=WN,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  facet_grid(~Network,scales = "free")+
+  theme_bw()
+
+
+#Dissimilarity of interactions established between species common to both realisations
+
+alls%>%ggplot( aes(x=GEO,y=OS,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  facet_grid(~Network,scales = "free")+
+  theme_bw()
+
+#Contribution of species dissimilarity to network dissimilarity
+
+alls%>%ggplot( aes(x=GEO,y=ST.WN,colour=Network))+
+  geom_point()+geom_smooth(method = "lm")+
+  facet_grid(~Network,scales = "free")+
+  theme_bw()
+
+
+
+
+
+evoenv<-env%>%dplyr::filter(Network!="YOUNG")%>%dplyr::select(Site,Elevation)%>%column_to_rownames(var="Site")
+
+net.dist <- dist(as.matrix(evoenv, latlon=TRUE))
+#colnames(net.dist) <- rownames(GeoDist) <- rownames(evoenv)
+GeoDist <- as.dist(net.dist)
+
+
+evoenv<-env%>%dplyr::filter(Network!="YOUNG")%>%dplyr::select(Site,River.dist.lake)%>%column_to_rownames(var="Site")
+
+river.dist <- dist(as.matrix(evoenv))
+colnames(river.dist) <- rownames(GeoDist) <- rownames(evoenv)
+GeoDist <- as.dist(net.dist)
+
+evoenv<-env%>%dplyr::filter(Network!="YOUNG")%>%dplyr::select(Site,SHRUB_SCRUB,Up.Lake.area,Head.river.dist,River.dist.lake,Elevation)%>%column_to_rownames(var="Site")
+
+env.dist<-dist(evoenv)
+metaweb<-metaweb(N)
+net.beta <- network_betadiversity(N)
+net.beta$GEO<-GeoDist
+net.beta$netdist<-net.dist
+net.beta$env<-env.dist
+net.beta$riverdist<-river.dist
+
+
+evoenv<-env%>%dplyr::filter(Network!="YOUNG")
+net.beta$Network<-evo$env$Network
+
+ggplot(net.beta, aes(x=ST,y=S))+geom_point()+geom_smooth(method = "lm")+geom_abline(intercept = 0, slope = 1, color="red", 
+                                                                                    linetype="dashed", size=1.5)+ylim(0,1)+xlim(0,1)
+
+ggplot(net.beta, aes(x=GEO,y=S))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=GEO,y=OS))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=GEO,y=WN))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=GEO,y=ST))+geom_point()+geom_smooth(method = "lm")
+
+
+ggplot(net.beta, aes(x=netdist,y=S))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=netdist,y=OS))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=netdist,y=WN))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=netdist,y=ST))+geom_point()+geom_smooth(method = "lm")
+
+ggplot(net.beta, aes(x=env,y=S))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=env,y=OS))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=env,y=WN))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=env,y=ST))+geom_point()+geom_smooth(method = "lm")
+
+ggplot(net.beta, aes(x=river.dist,y=S))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=river.dist,y=OS))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=river.dist,y=WN))+geom_point()+geom_smooth(method = "lm")
+ggplot(net.beta, aes(x=river.dist,y=ST))+geom_point()+geom_smooth(method = "lm")
+
 
 
