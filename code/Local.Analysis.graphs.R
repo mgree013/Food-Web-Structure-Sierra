@@ -57,14 +57,14 @@ species<-read.csv(file = "sp.density.update.12.28.19.csv", row.name=1)
 diversity<-species%>%
   #group_by(Site,Network)%>%
   transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
-  rownames_to_column("Site")
+  tibble::rownames_to_column("Site")
 
-env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()
+env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
 
-env.webzz%>%
+env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -74,7 +74,7 @@ env.webzz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webzz%>%
+env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = S_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -84,7 +84,17 @@ env.webzz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webs%>%
+env.div.webz%>%
+  gather(L,L.S,C, key = "var", value = "value") %>% 
+  ggplot(aes(x = Com.Size, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Community Size Gradient")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = Head.river.dist, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -94,7 +104,7 @@ env.webs%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webs%>%
+env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = River.dist.lake, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -104,7 +114,7 @@ env.webs%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webs%>%
+env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_boxplot()+
@@ -116,7 +126,7 @@ env.webs%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webzz%>%
+env.div.webz%>%
   gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -125,7 +135,7 @@ env.webzz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webzz%>%
+env.div.webz%>%
   filter(Head.river.dist>3.5)%>%
   gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
@@ -135,7 +145,7 @@ env.webzz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.webzz%>%
+env.div.webz%>%
   gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
   ggplot(aes(x = value, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
