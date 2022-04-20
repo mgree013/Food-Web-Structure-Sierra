@@ -691,6 +691,10 @@ rae.beta <- network_betadiversity(N.rae)
 
 
 #Geo.dist all sites
+evoenv<-env%>%dplyr::filter(O.NET=="ROCK")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
+GeoDist.rock <- spDists(as.matrix(evoenv, latlon=TRUE))
+GeoDist.rock <- as.dist(GeoDist.rock)
+
 evoenv<-env%>%dplyr::filter(O.NET=="KERN")%>%dplyr::select(Site,Lat,Lon)%>%column_to_rownames(var="Site")
 GeoDist.kern <- spDists(as.matrix(evoenv, latlon=TRUE))
 GeoDist.kern <- as.dist(GeoDist.kern)
@@ -714,12 +718,14 @@ GeoDist.rae <- as.dist(GeoDist.rae)
 
 ###Put it togerther
 
+rock.beta$GEO<-GeoDist.rock
 kern.beta$GEO<-GeoDist.kern
 casc.beta$GEO<-GeoDist.casc
 evo.beta$GEO<-GeoDist.evo
 bubbs.beta$GEO<-GeoDist.bubbs
 rae.beta$GEO<-GeoDist.rae
 
+rock.beta$Network<-c("ROCK")
 kern.beta$Network<-c("KERN")
 casc.beta$Network<-c("CASCADE")
 evo.beta$Network<-c("EVO")
@@ -727,7 +733,7 @@ bubbs.beta$Network<-c("BUBBS")
 rae.beta$Network<-c("RAE")
 
 
-alls<-rbind(kern.beta,casc.beta,evo.beta,bubbs.beta,rae.beta)
+alls<-rbind(rock.beta,kern.beta,casc.beta,evo.beta,bubbs.beta,rae.beta)
 alls<-alls%>%mutate(ST.WN=ST/WN)
 
 alls%>%ggplot( aes(x=ST,y=S,colour=Network))+
