@@ -371,7 +371,7 @@ null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod1)
-check_collinearity(mod3)
+check_collinearity(mod7)
 multicollinearity(mod3)
 
 #Linkage Model
