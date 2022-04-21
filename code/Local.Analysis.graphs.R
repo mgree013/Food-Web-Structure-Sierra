@@ -59,7 +59,9 @@ diversity<-species%>%
   transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
   tibble::rownames_to_column("Site")
 
-env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
+#env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
+env.div.webz<-left_join(env.webs,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
+
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
@@ -213,7 +215,7 @@ mod3<-glmmTMB(L~Head.river.dist+River.dist.lake+ (1|O.NET),family=poisson(),data
 null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
-r2(mod3)
+r2(mod1)
 check_collinearity(mod3)
 multicollinearity(mod3)
 
