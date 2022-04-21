@@ -12,21 +12,21 @@
 ################################################################################################################################
 
 # Calculate Community Size
-species<-read.csv(file = "sp.density.update.12.28.19.csv", row.name=1)
+species.div<-read.csv(file = "sp.density.update.12.28.19.csv", row.name=1)
 
-diversity<-species%>%
+div<-species.div%>%
   #group_by(Site,Network)%>%
-  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
+  transmute(N0=rowSums(species.div > 0),H= diversity(species.div),N1 =exp(H),N2 =diversity(species.div, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species.div))%>%
   tibble::rownames_to_column("Site")
 
 #env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
-env.div.webz<-left_join(env.webs,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
+env.div.webss<-left_join(env.webs,div, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
 
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
 
-env.div.webz%>%
+env.div.webss%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = Com.Size, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -36,7 +36,7 @@ env.div.webz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
+env.div.webss%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = Head.river.dist, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -46,7 +46,7 @@ env.div.webz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
+env.div.webss%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = River.dist.lake, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -56,7 +56,7 @@ env.div.webz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
+env.div.webss%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
   ggplot(aes(x = as.factor(Fish), y = value, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_boxplot()+
@@ -127,7 +127,7 @@ diversity<-species%>%
 diversity
   
 
-env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))%>%filter(O.NET !="KERN")
+env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%mutate(Com.Size=log(Com.Size+1))%>%filter(O.NET !="KERN")
 
 ################################################################################################################################
 
@@ -195,10 +195,10 @@ env.div.webz%>%
 #GLMM tmb
 
 #Connectance Model
-mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
-mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
-mod3<-glmmTMB(C~Head.river.dist*River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webz)
-null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webss)
+mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webss)
+mod3<-glmmTMB(C~Head.river.dist*River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webss)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod2)
@@ -206,10 +206,10 @@ check_collinearity(mod3)
 multicollinearity(mod3)
 
 #Linkage Model
-mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
-mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
-mod3<-glmmTMB(L~Head.river.dist*River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webz)
-null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webss)
+mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webss)
+mod3<-glmmTMB(L~Head.river.dist*River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webss)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod3)
@@ -218,10 +218,10 @@ multicollinearity(mod3)
 
 
 #Linkage Density Model
-mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
-mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
-mod3<-glmmTMB(L.S~Head.river.dist*River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webz)
-null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webss)
+mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webss)
+mod3<-glmmTMB(L.S~Head.river.dist*River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webss)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod1)
@@ -231,10 +231,10 @@ multicollinearity(mod3)
 #additive Stream Model
 
 #Connectance Model
-mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webz)
-mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webz)
-mod3<-glmmTMB(C~Head.river.dist+River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webz)
-null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webz)
+mod1<-glmmTMB(C~River.dist.lake+ (1|O.NET),family=beta_family(), data=env.div.webss)
+mod2<-glmmTMB(C~Head.river.dist+ (1|O.NET),family=beta_family(),data=env.div.webss)
+mod3<-glmmTMB(C~Head.river.dist+River.dist.lake+ (1|O.NET),family=beta_family(),data=env.div.webss)
+null<-glmmTMB(C~1+ (1|O.NET),family=beta_family(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod2)
@@ -242,10 +242,10 @@ check_collinearity(mod3)
 multicollinearity(mod3)
 
 #Linkage Model
-mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webz)
-mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webz)
-mod3<-glmmTMB(L~Head.river.dist+River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webz)
-null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webz)
+mod1<-glmmTMB(L~River.dist.lake+ (1|O.NET),family=poisson(), data=env.div.webss)
+mod2<-glmmTMB(L~Head.river.dist+ (1|O.NET),family=poisson(),data=env.div.webss)
+mod3<-glmmTMB(L~Head.river.dist+River.dist.lake+ (1|O.NET),family=poisson(),data=env.div.webss)
+null<-glmmTMB(L~1+ (1|O.NET),family=poisson(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod1)
@@ -254,10 +254,10 @@ multicollinearity(mod3)
 
 
 #Linkage Density Model
-mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webz)
-mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webz)
-mod3<-glmmTMB(L.S~Head.river.dist+River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webz)
-null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
+mod1<-glmmTMB(L.S~River.dist.lake+ (1|O.NET),family=gaussian(), data=env.div.webss)
+mod2<-glmmTMB(L.S~Head.river.dist+ (1|O.NET),family=gaussian(),data=env.div.webss)
+mod3<-glmmTMB(L.S~Head.river.dist+River.dist.lake+ (1|O.NET),family=gaussian(),data=env.div.webss)
+null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webss)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,null,weights = TRUE, sort = FALSE)
 reported.table2
 r2(mod1)
