@@ -8,3 +8,5 @@
 "Prosimulium",427.5427543,0.291869328,"Arthropoda","Insecta","Diptera","Simuliidae","Prosimulium"
 "Simulium",265.5265527,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
 "Stegopterna",364.5364536,2.733149393,"Arthropoda","Insecta","Diptera","Simuliidae","Stegopterna"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",
