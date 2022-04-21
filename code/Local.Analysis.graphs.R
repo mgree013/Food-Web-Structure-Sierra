@@ -10,48 +10,8 @@
 
 #Part 1: Local Food web metrics Analysis and Figures
 ################################################################################################################################
-################################################################################################################################
-#1A) Create Environemntal and Spatial PCA Gradients
-#PCA's
-envs<-env.webs%>%dplyr::select(c(Temp,Chlorophyll.mean,Conductivity,DO,pH,Discharge.Mean,SHRUB_SCRUB))
 
-Epca = prcomp(envs, scale.=TRUE)
-biplot(Epca)
-summary(Epca)
-Epca$rotation
-ggbiplot(Epca)
-ggbiplot(Epca, labels=rownames(env.webs$Network), groups=interaction(env.webs$Network), ellipse=TRUE)
-
-Epca$x
-env_pc_scores <- data.frame(Epca$x[,1:6])
-colnames(env_pc_scores)<-c("E_PC1","E_PC2","E_PC3","E_PC4","E_PC5","E_PC6")
-rownames(env_pc_scores)<-env.webs$Site
-
-#Space
-spatials<-env.webs%>%dplyr::select(c(Head.river.dist, River.dist.lake, Up.Lake.area, Elevation))
-
-Epca = prcomp(spatials, scale.=TRUE)
-biplot(Epca)
-summary(Epca)
-Epca$rotation
-ggbiplot(Epca)
-ggbiplot(Epca, labels=rownames(env.webs$Network), groups=interaction(env.webs$Network), ellipse=TRUE)
-
-
-Epca$x
-spatial_pc_scores <- data.frame(Epca$x[,1:4])
-colnames(spatial_pc_scores)<-c("S_PC1","S_PC2","S_PC3","S_PC4")
-rownames(spatial_pc_scores)<-env.webs$Site
-
-################
-spatial_pc_scores<-spatial_pc_scores%>%rownames_to_column("Site")
-env_pc_scores<-env_pc_scores%>%rownames_to_column("Site")
-#env.webs<-env.webs%>%rownames_to_column("Site")
-
-env.webz<-left_join(env.webs,spatial_pc_scores, by="Site")
-env.webzz<-left_join(env.webz,env_pc_scores, by="Site")
-################################################################################################################################
-#2) Calculate Community Size
+# Calculate Community Size
 species<-read.csv(file = "sp.density.update.12.28.19.csv", row.name=1)
 
 diversity<-species%>%
@@ -65,26 +25,6 @@ env.div.webz<-left_join(env.webs,diversity, by="Site")%>%drop_na()%>%mutate(Com.
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
-
-env.div.webz%>%
-  gather(L,L.S,C, key = "var", value = "value") %>% 
-  ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
-  geom_point()+
-  geom_smooth(method = "lm")+
-  xlab("Environmental Gradient (E_PC1)")+
-  facet_wrap(~var, scales = "free") +
-  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
-
-env.div.webz%>%
-  gather(L,L.S,C, key = "var", value = "value") %>% 
-  ggplot(aes(x = S_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
-  geom_point()+
-  geom_smooth(method = "lm")+
-  xlab("Spatial Gradient (S_PC1)")+
-  facet_wrap(~var, scales = "free") +
-  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
 
 env.div.webz%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
@@ -124,6 +64,99 @@ env.div.webz%>%
   xlab("Fish Presence")+
   labs(fill='Fish Presence') +
   #scale_fill_discrete(name = "Fish Presence", labels = c("no", "yes"))+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+
+################################################################################################################################
+#1A) Create Environemntal and Spatial PCA Gradients
+env.webs.process<-env.webs%>%
+  filter(O.NET !="KERN")
+
+#PCA's
+envs<-env.webs.process%>%
+  dplyr::select(c(Temp,Chlorophyll.mean,Conductivity,DO,pH,Discharge.Mean,SHRUB_SCRUB))
+
+Epca = prcomp(envs, scale.=TRUE)
+biplot(Epca)
+summary(Epca)
+Epca$rotation
+ggbiplot(Epca)
+ggbiplot(Epca, labels=rownames(env.webs.process$Network), groups=interaction(env.webs.process$Network), ellipse=TRUE)
+
+Epca$x
+env_pc_scores <- data.frame(Epca$x[,1:6])
+colnames(env_pc_scores)<-c("E_PC1","E_PC2","E_PC3","E_PC4","E_PC5","E_PC6")
+rownames(env_pc_scores)<-env.webs.process$Site
+
+#Space
+spatials<-env.webs.process%>%
+  dplyr::select(c(Head.river.dist, River.dist.lake, Up.Lake.area, Elevation))
+
+Epca = prcomp(spatials, scale.=TRUE)
+biplot(Epca)
+summary(Epca)
+Epca$rotation
+ggbiplot(Epca)
+ggbiplot(Epca, labels=rownames(env.webs.process$Network), groups=interaction(env.webs.process$Network), ellipse=TRUE)
+
+
+Epca$x
+spatial_pc_scores <- data.frame(Epca$x[,1:4])
+colnames(spatial_pc_scores)<-c("S_PC1","S_PC2","S_PC3","S_PC4")
+rownames(spatial_pc_scores)<-env.webs.process$Site
+
+################
+spatial_pc_scores<-spatial_pc_scores%>%rownames_to_column("Site")
+env_pc_scores<-env_pc_scores%>%rownames_to_column("Site")
+#env.webs<-env.webs%>%rownames_to_column("Site")
+
+env.webz<-left_join(env.webs.process,spatial_pc_scores, by="Site")
+env.webzz<-left_join(env.webz,env_pc_scores, by="Site")
+
+
+#2) Calculate Community Size
+species<-read.csv(file = "sp.density.update.12.28.19.csv", row.name=1)
+
+diversity<-species%>%
+  #group_by(Site,Network)%>%
+  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=rowSums(species))%>%
+  tibble::rownames_to_column("Site")
+
+diversity
+  
+
+env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))%>%filter(O.NET !="KERN")
+
+################################################################################################################################
+
+env.div.webz%>%
+  gather(L,L.S,C, key = "var", value = "value") %>% 
+  ggplot(aes(x = E_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Environmental Gradient (E_PC1)")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.div.webz%>%
+  gather(L,L.S,C, key = "var", value = "value") %>% 
+  ggplot(aes(x = S_PC1, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Spatial Gradient (S_PC1)")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+env.div.webz%>%
+  gather(L,L.S,C, key = "var", value = "value") %>% 
+  ggplot(aes(x = Com.Size, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Community Size Gradient")+
   facet_wrap(~var, scales = "free") +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
