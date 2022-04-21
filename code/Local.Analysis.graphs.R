@@ -58,6 +58,7 @@ env.div.webss%>%
   facet_wrap(~var, scales = "free") +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
+
 #Final PLots
 
 a<-env.div.webss%>%
@@ -117,7 +118,7 @@ g<-env.div.webss%>%
   labs(fill='Fish Presence') +
   ggtitle("g)") +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+ theme(legend.position = c(0.3, 0.9),  legend.background = element_blank(),legend.box.background = element_rect(colour = "black"))
 
 h<-env.div.webss%>%
   ggplot(aes(x = as.factor(Fish), y = C, fill=as.factor(Fish))) + 
@@ -126,7 +127,7 @@ h<-env.div.webss%>%
   xlab("Fish Presence")+ylab("Connectance (C)")+ ggtitle("h)") +
   labs(fill='Fish Presence') +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+theme(legend.position = "none")
 
 i<-env.div.webss%>%
   ggplot(aes(x = as.factor(Fish), y = L.S, fill=as.factor(Fish))) + 
@@ -136,7 +137,7 @@ i<-env.div.webss%>%
   labs(fill='Fish Presence') +
   ggtitle("i)") +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+theme(legend.position = "none")
 
 
 plot_grid(a,b,c,d,e,f,g,h,i,nrow=3)
@@ -233,6 +234,7 @@ env.div.webz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
+#Final Plots
 a<-env.div.webz%>%
   ggplot(aes(x = S_PC1, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
@@ -281,7 +283,7 @@ e<-env.div.webz%>%
 f<-env.div.webz%>%
   ggplot(aes(x = E_PC1, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  ggtitle("g)") +
+  ggtitle("f)") +
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
   xlab("Environmental Gradient")+ylab("Linkage Density (L/S)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
@@ -293,7 +295,7 @@ g<-env.div.webz%>%
   scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+  ggtitle("g)") +
   xlab("Fish Presence")+ylab("Number of Trophic Links (L)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+ theme(legend.position = c(0.3, 0.9),  legend.background = element_blank(),legend.box.background = element_rect(colour = "black"))
 
 h<-env.div.webz%>%
   ggplot(aes(x = as.factor(Fish), y = C, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
@@ -302,7 +304,7 @@ h<-env.div.webz%>%
   ggtitle("h)") +
   xlab("Fish Presence")+ylab("Connectance (C)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+theme(legend.position = "none")
 
 i<-env.div.webz%>%
   ggplot(aes(x = as.factor(Fish), y = L.S, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
@@ -311,10 +313,9 @@ i<-env.div.webz%>%
   ggtitle("i)") +
   xlab("Fish Presence")+ylab("Linkage Density (L/S)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.border = element_blank(),panel.background = element_blank())
+        panel.border = element_blank(),panel.background = element_blank())+theme(legend.position = "none")
 
-#plot_grid(a,b,c,nrow=1)
-#plot_grid(a,b,c,d,e,f,nrow=2)
+
 plot_grid(a,b,c,d,e,f,g,h,i,nrow=3)
 
 ################################################################################################################################
