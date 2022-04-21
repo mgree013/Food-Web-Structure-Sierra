@@ -20,7 +20,7 @@ div<-species.div%>%
   tibble::rownames_to_column("Site")
 
 #env.div.webz<-left_join(env.webzz,diversity, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
-env.div.webss<-left_join(env.webs,div, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))
+env.div.webss<-left_join(env.webs,div, by="Site")%>%drop_na()%>%mutate(Com.Size=log(Com.Size+1))%>%filter(River.dist.lake> 1)
 
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
@@ -58,7 +58,88 @@ env.div.webss%>%
   facet_wrap(~var, scales = "free") +
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
+#Final PLots
 
+a<-env.div.webss%>%
+  ggplot(aes(x = Head.river.dist, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = poisson(link="log")))+
+  xlab("Distance from Headwaters (m)")+ylab("Number of Trophic Links (L)")+ggtitle("a)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+b<-env.div.webss%>%
+  ggplot(aes(x = Head.river.dist, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Distance from Headwaters (m)")+ylab("Connectance (C)")+ ggtitle("b)") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+c<-env.div.webss%>%
+  ggplot(aes(x = Head.river.dist, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Distance from Headwaters (m)")+ylab("Linkage Density (L/S)")+ggtitle("c)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+
+d<-env.div.webss%>%
+  ggplot(aes(x = River.dist.lake, y = L)) + 
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = poisson(link="log")))+
+  xlab("Distance from Upstream Lakes (m)")+ylab("Number of Trophic Links (L)")+ggtitle("d)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+e<-env.div.webss%>%
+  ggplot(aes(x = River.dist.lake, y = C)) + 
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Distance from Upstream Lakes (m)")+ylab("Connectance (C)")+ ggtitle("e)") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+f<-env.div.webss%>%
+  ggplot(aes(x = River.dist.lake, y = L.S)) +
+  geom_point()+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Distance from Upstream Lakes (m)")+ylab("Linkage Density (L/S)")+ggtitle("f)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+g<-env.div.webss%>%
+  ggplot(aes(x = as.factor(Fish), y = L, fill=as.factor(Fish))) + 
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  xlab("Fish Presence")+ylab("Number of Trophic Links (L)")+
+  labs(fill='Fish Presence') +
+  ggtitle("g)") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+h<-env.div.webss%>%
+  ggplot(aes(x = as.factor(Fish), y = C, fill=as.factor(Fish))) + 
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  xlab("Fish Presence")+ylab("Connectance (C)")+ ggtitle("h)") +
+  labs(fill='Fish Presence') +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+i<-env.div.webss%>%
+  ggplot(aes(x = as.factor(Fish), y = L.S, fill=as.factor(Fish))) + 
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  xlab("Fish Presence")+ylab("Linkage Density (L/S)")+
+  labs(fill='Fish Presence') +
+  ggtitle("i)") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+
+plot_grid(a,b,c,d,e,f,g,h,i,nrow=3)
 
 ################################################################################################################################
 #1A) Create Environemntal and Spatial PCA Gradients
@@ -152,33 +233,89 @@ env.div.webz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
-  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
-  ggplot(aes(x = value, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+a<-env.div.webz%>%
+  ggplot(aes(x = S_PC1, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  geom_smooth(method = "lm")+
-  facet_wrap(~var, scales = "free") +
+  ggtitle("a)") +
+  stat_smooth(method = glm, method.args = list(family = poisson(link = "log")))+
+  xlab("Spatial Gradient")+ylab("Number of Trophic Links (L)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
-  filter(Head.river.dist>3.5)%>%
-  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
-  ggplot(aes(x = value, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+b<-env.div.webz%>%
+  ggplot(aes(x = S_PC1, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  geom_smooth(method = "lm")+
-  facet_wrap(~var, scales = "free") +
+  ggtitle("b)") +
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Spatial Gradient")+ylab("Connectance (C)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
-env.div.webz%>%
-  gather(E_PC1,E_PC2,E_PC3,E_PC4,S_PC1,S_PC2,S_PC3,Chlorophyll.mean,Head.river.dist,River.dist.lake, key = "var", value = "value") %>% 
-  ggplot(aes(x = value, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+c<-env.div.webz%>%
+  ggplot(aes(x = S_PC1, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  geom_smooth(method = "lm")+
-  facet_wrap(~var, scales = "free") +
+  ggtitle("c)") +
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Spatial Gradient")+ylab("Linkage Density (L/S)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
+
+d<-env.div.webz%>%
+  ggplot(aes(x = E_PC1, y = L)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  ggtitle("d)") +
+  stat_smooth(method = glm, method.args = list(family = poisson(link = "log")))+
+  xlab("Environmental Gradient")+ylab("Number of Trophic Links (L)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+e<-env.div.webz%>%
+  ggplot(aes(x = E_PC1, y = C)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  ggtitle("e)") +
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Environmental Gradient")+ylab("Connectance (C)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+f<-env.div.webz%>%
+  ggplot(aes(x = E_PC1, y = L.S)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  ggtitle("g)") +
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  xlab("Environmental Gradient")+ylab("Linkage Density (L/S)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+g<-env.div.webz%>%
+  ggplot(aes(x = as.factor(Fish), y = L, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+  ggtitle("g)") +
+  xlab("Fish Presence")+ylab("Number of Trophic Links (L)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+h<-env.div.webz%>%
+  ggplot(aes(x = as.factor(Fish), y = C, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  ggtitle("h)") +
+  xlab("Fish Presence")+ylab("Connectance (C)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+i<-env.div.webz%>%
+  ggplot(aes(x = as.factor(Fish), y = L.S, fill=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  ggtitle("i)") +
+  xlab("Fish Presence")+ylab("Linkage Density (L/S)")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+#plot_grid(a,b,c,nrow=1)
+#plot_grid(a,b,c,d,e,f,nrow=2)
+plot_grid(a,b,c,d,e,f,g,h,i,nrow=3)
 
 ################################################################################################################################
 #4) Analysis For Spatial Gradients Steam Hypothesis
@@ -394,10 +531,10 @@ multicollinearity(mod3)
 mod1<-glmmTMB(L.S~S_PC1+ (1|O.NET),family=gaussian(), data=env.div.webz)
 mod2<-glmmTMB(L.S~E_PC1+ (1|O.NET),family=gaussian(),data=env.div.webz)
 mod3<-glmmTMB(L.S~as.factor(Fish)+ (1|O.NET),family=gaussian(),data=env.div.webz)
-mod4<-glmmTMB(L.S~as.factor(Fish)*S_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
-mod5<-glmmTMB(L.S~as.factor(Fish)*E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
-mod6<-glmmTMB(L.S~S_PC1*E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
-mod7<-glmmTMB(L.S~as.factor(Fish)*S_PC1*E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
+mod4<-glmmTMB(L.S~as.factor(Fish)+S_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
+mod5<-glmmTMB(L.S~as.factor(Fish)+E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
+mod6<-glmmTMB(L.S~S_PC1+E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
+mod7<-glmmTMB(L.S~as.factor(Fish)+S_PC1+E_PC1 +(1|O.NET),family=gaussian(),data=env.div.webz)
 null<-glmmTMB(L.S~1+ (1|O.NET),family=gaussian(),data=env.div.webz)
 reported.table2 <- bbmle::AICtab(mod1,mod2,mod3,mod4,mod5,mod6,mod7,null,weights = TRUE, sort = FALSE)
 reported.table2
