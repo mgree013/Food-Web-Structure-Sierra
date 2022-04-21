@@ -12,3 +12,5 @@
 "Pisidium",94.50945095,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
 "Rhizelmis",67.50675068,0.31573772,"Arthropoda","Insecta","Coleoptera","Elmidae","Rhizelmis"
 "Rhyacophila",45.00450045,5.337910712,"Arthropoda","Insecta","Trichoptera","Rhyacophilidae","Rhyacophila"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

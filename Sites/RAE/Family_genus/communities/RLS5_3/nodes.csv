@@ -12,3 +12,5 @@
 "Muscidae",4.500450045,1.259049334,"Arthropoda","Insecta","Diptera","Muscidae","Muscidae"
 "Pisidium",823.5823582,0.102405857,"Mollusca","Bivalvia","Veneroida","Pisidiidae","Pisidium"
 "Rhizelmis",54.00540054,0.31573772,"Arthropoda","Insecta","Coleoptera","Elmidae","Rhizelmis"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",

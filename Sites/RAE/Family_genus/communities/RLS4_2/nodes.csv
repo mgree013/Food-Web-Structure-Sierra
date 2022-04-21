@@ -11,3 +11,5 @@
 "Rhizelmis",22.50225023,0.31573772,"Arthropoda","Insecta","Coleoptera","Elmidae","Rhizelmis"
 "Simulium",4.500450045,0.357951466,"Arthropoda","Insecta","Diptera","Simuliidae","Simulium"
 "Suwallia",22.50225023,2.473558448,"Arthropoda","Insecta","Plecoptera","Chloroperlidae","Suwallia"
+"Benthic.producers",1,0.001,,,,"Benthic.producers",
+"Pelagic.producers",1,0.001,,,,"Pelagic.producers",
