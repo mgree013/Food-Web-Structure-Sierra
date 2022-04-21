@@ -25,7 +25,25 @@ env.div.webss<-left_join(env.webs,div, by="Site")%>%drop_na()%>%mutate(Com.Size=
 ################################################################################################################################
 #Plots:explore Local Metrics along individual gradients
 #S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path
+env.div.webss%>%
+  gather(S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = Head.river.dist, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Distance from Headwaters (m)")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
+env.div.webss%>%
+  gather(S,L,L.S,C,B,I,T,N,Isolated,Can,Omn,Sim.mean,Path, key = "var", value = "value") %>% 
+  ggplot(aes(x = River.dist.lake, y = value)) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Distance from Upstream Lakes (m)")+
+  facet_wrap(~var, scales = "free") +
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
 env.div.webss%>%
   gather(L,L.S,C, key = "var", value = "value") %>% 
