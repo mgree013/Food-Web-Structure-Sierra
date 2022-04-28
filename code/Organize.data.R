@@ -7,7 +7,7 @@
 #File: Organizing environmental, spatial, and local food web metrics
 
 #Load Packages
-Packages <- c("tidyverse", "ggplot2", "igraph", "reshape2","reshape", "viridis", "ggbiplot", "metR", "cheddar", "cowplot", "vegan","glmmTMB", "performance","sp","betalink")
+Packages <- c("tidyverse", "ggplot2", "igraph", "reshape2","reshape", "viridis", "ggbiplot", "metR", "cheddar", "cowplot", "vegan","glmmTMB", "performance","sp","betalink", "FD")
 lapply(Packages, library, character.only = TRUE)
 
 ##################################################################################################################################################################

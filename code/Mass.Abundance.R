@@ -90,7 +90,7 @@ species_mass_data_env%>%
 
 ########################################################################################################################
 #Part 2: CWM
-library(FD)
+
 row.traits<-traits%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")
 traitsy<-traits%>%dplyr::rename(Body_mass_mg=M)%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")%>%dplyr::select(c(Body_mass_mg))
 str(traitsy)
