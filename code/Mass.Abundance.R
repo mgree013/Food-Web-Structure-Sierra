@@ -21,7 +21,7 @@ env <-read.csv("dave.matt.env.full.12.29.19.csv")
 summary(env)
 
 #organize data
-env<-env%>%mutate(Euc.dist.lake=log(Euc.dist.lake+1),River.dist.lake=log(River.dist.lake),Head.river.dist=sqrt(Head.river.dist+1))
+env<-env%>%mutate(Euc.dist.lake=log(Euc.dist.lake+1),River.dist.lake=log(River.dist.lake+1),Head.river.dist=log(Head.river.dist+1))
 envs<-env%>%dplyr::select(c(Site,O.NET))
 species_all<-species%>%pivot_longer(-Site, names_to="Taxon", values_to="abundance")%>%filter(abundance>0)
 traits_mass<-traits%>%rename(Body_mass_mg=M)%>%dplyr::select(c(Taxon, Body_mass_mg))
@@ -91,12 +91,17 @@ species_mass_data_env%>%
 ########################################################################################################################
 #Part 2: CWM
 
-row.traits<-traits%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")
-traitsy<-traits%>%dplyr::rename(Body_mass_mg=M)%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")%>%dplyr::select(c(Body_mass_mg))
-str(traitsy)
-rownames(traitsy)<-rownames(row.traits)
+species.traits<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
+tr.traits<-read.csv("Full_full_fn_trait.csv")
 
-tres_bm = dbFD(traitsy,species, corr = ("lingoes"),
+
+row.traits<-tr.traits%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")
+traitsy<-tr.traits%>%dplyr::rename(Body_mass_mg=M)%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")%>%dplyr::select(c(Body_mass_mg))
+str(traitsy)
+#rownames(traitsy)<-rownames(row.traits)
+rownames(traitsy)<-row.traits$Taxonomic_name
+
+tres_bm = dbFD(traitsy,species.traits, corr = ("lingoes"),
                stand.FRic = TRUE, calc.FDiv = TRUE)
 
 cwm=tres_bm$CWM
@@ -106,31 +111,70 @@ FRic=as.data.frame(tres_bm$FRic)
 
 head(cwm)
 
-datas<-cbind(PC1,PC2,PC3,PC4,cwm,env,FRic,FDis,FEve)
-datas%>%
-  filter(River.dist.lake>0)%>%
-  gather(River.dist.lake,Head.river.dist,Chlorophyll.mean,Elevation,PC1,PC2,PC3,PC4,Discharge.Mean,Temp,DO,SHRUB_SCRUB,Local.Dist, key = "var", value = "value") %>% #PC2,PC3,PC4,River.dist.lake,
-  ggplot(aes(x = value, y = `tres_bm$FDis`))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+datas<-cbind(env,cwm,FRic,FDis,FEve)
+datasz<-datas%>%
+  filter(River.dist.lake>0.1)%>%
+  #filter(Head.river.dist>2.3)%>%
+  #filter(Fish != "NA")%>%
+  filter(O.NET != "YOUNG")%>%
+  filter(Body_mass_mg<15)
+  
+datasz%>%
+  ggplot(aes(x = log(Elevation+1), y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  geom_smooth(method = "lm")+
-  facet_wrap(~ var, scales = "free") +
-  theme_bw()
+  #geom_smooth(method = "lm")+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  theme_bw()+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
-datas%>%
+datasz%>%
+  gather(Head.river.dist,River.dist.lake,Elevation,key = "var", value = "value") %>% #PC2,PC3,PC4,River.dist.lake,
+  ggplot(aes(x = value, y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  geom_point()+
+  #geom_smooth(method = "lm")+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  facet_wrap(~ var, scales = "free") +
+  theme_bw()+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+datasz%>%
   gather(Head.river.dist,River.dist.lake,key = "var", value = "value") %>% #PC2,PC3,PC4,River.dist.lake,
   ggplot(aes(x = value, y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
-  geom_smooth(method = "lm")+
-  facet_wrap(~ var, scales = "free") +
-  theme_bw()
+  #geom_smooth(method = "lm")+
+  stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
+  facet_grid(O.NET~ var, scales = "free") +
+  theme_bw()+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+datasz%>%
+  #filter(Fish != "NA")%>%
+  ggplot(aes(x = as.factor(Fish), y = Body_mass_mg, fill=as.factor(Fish)))+ 
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
+  xlab("Fish Presence")+
+  labs(fill='Fish Presence') +
+  #scale_fill_discrete(name = "Fish Presence", labels = c("no", "yes"))+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
 
-dog<-lm(Body_mass_mg~Head.river.dist, datas)
+dog<-lm(Body_mass_mg~Head.river.dist, datasz)
 summary(dog)
 
-dog<-lm(Body_mass_mg~River.dist.lake, datas)
+dog<-lm(Body_mass_mg~River.dist.lake, datasz)
+
+dog<-lm(Body_mass_mg~River.dist.lake*Head.river.dist, datasz)
 summary(dog)
 
+dog<-glm(Body_mass_mg~as.factor(Fish)*River.dist.lake*Head.river.dist,family = gaussian(link = "identity"), datasz)
+summary(dog)
+r2(dog)
+
+dog<-aov(Body_mass_mg~as.factor(Fish), datasz)
 
 #################################################
 
