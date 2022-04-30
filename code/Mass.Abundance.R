@@ -59,13 +59,13 @@ species_mass_data_env_net<-species_mass_data_env%>%
   summarise(abundance=sum(abundance))
 
 species_mass_data_env_net%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
+  ggplot(aes(x=(Body_mass_mg),y=log(abundance)))+
   geom_point()+
   geom_smooth(method = "lm")+
   facet_grid(~O.NET)
 
 species_mass_data_env_net%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
+  ggplot(aes(x=(Body_mass_mg),y=log(abundance)))+
   geom_point()+
   geom_smooth(method = "lm")
 
@@ -129,8 +129,9 @@ datasz%>%
         panel.border = element_blank(),panel.background = element_blank())
 
 datasz%>%
+  filter(Fish !="NA")%>%
   gather(Head.river.dist,River.dist.lake,Elevation,key = "var", value = "value") %>% #PC2,PC3,PC4,River.dist.lake,
-  ggplot(aes(x = value, y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  ggplot(aes(x = value, y = Body_mass_mg, colour=as.factor(Fish)))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   #geom_smooth(method = "lm")+
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
