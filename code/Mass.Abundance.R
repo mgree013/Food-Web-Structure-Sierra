@@ -92,7 +92,7 @@ species_mass_data_env%>%
 #Part 2: CWM
 
 species.traits<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
-tr.traits<-read.csv("Full_full_fn_trait.csv")
+#tr.traits<-read.csv("Full_full_fn_trait.csv")
 
 
 row.traits<-tr.traits%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")
