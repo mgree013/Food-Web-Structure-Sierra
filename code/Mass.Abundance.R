@@ -6,12 +6,14 @@
 #Papers
 #Relationships between body size and abundance in ecology
 
-library(ggplot2)
-library(tidyverse)
+#Load Packages
+Packages <- c("tidyverse", "ggplot2", "vegan", "reshape2","reshape", "adespatial", "sf", "mapview", "viridis", "FD","multcomp","semPlot","lavaan", "performance")
+lapply(Packages, library, character.only = TRUE)
 
 setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
 species<-read.csv(file = "sp.density.update.12.28.19.csv")
+
 summary(species)
 
 traits<-read.csv("Full_fn_trait.csv")
@@ -29,6 +31,62 @@ species_mass_data<-left_join(species_all,traits_mass, by="Taxon")
 
 species_mass_data_env<-left_join(species_mass_data,env, by="Site")%>%filter(O.NET != "YOUNG")
 ########################################################################################################################
+species_mass_data_env%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=Fish,y=log(abundance+1),fill=as.factor(Fish)))+
+  geom_boxplot()+
+  xlab("Fish Presence")+ylab("Log Density")+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  facet_wrap(~Taxon, scales="free")+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                 panel.border = element_blank(),panel.background = element_blank())
+
+
+
+#Diversity
+species<-read.csv(file = "sp.density.update.12.28.19.csv", row.names = 1)
+
+diversity<-species%>%
+  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=log(rowSums(species)+1),betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD) #,betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD ,betas.LCBD.p=beta.div(species, method="chord",sqrt.D=TRUE)$p.LCBD )
+
+diversity.env<-diversity%>%rownames_to_column(var = "Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
+
+
+diversity.env%>%
+  gather(N0,  N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  ggplot(aes(x=Elevation, y=value, colour=var))+
+  geom_point()+
+  geom_smooth(method = "lm",se=F)+
+  scale_color_viridis_d()+
+  xlab("Elevation (m)")+
+  facet_wrap(~var, scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank(),legend.position = "none")
+
+diversity.env%>%
+  gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  ggplot(aes(x=Elevation, y=value, colour=as.factor(Fish)))+
+  geom_point()+
+  geom_smooth(method = "lm",se=F)+
+  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  xlab("Elevation (m)")+
+  facet_wrap(~var, scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+diversity.env%>%
+  gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  ggplot(aes(x=Elevation, y=value, colour=as.factor(Fish)))+
+  geom_point()+
+  geom_smooth(method = "lm",se=F)+
+  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  xlab("Elevation (m)")+
+  facet_grid(var~Fish, scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+
+
+
 #Create Mass abundance curves for each site, network, and regionally
 
 #1)Mass Abundance by Site
@@ -45,6 +103,12 @@ species_mass_data_env%>%
   geom_point()+
   geom_smooth(method = "lm")+
   facet_grid(~Site)
+
+species_mass_data_env%>% 
+  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  facet_grid(~Fish)
 
 species_mass_data_env%>% 
   #filter(O.NET=="CASCADE")%>%
@@ -84,7 +148,7 @@ species_mass_data_env%>%
   ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
   geom_point()+
   geom_smooth(method = "lm")+
-  facet_grid(~Order)
+  facet_grid(~Fish)
 
 
 
