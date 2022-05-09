@@ -50,7 +50,6 @@ diversity<-species%>%
 
 diversity.env<-diversity%>%rownames_to_column(var = "Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
 
-
 diversity.env%>%
   gather(N0,  N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=Elevation, y=value, colour=var))+
@@ -140,78 +139,8 @@ boxplot(mod)
 ############################################################################################################################################
 #CWM
 
-
-############################################################################################################################################
-#Create Mass abundance curves for each site, network, and regionally
-
-#1)Mass Abundance by Site
-CLS1_1<-species_mass_data_env%>%filter(Site=="CLS1_1")
-CLS1_1%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")
-
-#group by Networks and Site (repeat for our other Networks: BUBBS, EVO)
-species_mass_data_env%>% 
-  filter(O.NET=="CASCADE")%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  facet_grid(~Site)
-
-species_mass_data_env%>% 
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  facet_grid(~Fish)
-
-species_mass_data_env%>% 
-  #filter(O.NET=="CASCADE")%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  facet_grid(~Fish)
-
-#2)Group by Network
-species_mass_data_env_net<-species_mass_data_env%>%
-  group_by(O.NET,Taxon,Body_mass_mg)%>%
-  summarise(abundance=sum(abundance))
-
-species_mass_data_env_net%>%
-  ggplot(aes(x=(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  facet_grid(~O.NET)
-
-species_mass_data_env_net%>%
-  ggplot(aes(x=(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")
-
-#3)Regionally all sites together
-
-species_mass_data_env_reg<-species_mass_data_env%>%
-  group_by(Taxon,Body_mass_mg)%>%
-  summarise(abundance=sum(abundance))
-
-species_mass_data_env_reg%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")
-
-species_mass_data_env%>%
-  ggplot(aes(x=log(Body_mass_mg),y=log(abundance)))+
-  geom_point()+
-  geom_smooth(method = "lm")+
-  facet_grid(~Fish)
-
-
-
-########################################################################################################################
-#Part 2: CWM
-
 species.traits<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
-#tr.traits<-read.csv("Full_full_fn_trait.csv")
+tr.traits<-read.csv("Full_full_fn_trait.csv")
 
 
 row.traits<-tr.traits%>%filter(Taxon !="Benthic.producers" & Taxon !="Pelagic.producers")
@@ -237,25 +166,26 @@ datasz<-datas%>%
   #filter(Fish != "NA")%>%
   filter(O.NET != "YOUNG")%>%
   filter(Body_mass_mg<15)
-  
+
 datasz%>%
   ggplot(aes(x = log(Elevation+1), y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   #geom_smooth(method = "lm")+
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
-  theme_bw()+
+  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  theme_bw()+ylab("CWM")+xlab("Elevation (m)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 datasz%>%
   filter(Fish !="NA")%>%
-  gather(Head.river.dist,River.dist.lake,Elevation,key = "var", value = "value") %>% #PC2,PC3,PC4,River.dist.lake,
-  ggplot(aes(x = value, y = Body_mass_mg, colour=as.factor(Fish)))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  ggplot(aes(x = Elevation, y = Body_mass_mg, colour=as.factor(Fish)))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   #geom_smooth(method = "lm")+
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
-  facet_wrap(~ var, scales = "free") +
-  theme_bw()+
+  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  theme_bw()+ylab("CWM")+xlab("Elevation (m)")+
+  facet_grid(~as.factor(Fish))+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
@@ -271,7 +201,7 @@ datasz%>%
         panel.border = element_blank(),panel.background = element_blank())
 
 datasz%>%
-  #filter(Fish != "NA")%>%
+  filter(Fish != "NA")%>%
   ggplot(aes(x = as.factor(Fish), y = Body_mass_mg, fill=as.factor(Fish)))+ 
   geom_boxplot()+
   scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("no", "yes"))+
@@ -281,20 +211,26 @@ datasz%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
+#########################################################################
+#Visualize influence of fish and elevation
 
-dog<-lm(Body_mass_mg~Head.river.dist, datasz)
-summary(dog)
 
-dog<-lm(Body_mass_mg~River.dist.lake, datasz)
+############################################################################################################################################
 
-dog<-lm(Body_mass_mg~River.dist.lake*Head.river.dist, datasz)
-summary(dog)
+#Fish  By Elevation
+diversity.env%>%
+  ggplot(aes(x = as.factor(Fish), y = Elevation, fill=as.factor(Fish)))+ 
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  xlab("Fish Presence")+
+  labs(fill='Elevation (m)') +
+  #scale_fill_discrete(name = "Fish Presence", labels = c("no", "yes"))+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
 
-dog<-glm(Body_mass_mg~as.factor(Fish)*River.dist.lake*Head.river.dist,family = gaussian(link = "identity"), datasz)
-summary(dog)
-r2(dog)
 
-dog<-aov(Body_mass_mg~as.factor(Fish), datasz)
+############################################################################################################################################
 
-#################################################
+
+
 
