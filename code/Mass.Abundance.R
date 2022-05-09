@@ -12,7 +12,8 @@ lapply(Packages, library, character.only = TRUE)
 
 setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
-species<-read.csv(file = "sp.density.update.12.28.19.csv")
+#species<-read.csv(file = "sp.density.update.12.28.19.csv")
+species<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
 
 summary(species)
 
@@ -26,7 +27,7 @@ summary(env)
 env<-env%>%mutate(Euc.dist.lake=log(Euc.dist.lake+1),River.dist.lake=log(River.dist.lake+1),Head.river.dist=log(Head.river.dist+1))
 envs<-env%>%dplyr::select(c(Site,O.NET))
 species_all<-species%>%pivot_longer(-Site, names_to="Taxon", values_to="abundance")%>%filter(abundance>0)
-traits_mass<-traits%>%rename(Body_mass_mg=M)%>%dplyr::select(c(Taxon, Body_mass_mg))
+traits_mass<-traits%>%dplyr::rename(Body_mass_mg=M)%>%dplyr::select(c(Taxon, Body_mass_mg))
 species_mass_data<-left_join(species_all,traits_mass, by="Taxon")
 
 species_mass_data_env<-left_join(species_mass_data,env, by="Site")%>%filter(O.NET != "YOUNG")
@@ -40,21 +41,134 @@ species_mass_data_env%>%
   facet_wrap(~Taxon, scales="free")+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                                                  panel.border = element_blank(),panel.background = element_blank())
 
+species_mass_data_env%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=Taxon,y=log(abundance+1),fill=as.factor(Fish)))+
+  geom_boxplot()+
+  xlab("Fish Presence")+ylab("Log Density")+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  facet_wrap(~Taxon, scales="free")+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                          panel.border = element_blank(),panel.background = element_blank())
+
+species_mass_data_env%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=reorder(Taxon, Body_mass_mg, FUN = mean),y=log(abundance+1),fill=as.factor(Fish)))+
+  geom_boxplot()+
+  xlab("Fish Presence")+ylab("Log Density")+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                                 panel.border = element_blank(),panel.background = element_blank())
+
+###########
+#Just Select Species that occur in fish and fishless sites
+species_mass_data_env_sum<-species_mass_data_env%>%
+  group_by(Taxon,Fish)%>%
+  summarise(Total_density=sum(abundance))%>%
+  pivot_wider(names_from = Taxon,values_from = Total_density)%>%
+  filter(Fish !="NA")%>%
+  pivot_longer(cols=Acentrella:Zapada,names_to = "Taxon")
+  
+no_species_mass_data_env_sum<-species_mass_data_env_sum%>%
+  filter(Fish=="No")%>% filter(is.na(value))
+
+yes_species_mass_data_env_sum<-species_mass_data_env_sum%>%
+  filter(Fish=="Yes")%>% filter(is.na(value))
+
+all_species_mass_data_env_sum<-species_mass_data_env_sum%>%
+  filter(is.na(value))
+
+#No:Aedes,Alloperla,Allotrichoma,Blephariceridae,Brachycentrus,Callibaetis,Calliperla,Capniidae,Centroptilum,Cheumatopsyche,Chrysops
+#yes: Arctocorisa,Arctopsyche,Atrichopogon,Capniidae,Cenocorixa,Ceratopogon
+
+species_mass_data_env_filter<-species_mass_data_env%>%
+  filter(Taxon !="Aedes" ,Taxon !="Alloperla" ,Taxon !="Allotrichoma" ,Taxon !="Blephariceridae" ,Taxon !="Brachycentrus"
+         ,Taxon !="Callibaetis" ,Taxon !="Calliperla" ,Taxon !="Capniidae" ,Taxon !="Centroptilum" ,Taxon !="Cheumatopsyche" ,Taxon !="Chrysops" ,
+           Taxon !="Claassenia" ,Taxon !="Cleptelmis" ,Taxon !="Cultus" ,Taxon !="Despaxia" ,Taxon !="Deuterophlebia" ,Taxon !="Ephemerella" ,
+           Taxon !="Euhirudinea" ,Taxon !="Forcipomyia" ,Taxon !="Glutops" ,Taxon !="Haploperla" ,Taxon !="Hemerodromia" ,Taxon !="Hesperoperla" ,
+           Taxon !="Hexatoma",Taxon !="Hirudinea" ,Taxon !="Hydra" ,Taxon !="Hydropsyche" ,Taxon !="Lepidostoma" ,Taxon !="Limnophila" ,
+           Taxon !="Malenka" ,Taxon !="Megarcys" ,Taxon !="Monophilus" ,Taxon !="Narpus" ,Taxon !="Nemertea" ,Taxon !="Ochrotrichia" ,Taxon !="Oreodytes" ,
+           Taxon !="Orohermes" ,Taxon !="Pedicia" ,Taxon !="Perlinodes" ,Taxon !="Planorbidae" ,Taxon !="Pleuroceridae" ,Taxon !="Polycentropus" ,Taxon !="Rhabdomastix" ,
+           Taxon !="Rhithrogena" ,Taxon !="Rhizelmis" ,Taxon !="Sialis" ,Taxon !="Siphlonurus" ,Taxon !="Skwala" ,Taxon !="Stictotarsus" ,Taxon !="Tabanus" ,
+           Taxon !="Arctocorisa" ,Taxon !="Arctopsyche" ,Taxon !="Atrichopogon" ,Taxon !="Cenocorixa" ,Taxon !="Ceratopogon" ,Taxon !="Chrysops" ,Taxon !="Chyranda" ,
+           Taxon !="Culiseta" ,Taxon !="Cultus" ,Taxon !="Despaxia" ,Taxon !="Dolichopus" ,Taxon !="Graptocorixa" ,Taxon !="Hemerodromia" ,Taxon !="Hexatoma" ,
+           Taxon !="Hydroporus" ,Taxon !="Lednia" ,Taxon !="Limnophila" ,Taxon !="Limonia" ,Taxon !="Metacnephia" ,Taxon !="Monohelea" ,Taxon !="Neothremma" ,
+           Taxon !="Nixe" ,Taxon !="Ormosia" ,Taxon !="Pleuroceridae" ,Taxon !="Rhabdomastix" ,Taxon !="Sciara" ,Taxon !="Soyedina" ,Taxon !="Stictotarsus" ,
+           Taxon !="Tabanus", Taxon !="Wormaldia", Taxon !="Wiedeman")
+
+species_mass_data_env_filter%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=reorder(Taxon, Body_mass_mg, FUN = mean),y=log(abundance+1),fill=as.factor(Fish)))+
+  geom_boxplot()+
+  xlab("Taxon")+ylab("Log Density")+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                                 panel.border = element_blank(),panel.background = element_blank())
+
+species_mass_data_env_filter%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=Fish,y=log(abundance+1),fill=as.factor(Fish)))+
+  geom_boxplot()+
+  xlab("Taxon")+ylab("Log Density")+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  facet_wrap(~Taxon)+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                                 panel.border = element_blank(),panel.background = element_blank())
 
 ############################################################################################################################################
 #Diversity
-species<-read.csv(file = "sp.density.update.12.28.19.csv", row.names = 1)
+species<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
+species<-species%>%dplyr::select(-c(Chironomidae,Acari,Nematomorpha,Oligochaeta,Ostracoda,Turbellaria,Euhirudinea))
 
 diversity<-species%>%
-  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=log(rowSums(species)+1),betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD) #,betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD ,betas.LCBD.p=beta.div(species, method="chord",sqrt.D=TRUE)$p.LCBD )
+  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=log(rowSums(species)+1))#,betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD ,betas.LCBD.p=beta.div(species, method="chord",sqrt.D=TRUE)$p.LCBD )
+#Calculate Beta Diversity (LCBD) for each network
+combine<-cbind(species,env$O.NET)
 
-diversity.env<-diversity%>%rownames_to_column(var = "Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
+kern<-subset(combine, `env$O.NET`=="KERN")
+kern.var<-kern[, colSums(kern != 0) > 0]
+kern.beta<-beta.div(kern.var[1:61], method="hellinger",sqrt.D=TRUE)
+kern.beta.comp<-beta.div.comp(kern.var[1:61], coef = "S", quant=T)
+
+casc<-subset(combine, `env$O.NET`=="CASCADE")
+casc.var<-casc[, colSums(casc != 0) > 0]
+casc.beta<-beta.div(casc.var[1:44], method="hellinger",sqrt.D=TRUE)
+casc.beta.comp<-beta.div.comp(casc.var[1:44], coef = "S", quant=T)
+
+evo<-subset(combine, `env$O.NET`=="EVO")
+evo.var<-evo[, colSums(evo != 0) > 0]
+evo.beta<-beta.div(evo.var[1:36], method="hellinger",sqrt.D=TRUE)
+evo.beta.comp<-beta.div.comp(evo.var[1:36], coef = "S", quant=T)
+
+bubb<-subset(combine, `env$O.NET`=="BUBBS")
+bubb.var<-bubb[, colSums(bubb != 0) > 0]
+bubb.beta<-beta.div(bubb.var[1:83], method="hellinger",nperm=999,sqrt.D=TRUE)
+bubb.beta.comp<-beta.div.comp(bubb.var[1:83], coef = "S", quant=T)
+
+young<-subset(combine, `env$O.NET`=="YOUNG")
+young.var<-young[, colSums(young != 0) > 0]
+young.beta<-beta.div(young.var[1:29], nperm=999,method="hellinger",sqrt.D=TRUE)
+young.beta.comp<-beta.div.comp(young.var[1:29], coef = "S", quant=T)
+
+rock<-subset(combine, `env$O.NET`=="ROCK")
+rock.var<-rock[, colSums(rock != 0) > 0]
+rock.beta<-beta.div(rock.var[1:60], nperm=999,method="hellinger",sqrt.D=TRUE)
+rock.beta.comp<-beta.div.comp(rock.var[1:60], coef = "S", quant=T)
+
+betas.LCBD<-c(kern.beta$LCBD,casc.beta$LCBD,evo.beta$LCBD,bubb.beta$LCBD,young.beta$LCBD,rock.beta$LCBD)
+betas.LCBD<-as.data.frame(betas.LCBD)
+betas.LCBD.data<-betas.LCBD%>%rownames_to_column("Site")
+diversity.data<-diversity%>%rownames_to_column("Site")
+
+all<-diversity.data%>%left_join(env,by="Site")%>%left_join(betas.LCBD.data,by="Site")#%>%filter(Elevation >2790)
+#all<-diversity.data%>%left_join(env,by="Site")%>%filter(Elevation >2790)
+diversity.env<-all%>%filter(Fish!="NA")%>%filter(O.NET!="YOUNG")
 
 diversity.env%>%
+  #filter(Head.river.dist >4)%>%
   gather(N0,  N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=Elevation, y=value, colour=var))+
   geom_point()+
-  geom_smooth(method = "lm",se=F)+
+  geom_smooth(method = "lm",se=T)+
   scale_color_viridis_d()+
   xlab("Elevation (m)")+
   facet_wrap(~var, scales = "free")+
@@ -62,6 +176,7 @@ diversity.env%>%
         panel.border = element_blank(),panel.background = element_blank(),legend.position = "none")
 
 diversity.env%>%
+  #filter(Elevation >2790)%>%
   gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=as.factor(Fish), y=value, fill=as.factor(Fish)))+
   geom_boxplot()+
