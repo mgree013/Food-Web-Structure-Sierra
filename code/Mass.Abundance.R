@@ -41,7 +41,7 @@ species_mass_data_env%>%
                                                  panel.border = element_blank(),panel.background = element_blank())
 
 
-
+############################################################################################################################################
 #Diversity
 species<-read.csv(file = "sp.density.update.12.28.19.csv", row.names = 1)
 
@@ -61,6 +61,17 @@ diversity.env%>%
   facet_wrap(~var, scales = "free")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank(),legend.position = "none")
+
+diversity.env%>%
+  gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  ggplot(aes(x=as.factor(Fish), y=value, fill=as.factor(Fish)))+
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  xlab("Elevation (m)")+
+  facet_wrap(~var, scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
 
 diversity.env%>%
   gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
@@ -84,9 +95,53 @@ diversity.env%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
+############################################################################################################################################
+#NMDS
+species_env<-species%>%rownames_to_column("Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
+species_2<-species_env%>%column_to_rownames("Site")%>%dplyr::select(c(Acentrella:Wormaldia))
+set.seed(29)
+species<-species_2
+dune.rel<-decostand(species,"total") #standardize community data
+dune.bray<-vegdist(dune.rel) #calculate dissimilarity among sites (i.e. dissimilarity matrix)
+dune.nmds=metaMDS(dune.rel, k=2, try=10) #NMDS code
+dune.nmds
+stressplot(dune.nmds) #this tells us if our plot is going to work, and it looks good
+
+plot(dune.nmds,typ= "n", xlab = "NMDS Axis 1", ylab = "NMDS Axis 2")
+#text(dune.nmds$species[,1], dune.nmds$species[,2], rownames(dune.nmds$species), cex=0.7, col ="black")
+points(dune.nmds$points[,1], dune.nmds$points[,2],  pch = 1) 
+ordihull(dune.nmds, groups=as.factor(species_env$Fish), draw="polygon", label=T)
+#ordihull(dune.nmds, groups=sp_abund_env$lake_drainage_name, draw="polygon", label=T)
+ordisurf(dune.nmds, species_env$Elevation, prioirty=,labcex=0.9, add = T,col="forestgreen")
+
+#PERMANOVA analysis-Whats driving variation we see above?
+adonis2(dune.bray ~ species_env$Fish+species_env$Elevation+species_env$O.NET, permutations = 99, method = "bray")
+betad <- betadiver(dune.rel, "z")
+adonis(betad ~ species_env$Fish+species_env$Elevation, data=species, perm=200)
+
+adonis2(dune.bray ~ species_env$Fish, permutations = 99, method = "bray")
+betad <- betadiver(dune.rel, "z")
+adonis(betad ~ species_env$Fish, data=species, perm=200)
+
+dune.envfit <- envfit(dune.nmds, env = species_env$Elevation, perm = 999) #standard envfit
+dune.envfit
+env.scores.dune <- as.data.frame(scores(dune.envfit, display = "vectors")) #extracts relevant scores from envifit
+env.data = cbind(species_env$Elevation)
+mds.data.envfit = envfit(dune.nmds, env.data)
+
+plot(mds.data.envfit, col = "black", labels = c( "Elevation"), lwd = 2)
+
+mod <- betadisper(dune.bray, species_env$Fish)
+anova(mod)
+print(mod)
+permutest(mod)
+boxplot(mod)
+
+############################################################################################################################################
+#CWM
 
 
-
+############################################################################################################################################
 #Create Mass abundance curves for each site, network, and regionally
 
 #1)Mass Abundance by Site
