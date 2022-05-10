@@ -7,17 +7,17 @@
 #Relationships between body size and abundance in ecology
 
 #Load Packages
-Packages <- c("tidyverse", "ggplot2", "vegan", "reshape2","reshape", "adespatial", "sf", "mapview", "viridis", "FD","multcomp","semPlot","lavaan", "performance")
+Packages <- c("tidyverse", "ggplot2", "vegan", "reshape2","reshape", "betareg","adespatial", "sf", "mapview", "viridis", "FD","multcomp","semPlot","lavaan", "performance")
 lapply(Packages, library, character.only = TRUE)
 
 setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
 #species<-read.csv(file = "sp.density.update.12.28.19.csv")
-species<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
+species<-read.csv(file = "sp.density.update.12.28.19_traits.csv")
 
 summary(species)
 
-traits<-read.csv("Full_fn_trait.csv")
+traits<-read.csv("Full_full_fn_trait.csv")
 summary(traits)
 
 env <-read.csv("dave.matt.env.full.12.29.19.csv")
@@ -30,7 +30,18 @@ species_all<-species%>%pivot_longer(-Site, names_to="Taxon", values_to="abundanc
 traits_mass<-traits%>%dplyr::rename(Body_mass_mg=M)%>%dplyr::select(c(Taxon, Body_mass_mg))
 species_mass_data<-left_join(species_all,traits_mass, by="Taxon")
 
-species_mass_data_env<-left_join(species_mass_data,env, by="Site")%>%filter(O.NET != "YOUNG")
+species_mass_data_env<-left_join(species_mass_data,env, by="Site")%>%filter(O.NET != "YOUNG")%>%
+  filter(Site !=	"Outlet.11007.fishless.2003")%>%
+  filter(Site !=	"Outlet.11007.fishless.2004")%>%
+  filter(Site !=	"Outlet.10487.trt.2003")%>%
+  filter(Site !=	"Outlet.10487.trt.2004")%>%
+  filter(Site !=	"Outlet.10477.trt.2003")%>%
+  filter(Site !=	"Outlet.10477.trt.2004")%>%
+  filter(Site !=	"Outlet.10494.trt.2012")%>%
+  filter(Site !=	"	Outlet.Vidette.below.2003")%>%
+  filter(Site !=	"	Outlet.Vidette.below.2004")%>%
+  filter(Site !=	"	Outlet.Vidette.below.20012")
+  
 ########################################################################################################################
 species_mass_data_env%>%
   filter(Fish !="NA")%>%
@@ -93,7 +104,7 @@ species_mass_data_env_filter<-species_mass_data_env%>%
            Taxon !="Culiseta" ,Taxon !="Cultus" ,Taxon !="Despaxia" ,Taxon !="Dolichopus" ,Taxon !="Graptocorixa" ,Taxon !="Hemerodromia" ,Taxon !="Hexatoma" ,
            Taxon !="Hydroporus" ,Taxon !="Lednia" ,Taxon !="Limnophila" ,Taxon !="Limonia" ,Taxon !="Metacnephia" ,Taxon !="Monohelea" ,Taxon !="Neothremma" ,
            Taxon !="Nixe" ,Taxon !="Ormosia" ,Taxon !="Pleuroceridae" ,Taxon !="Rhabdomastix" ,Taxon !="Sciara" ,Taxon !="Soyedina" ,Taxon !="Stictotarsus" ,
-           Taxon !="Tabanus", Taxon !="Wormaldia", Taxon !="Wiedeman")
+           Taxon !="Tabanus", Taxon !="Wormaldia", Taxon !="Wiedeman", Taxon !="Helodon", Taxon !="Tipula", Taxon !="Optioservus")
 
 species_mass_data_env_filter%>%
   filter(Fish !="NA")%>%
@@ -114,13 +125,62 @@ species_mass_data_env_filter%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                                                                  panel.border = element_blank(),panel.background = element_blank())
 
+species_mass_data_env_filter%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=Elevation,y=log(abundance+1),color=as.factor(Fish)))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Taxon")+ylab("Log Density")+
+  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  facet_wrap(~Taxon,scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+species_mass_data_env_filter%>%
+  filter(Fish !="NA")%>%
+  ggplot(aes(x=Elevation,y=log(abundance+1)))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  xlab("Taxon")+ylab("Log Density")+
+  facet_wrap(~Taxon,scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
+model1<-glm(log(abundance+1)~Fish,family=gaussian(link="identity"),species_mass_data_env_filter)
+model2<-glm(log(abundance+1)~Elevation,family=gaussian(link="identity"),species_mass_data_env_filter)
+model3<-glm(log(abundance+1)~Body_mass_mg,family=gaussian(link="identity"),species_mass_data_env_filter)
+model4<-glm(log(abundance+1)~Fish*Elevation,family=gaussian(link="identity"),species_mass_data_env_filter)
+model5<-glm(log(abundance+1)~Fish*Body_mass_mg,family=gaussian(link="identity"),species_mass_data_env_filter)
+model6<-glm(log(abundance+1)~Elevation*Body_mass_mg,family=gaussian(link="identity"),species_mass_data_env_filter)
+model7<-glm(log(abundance+1)~Fish*Elevation*Body_mass_mg,family=gaussian(link="identity"),species_mass_data_env_filter)
+model8<-glm(log(abundance+1)~1,family=gaussian(link="identity"),species_mass_data_env_filter)
+reported.table2 <- bbmle::AICtab(model1,model2,model3,model4,model5,model6,model7,model8,weights = TRUE, sort = FALSE)
+reported.table2
+r2(model7)
+pseudoR0 <- ((model7$null.deviance-model7$deviance)/model7$null.deviance)
+pseudoR0
+
+#Doroneuria
+species_mass_data_env_filter_Doroneuria<-species_mass_data_env_filter%>%
+  filter(Taxon=="Doroneuria")
+
+model1<-glm(log(abundance+1)~Fish,family=gaussian(link="identity"),species_mass_data_env_filter_Doroneuria)
+model2<-glm(log(abundance+1)~Elevation,family=gaussian(link="identity"),species_mass_data_env_filter_Doroneuria)
+model4<-glm(log(abundance+1)~Fish*Elevation,family=gaussian(link="identity"),species_mass_data_env_filter_Doroneuria)
+model8<-glm(log(abundance+1)~1,family=gaussian(link="identity"),species_mass_data_env_filter_Doroneuria)
+reported.table2 <- bbmle::AICtab(model1,model2,model4,model8,weights = TRUE, sort = FALSE)
+reported.table2
+r2(model1)
+
+pseudoR0 <- ((model1$null.deviance-model1$deviance)/model1$null.deviance)
+pseudoR0
 ############################################################################################################################################
 #Diversity
 species<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
 species<-species%>%dplyr::select(-c(Chironomidae,Acari,Nematomorpha,Oligochaeta,Ostracoda,Turbellaria,Euhirudinea))
 
 diversity<-species%>%
-  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=log(rowSums(species)+1))#,betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD ,betas.LCBD.p=beta.div(species, method="chord",sqrt.D=TRUE)$p.LCBD )
+  transmute(N0=rowSums(species > 0),H= diversity(species),N1 =exp(H),N2 =diversity(species, "inv"),J= H/log(N0),E10= (N1/N0),E20= (N2/N0),Com.Size=log(rowSums(species)+1),betas.LCBD=beta.div(species, method="hellinger",sqrt.D=TRUE)$LCBD  )
 #Calculate Beta Diversity (LCBD) for each network
 combine<-cbind(species,env$O.NET)
 
@@ -161,11 +221,21 @@ diversity.data<-diversity%>%rownames_to_column("Site")
 
 all<-diversity.data%>%left_join(env,by="Site")%>%left_join(betas.LCBD.data,by="Site")#%>%filter(Elevation >2790)
 #all<-diversity.data%>%left_join(env,by="Site")%>%filter(Elevation >2790)
-diversity.env<-all%>%filter(Fish!="NA")%>%filter(O.NET!="YOUNG")
+diversity.env<-all%>%filter(Fish!="NA")%>%filter(O.NET!="YOUNG")%>%
+  filter(Site !=	"Outlet.11007.fishless.2003")%>%
+  filter(Site !=	"Outlet.11007.fishless.2004")%>%
+  filter(Site !=	"Outlet.10487.trt.2003")%>%
+  filter(Site !=	"Outlet.10487.trt.2004")%>%
+  filter(Site !=	"Outlet.10477.trt.2003")%>%
+  filter(Site !=	"Outlet.10477.trt.2004")%>%
+  filter(Site !=	"Outlet.10494.trt.2012")%>%
+  filter(Site !=	"	Outlet.Vidette.below.2003")%>%
+  filter(Site !=	"	Outlet.Vidette.below.2004")%>%
+  filter(Site !=	"	Outlet.Vidette.below.20012")%>%filter(Elevation >2800)
 
 diversity.env%>%
-  #filter(Head.river.dist >4)%>%
-  gather(N0,  N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  filter(Elevation >2800)%>%
+  gather(  N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=Elevation, y=value, colour=var))+
   geom_point()+
   geom_smooth(method = "lm",se=T)+
@@ -174,9 +244,34 @@ diversity.env%>%
   facet_wrap(~var, scales = "free")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank(),legend.position = "none")
+lm<-lm(betas.LCBD~Elevation,diversity.env)
+summary(lm)
+
+mod<-betareg(betas.LCBD~Elevation,diversity.env)
+mod1<-betareg(betas.LCBD~Fish,diversity.env)
+mod2<-betareg(betas.LCBD~Elevation*Fish,diversity.env)
+mod3<-betareg(betas.LCBD~1,diversity.env)
+reported.table2 <- bbmle::AICtab(mod,mod1,mod2,mod3,weights = TRUE, sort = FALSE)
+reported.table2
+
+mod<-glm(N1~Elevation,family=gaussian(link = "identity"),diversity.env)
+mod1<-glm(N1~Fish,family=gaussian(link = "identity"),diversity.env)
+mod2<-glm(N1~Elevation*Fish,family=gaussian(link = "identity"),diversity.env)
+mod3<-glm(N1~1,family=gaussian(link = "identity"),diversity.env)
+reported.table2 <- bbmle::AICtab(mod,mod1,mod2,mod3,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod2)
+
+mod<-glm(Com.Size~Elevation,family=gaussian(link = "identity"),diversity.env)
+mod1<-glm(Com.Size~Fish,family=gaussian(link = "identity"),diversity.env)
+mod2<-glm(Com.Size~Elevation*Fish,family=gaussian(link = "identity"),diversity.env)
+mod3<-glm(Com.Size~1,family=gaussian(link = "identity"),diversity.env)
+reported.table2 <- bbmle::AICtab(mod,mod1,mod2,mod3,weights = TRUE, sort = FALSE)
+reported.table2
+r2(mod2)
 
 diversity.env%>%
-  #filter(Elevation >2790)%>%
+  filter(Elevation >2790)%>%
   gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=as.factor(Fish), y=value, fill=as.factor(Fish)))+
   geom_boxplot()+
@@ -188,6 +283,7 @@ diversity.env%>%
 
 
 diversity.env%>%
+  filter(Elevation >2790)%>%
   gather(N0, N1,  E10, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
   ggplot(aes(x=Elevation, y=value, colour=as.factor(Fish)))+
   geom_point()+
@@ -212,12 +308,12 @@ diversity.env%>%
 ############################################################################################################################################
 #NMDS
 species_env<-species%>%rownames_to_column("Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
-species_2<-species_env%>%column_to_rownames("Site")%>%dplyr::select(c(Acentrella:Wormaldia))
-set.seed(29)
+species_2<-species_env%>%column_to_rownames("Site")%>%dplyr::select(c(Acentrella:Zapada))
+set.seed(99)
 species<-species_2
 dune.rel<-decostand(species,"total") #standardize community data
 dune.bray<-vegdist(dune.rel) #calculate dissimilarity among sites (i.e. dissimilarity matrix)
-dune.nmds=metaMDS(dune.rel, k=2, try=10) #NMDS code
+dune.nmds=metaMDS(dune.rel, k=2, try=1000) #NMDS code
 dune.nmds
 stressplot(dune.nmds) #this tells us if our plot is going to work, and it looks good
 
@@ -229,7 +325,7 @@ ordihull(dune.nmds, groups=as.factor(species_env$Fish), draw="polygon", label=T)
 ordisurf(dune.nmds, species_env$Elevation, prioirty=,labcex=0.9, add = T,col="forestgreen")
 
 #PERMANOVA analysis-Whats driving variation we see above?
-adonis2(dune.bray ~ species_env$Fish+species_env$Elevation+species_env$O.NET, permutations = 99, method = "bray")
+adonis2(dune.bray ~ species_env$Fish+species_env$Elevation+species_env$O.NET, permutations = 999, method = "bray")
 betad <- betadiver(dune.rel, "z")
 adonis(betad ~ species_env$Fish+species_env$Elevation, data=species, perm=200)
 
@@ -283,24 +379,25 @@ datasz<-datas%>%
   filter(Body_mass_mg<15)
 
 datasz%>%
-  ggplot(aes(x = log(Elevation+1), y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
+  filter(Elevation>2790)%>%
+  ggplot(aes(x = Elevation, y = Body_mass_mg))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   #geom_smooth(method = "lm")+
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
-  scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
   theme_bw()+ylab("CWM")+xlab("Elevation (m)")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
 datasz%>%
   filter(Fish !="NA")%>%
+  filter(Elevation>2790)%>%
   ggplot(aes(x = Elevation, y = Body_mass_mg, colour=as.factor(Fish)))+ #, colour=as.factor(Fish))) + #remove , fill=Network and see what the grpah looks like, are there tredns that both entowrks share together
   geom_point()+
   #geom_smooth(method = "lm")+
   stat_smooth(method = glm, method.args = list(family = gaussian(link="identity")))+
   scale_color_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
   theme_bw()+ylab("CWM")+xlab("Elevation (m)")+
-  facet_grid(~as.factor(Fish))+
+  facet_wrap(~as.factor(Fish),scales = "free")+
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
