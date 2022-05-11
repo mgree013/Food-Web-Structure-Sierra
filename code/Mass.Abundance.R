@@ -338,6 +338,34 @@ diversity.env%>%
   theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.border = element_blank(),panel.background = element_blank())
 
+
+env_div_av<-diversity.env%>%
+  filter(!is.na(N0))%>%
+  group_by(Fish)%>%
+  summarise(mean_n1=mean(N1), meanN0=mean(N0), mean.beta=mean(betas.LCBD), mean.Com=mean(Com.Size))
+
+mod<-glm(N0~Fish, family=poisson(link="log"),diversity.env)
+summary(mod)
+
+mod<-glm(N1~Fish, family=gaussian(link="identity"),diversity.env)
+summary(mod)
+
+mod<-glm(Com.Size~Fish, family=gaussian(link="identity"),diversity.env)
+summary(mod)
+
+mod<-betareg(betas.LCBD~Fish,diversity.env)
+summary(mod)
+
+diversity.env%>%
+  gather( N1, Com.Size, betas.LCBD,key = "var", value = "value")%>% 
+  ggplot(aes(x=as.factor(Fish), y=value, fill=as.factor(Fish)))+
+  geom_boxplot()+
+  scale_fill_viridis(discrete = TRUE,name = "Fish Presence", labels = c("No", "Yes"))+
+  xlab("Fish Presence")+
+  facet_wrap(~var, scales = "free")+
+  theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.border = element_blank(),panel.background = element_blank())
+
 ############################################################################################################################################
 #NMDS
 species_env<-species%>%rownames_to_column("Site")%>%left_join(env, by="Site")%>%filter(Fish!="NA")
