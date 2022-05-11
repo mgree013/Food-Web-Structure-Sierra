@@ -6,15 +6,17 @@
 #Papers
 #Relationships between body size and abundance in ecology
 
+###########################################
 #Load Packages
 Packages <- c("tidyverse", "ggplot2", "vegan", "reshape2","reshape", "betareg","adespatial", "sf", "mapview", "viridis", "FD","multcomp","semPlot","lavaan", "performance")
 lapply(Packages, library, character.only = TRUE)
 
 setwd("~/Dropbox/Manuscipts/L-S Food web/Food-Web-Structure-Sierra/data")
 
+###########################################
+#Load Data
 #species<-read.csv(file = "sp.density.update.12.28.19.csv")
 species<-read.csv(file = "sp.density.update.12.28.19_traits.csv")
-
 summary(species)
 
 traits<-read.csv("Full_full_fn_trait.csv")
@@ -23,6 +25,7 @@ summary(traits)
 env <-read.csv("dave.matt.env.full.12.29.19.csv")
 summary(env)
 
+###########################################
 #organize data
 env<-env%>%mutate(Euc.dist.lake=log(Euc.dist.lake+1),River.dist.lake=log(River.dist.lake+1),Head.river.dist=log(Head.river.dist+1))
 envs<-env%>%dplyr::select(c(Site,O.NET))
@@ -174,6 +177,36 @@ r2(model1)
 
 pseudoR0 <- ((model1$null.deviance-model1$deviance)/model1$null.deviance)
 pseudoR0
+
+
+#Change in density by body size
+species_mass_data_env$Fish<-as.factor(species_mass_data_env$Fish)
+species_mass_data_env_sum<-species_mass_data_env%>%
+  group_by(Taxon,Fish, Body_mass_mg)%>%
+  summarise(Mean_density=mean(abundance))%>%
+  filter(Fish !="NA")%>%
+  pivot_wider(names_from = Fish,values_from = Mean_density)%>%
+  mutate(change_density=No-Yes, change_1_density=Yes-No)
+
+
+species_mass_data_env_sum%>%
+  filter(change_density>0)%>%
+  ggplot(aes(x=log(Body_mass_mg+1),y=log(change_density+1)))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  ylab("Change Macro Density")+xlab("Maco Body Size")+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                                 panel.border = element_blank(),panel.background = element_blank())
+
+species_mass_data_env_sum%>%
+  filter(change_1_density>0)%>%
+  ggplot(aes(x=log(Body_mass_mg+1),y=log(change_1_density+1)))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  ylab("Change Macro Density")+xlab("Maco Body Size")+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))+theme(axis.line = element_line(colour = "black"),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                                 panel.border = element_blank(),panel.background = element_blank())
+
 ############################################################################################################################################
 #Diversity
 species<-read.csv(file = "sp.density.update.12.28.19_traits.csv", row.names = 1)
